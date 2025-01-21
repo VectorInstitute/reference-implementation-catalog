@@ -2,9 +2,6 @@
 
 #TODO: Add an introduction here.
 
-| Repository | Description | Algorithms inside   | Number of<br>datasets | Datasets |
-| ---------  | ----------- | ------------------- | --------------------- | -------- |
-
-
-
-
+| ---------- | ----------- | ----------  | --------------------- | --------- |
+| Repository | Description | Algorithms  | Number of<br>datasets | Datasets  |
+| :--------- | :---------- | :---------: | :--------------------:| :-------: |
