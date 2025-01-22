@@ -1,2 +1,6 @@
-# reference-implementation-catalog
-A catalog of reference implementations authored by Vector Institute.
+# Reference Implementation Catalog
+
+#TODO: Add an introduction here.
+
+| Repository | Description | Algorithms  | Number of<br>datasets | Datasets  |
+| :--------- | :---------- | :---------: | :--------------------:| :-------: |
