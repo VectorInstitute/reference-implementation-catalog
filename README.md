@@ -11,6 +11,11 @@
 | [SSGVQAP][ssgvap-repo] | This repository contains code for the paper [A Smart System to Generate and Validate Question Answer Pairs for COVID-19 Literature][ssgvap-paper] which was accepted ibn ACL'20. Authors are Rohan Bhambhoria, Luna Feng, Dawn Sepehr, John Chen, Conner Cowling, Sedef Kocak, Elham Dolatabadi. | An Active Learning Strategy for Data Selection, AL-Uncertainty, AL-Clustering | 1 | [CORD-19] |
 | [NeuralKernelBandits][nkb-repo] | This repository contains code for the paper [An Empirical Study of Neural Kernel Bandits][nkb-paper] which was accepted in Neurips'21. Authors are Lisicki, Michal, Arash Afkanpour, and Graham W. Taylor. | Neural tangent kernel, Conjugate kernel, NNGP, Deep ensembles, Randomized Priors, NTKGP, Upper Confidence Bounds (UCB), Thompson Sampling (TS) | 7 | [Mushroom], [Statlog] <br> [Adult][adult-nkb], [US Census 1990] <br> [Covertype] |
 | [foodprice-forecasting][fpf-repo] | This repository replicates the experiments described on pages 16 and 17 of the [2022 Edition of Canada's Food Price Report][fpf-paper]. | Time series forecasting using Prophet,  Time series forecasting using Neural prophet, Interpretable time series forecasting using N-BEATS, Ensemble of the above methods. | 3 | [FRED Economic Data] |
+| [Recommendation Systems][recsys-repo] | This repository contains demos for various RecSys techniques such as Collaborative Filtering, Knowledge Graph, RL based, Sequence Aware, Session based etc. | SVD++, NeuMF, Plot based, Two tower, SVD, KG based, SlateQ, BST, Simple Association Rules, first-order Markov Chains, Sequential Rules, RNN, Neural Attentive Session, BERT4rec, A2SVDModel, SLi-Rec | 7 | [Amazon-recsys] ,[careervillage], <br> [movielens-recsys], [tmdb], [LastFM] <br> [yoochoose] |
+| [Forecasting with Deep Learning][forecasting-dl-repo] | This repository contains demos for a variety of forecasting techniques for Univariate and Multivariate time series, spatiotemporal forecasting etc. | Exponential Smoothing, Persistence Forecasting,  Mean Window Forecast,  Prophet, Neuralphophet, NBeats, DeepAR, Autoformer, DLinear, NHITS | 11 | [Canadian Weather Station Data], [BoC Exchange rate], [Electricity Consumption], [Road Traffic Occupancy], [Influenza-Like Illness Patient Ratios], [Walmart M5 Retail Product Sales], [WeatherBench], [Grocery Store Sales], [Economic Data with Food CPI] |
+| [Prompt Engineering][pe-repo] |  This repository contains demos for a variety of Prompt Engineering techniques such as fairness measurement via sentiment analysis, finetuning, prompt tuning, prompt ensembling etc. | Bias Quantification & Probing, Stereotypical Bias Analysis, Binary sentiment analysis task, Finetuning using HF Library, Gradient-Search for Instruction Prefix, GRIPS for Instruction Prefix, LLM Summarization, LLM Classification: AG News task, LLM BoolQ (Boolean question answering), LLM Basic Translation (French -> English), LLM Aspect-Based Sentiment Analysis, prompt-tuning, Activation Computation, LLM Classifier Training, Voting and Averaging Ensembles | 10 | [Crow-pairs], [sst5], [cnn_dailymail], [ag_news], [Tweet-data], [Other] |
+| [ABSA][absa-repo] | This repository contains code for the paper [Open Aspect Target Sentiment Classification with Natural Language Prompts][absa-paper]. <br> Authors are Ronald Seoh, Ian Birle, Mrinal Tak, Haw-Shiuan Chang, Brian Pinette, Alfred Hough. | Zero-shot inference for sentiment using PLM and openprompt, Few-shot inference for sentiment using PLM, Zero-shot ATSC with Prompts using BERT and OPT, Zero-shot inference of aspect term and generate sentiment polarity using NLTK pipeline | 4 | [Link][Link-absa] |
+| [NAA][naa-repo] | This repository contains code for the paper [Bringing the State-of-the-Art to Customers: A Neural Agent Assistant Framework for Customer Service Support].[naa-paper] Authors are Stephen Obadinma, Faiza Khan Khattak, Shirley Wang, Tania Sidhorn, Elaine Lau, Sean Robertson, Jingcheng Niu, Winnie Au, Alif Munim, Karthik Raja Kalaiselvi Bhaskar. | Context Retreival using SBERT bi-encoder, Context Retreival using SBERT cross-encoder, Intent identification using BERT, Few Shot Multi-Class Text Classification with BERT, Multi-Class Text Classification with BERT, Reponse generation via GPT2. | 5 | [ELI5],  [MSMARCO] |
 --------
 
 [//]: # (Reference links for Github repositories)
@@ -21,6 +26,12 @@
 [ssgvap-repo]: https://github.com/VectorInstitute/SSGVQAP
 [nkb-repo]: https://github.com/VectorInstitute/NeuralKernelBandits
 [fpf-repo]: https://github.com/VectorInstitute/foodprice-forecasting
+[recsys-repo]: https://github.com/VectorInstitute/recommender_systems_project
+[forecasting-dl-repo]: https://github.com/VectorInstitute/forecasting-with-dl
+[pe-repo]: https://github.com/VectorInstitute/PromptEngineering
+[fastgan-repo]: https://github.com/VectorInstitute/FastGAN-pytorch
+[absa-repo]: https://github.com/VectorInstitute/ABSA
+[naa-repo]: https://github.com/VectorInstitute/NAA
 
 [//]: # (Reference links for Research papers)
 [laftr-paper]: https://arxiv.org/abs/1802.06309
@@ -28,6 +39,7 @@
 [ssgvap-paper]: https://aclanthology.org/2020.sdp-1.4/
 [nkb-paper]: https://arxiv.org/abs/2111.03543
 [fpf-paper]: https://www.dal.ca/sites/agri-food/research/canada-s-food-price-report-2022.html
+[absa-paper]: https://aclanthology.org/2021.emnlp-main.509/
 
 [//]: # (Reference links for datasets)
 [CIFAR10]: https://pytorch.org/vision/main/generated/torchvision.datasets.CIFAR10.html#torchvision.datasets.CIFAR10
@@ -57,3 +69,31 @@
 [US Census 1990]: https://archive.ics.uci.edu/dataset/116/us+census+data+1990
 [Covertype]: https://archive.ics.uci.edu/dataset/31/covertype
 [FRED Economic Data]: https://fred.stlouisfed.org/
+[Amazon-recsys]: https://drive.google.com/drive/folders/1w9ofYRBZN5XIb8M-UzbU3Wp4H1ZBYOFi?usp=drive_link
+[careervillage]: https://drive.google.com/drive/folders/1rNeBtNYM7Z0oHVho75PDEP3VZIXAoxx9?usp=drive_link
+[movielens-recsys]: https://drive.google.com/drive/folders/112OtYq83WZgVqV43pGhKZjVTzlUhKM-b?usp=drive_link
+[tmdb]: https://drive.google.com/drive/folders/1CU863OynVNnNTTduKxExubCyJLCZPF0R?usp=drive_link
+[LastFM]: https://drive.google.com/drive/folders/1Jftz1_olxblJVZe6ZDMdrclAW_YnCOci?usp=drive_link
+[yoochoose]: https://drive.google.com/drive/folders/1XNyPH8i-pxnNbJKjZZRCL1oz-HPZscLC?usp=drive_link
+[Canadian Weather Station Data]: https://drive.google.com/drive/folders/1YeOoJNf7VCy7r3sFhdTrl7WdevcUIZNW
+[BoC Exchange rate]: https://drive.google.com/drive/folders/1Z9pnC0kPN-c_eAHSsPyWPYRnnGR3sEuf
+[Electricity Consumption]: https://drive.google.com/drive/folders/1YIl6RHAQ5muZEjFjXLj7Zt4vOwKUu2Qe
+[Road Traffic Occupancy]: https://drive.google.com/drive/folders/1YDM-mMGuhlE_pTlwb5qoPcOQfspJ4m4W
+[Influenza-Like Illness Patient Ratios]: https://drive.google.com/drive/folders/1YFoC3fWY-22S11MtfKHnl_R8OminZ2eo
+[Walmart M5 Retail Product Sales]: https://drive.google.com/drive/folders/1bc488T1GsJ3xg2nQmuFTut7uF1SFDSp2
+[WeatherBench]:https://drive.google.com/drive/folders/1YD-Hadx_T4JZcjmvFYDp4Pb71852CIVT
+[Grocery Store Sales]: https://drive.google.com/drive/folders/1as_cJgJbzw1OlnWyF8Y3xj7ZEjRh_kD6
+[Economic Data with Food CPI]: https://drive.google.com/drive/folders/1cNyHR5DpUQ5RORgDS8pB8iswWo-iBLFI
+[Crow-pairs]: https://github.com/VectorInstitute/PromptEngineering/blob/main/src/reference_implementations/fairness_measurement/crow_s_pairs/resources/crows_pairs_anonymized.csv
+[sst5]: http://github.com/VectorInstitute/PromptEngineering/blob/main/src/reference_implementations/fairness_measurement/czarnowska_analysis/resources/processed_sst5.tsv
+[cnn_dailymail]: https://huggingface.co/datasets/ccdv/cnn_dailymail
+[ag_news]: https://huggingface.co/datasets/fancyzhx/ag_news
+[Tweet-data]: https://github.com/VectorInstitute/PromptEngineering/tree/main/resources/datasets
+[Other]: https://github.com/VectorInstitute/PromptEngineering/tree/main/src/reference_implementations/prompting_vector_llms/llm_prompting_examples/resources
+
+
+[Few shot images dataset]: https://drive.google.com/file/d/1aAJCZbXNHyraJ6Mi13dSbe7pTyfPXha0/view
+[Link-absa]: https://github.com/VectorInstitute/ABSA/tree/main/atsc_paper/atsc_prompts_modified/dataset_files
+[ELI5]: https://drive.google.com/drive/folders/1PDBiij-6JSxOtplOSc0hPTk9zL9n3qR6
+[MSMARCO]: https://drive.google.com/drive/folders/1LO3OtuDC_FSFktTgb2NfjPY2cse7WcTY
+
