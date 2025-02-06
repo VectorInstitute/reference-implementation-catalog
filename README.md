@@ -20,6 +20,9 @@
 | [SSL Bootcamp][ssl-repo] | This repository contains demos for self-supervised techniques such as contrastive learning, masked modeling and self distillation. | Internal Contrastive Learning, LatentOD-AD, TabRet,SimMTM, Data2Vec | 52 | [Beijing Air Quality][baq-ssl], [BRFSS][brfss-ssl], [Stroke Prediction][stroke-ssl], [STL10][stl-10-ssl], [Link1][Link1-ssl], [Link2][Link2-ssl]
 | [Causal Inference Lab][ci-lab-repo] |  This repository contains code to estimate the causal effects of an intervention on some measurable outcome primarily in the health domain. | Naive ATE, TARNet, DragonNet, Double Machine Learning, T Learner, S Learner, Inverse Propensity based Learner, PEHE, MAE; Evaluation metrics: R Score, DR Score, Tau Risk, Tau IPTW Score, Tau DR Score, Tau S Score, Tau T Risk, Influence Score | 5 | [Infant Health and Development Program][IHDP], <br> [Jobs], [Twins], <br> [Berkeley admission], <br> [Government Census], [Compas] |
 | [VariationalNeuralAnnealing][vna-repo] | This repository contains code for the paper [Variational neural annealing][vna-paper]. Authors are Mohamed Hibat-Allah, Estelle M. Inack, Roeland Wiersema, Roger G. Melko & Juan Carrasquilla. | Variational neural annealing; Variational Classical Annealing (VCA), Variational Quantum Annealing, Regularized VQA, Classical-Quantum Optimization | 2 | [Edwards-Anderson][EA], [Sherrington-Kirkpatrick][SK] |
+| [HV-Ai-C][hvaic-repo] | This repository implements a Reinforcement Learning agent to optimize energy consumption within Data Centers. | RL agents performing Random action, Fixed action, Q Learning; Hyperspace Neighbor Penetration | - | - |
+| [Flex Model][flex-model-repo] | This repository contains code for the paper [FlexModel: A Framework for Interpretability of Distributed Large Language Models][flex-model-paper]. Authors are Matthew Choi, Muhammad Adil Asif, John Willes, David Emerson.| Distributed Interpretability | - | - |
+| [VBLL][vbll-repo] | This repository contains code for the paper [Variational Bayesian Last Layers][vbll-paper]. Authors are James Harrison, John Willes, Jasper Snoek. | Variational Bayesian Last Layers | 2 | [MNIST], [FashionMNIST]
 --------
 
 [//]: # (Reference links for Github repositories)
@@ -53,6 +56,8 @@
 [fpf-paper]: https://www.dal.ca/sites/agri-food/research/canada-s-food-price-report-2022.html
 [absa-paper]: https://aclanthology.org/2021.emnlp-main.509/
 [vna-paper]: https://www.nature.com/articles/s42256-021-00401-3
+[flex-model-paper]: https://arxiv.org/abs/2312.03140
+[vbll-paper]: https://arxiv.org/abs/2404.11599
 
 [//]: # (Reference links for datasets)
 [CIFAR10]: https://pytorch.org/vision/main/generated/torchvision.datasets.CIFAR10.html#torchvision.datasets.CIFAR10
@@ -122,3 +127,5 @@
 [Compas]: https://github.com/VectorInstitute/Causal_Inference_Laboratory/tree/main/data/CFA
 [EA]: https://github.com/VectorInstitute/VariationalNeuralAnnealing/tree/main/data/EA
 [SK]: https://github.com/VectorInstitute/VariationalNeuralAnnealing/tree/main/data/SK
+[MNIST]: https://huggingface.co/datasets/ylecun/mnist
+[FashionMNIST]: https://huggingface.co/datasets/zalando-datasets/fashion_mnist
