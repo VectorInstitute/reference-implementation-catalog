@@ -16,6 +16,10 @@
 | [Prompt Engineering][pe-repo] |  This repository contains demos for a variety of Prompt Engineering techniques such as fairness measurement via sentiment analysis, finetuning, prompt tuning, prompt ensembling etc. | Bias Quantification & Probing, Stereotypical Bias Analysis, Binary sentiment analysis task, Finetuning using HF Library, Gradient-Search for Instruction Prefix, GRIPS for Instruction Prefix, LLM Summarization, LLM Classification: AG News task, LLM BoolQ (Boolean question answering), LLM Basic Translation (French -> English), LLM Aspect-Based Sentiment Analysis, prompt-tuning, Activation Computation, LLM Classifier Training, Voting and Averaging Ensembles | 10 | [Crow-pairs], [sst5], [cnn_dailymail], [ag_news], [Tweet-data], [Other] |
 | [ABSA][absa-repo] | This repository contains code for the paper [Open Aspect Target Sentiment Classification with Natural Language Prompts][absa-paper]. <br> Authors are Ronald Seoh, Ian Birle, Mrinal Tak, Haw-Shiuan Chang, Brian Pinette, Alfred Hough. | Zero-shot inference for sentiment using PLM and openprompt, Few-shot inference for sentiment using PLM, Zero-shot ATSC with Prompts using BERT and OPT, Zero-shot inference of aspect term and generate sentiment polarity using NLTK pipeline | 4 | [Link][Link-absa] |
 | [NAA][naa-repo] | This repository contains code for the paper [Bringing the State-of-the-Art to Customers: A Neural Agent Assistant Framework for Customer Service Support].[naa-paper] Authors are Stephen Obadinma, Faiza Khan Khattak, Shirley Wang, Tania Sidhorn, Elaine Lau, Sean Robertson, Jingcheng Niu, Winnie Au, Alif Munim, Karthik Raja Kalaiselvi Bhaskar. | Context Retreival using SBERT bi-encoder, Context Retreival using SBERT cross-encoder, Intent identification using BERT, Few Shot Multi-Class Text Classification with BERT, Multi-Class Text Classification with BERT, Reponse generation via GPT2. | 5 | [ELI5],  [MSMARCO] |
+| [Anomaly Detection Project][anomaly-repo] | This repository contains demos for various supervised and unsupervised anomaly detection techniques in domains such as Fraud Detection, Network Intrusion Detection, System Monitoring and image, Video Analysis. | AMNet, GCN, SAGE, OCGNN, DON, AdONE, MLP, FTTransformter, DeepSAD, XGBoost, CBLOF, CFA for Target-Oriented Anomaly Localization, Draem for surface anomaly detection, Logistic Regression, CATBoost,  Random Forest, Diversity Measurable Anomaly Detection, Two-stream I3D Convolutional Network, DeepCNN, CatBoost, LighGBM, Isolation Forest, TabNet, AutoEncoder, Internal Contrastive Learning | 5 | [On Vector Cluster][cluster-anomaly] |
+| [SSL Bootcamp][ssl-repo] | This repository contains demos for self-supervised techniques such as contrastive learning, masked modeling and self distillation. | Internal Contrastive Learning, LatentOD-AD, TabRet,SimMTM, Data2Vec | 52 | [Beijing Air Quality][baq-ssl], [BRFSS][brfss-ssl], [Stroke Prediction][stroke-ssl], [STL10][stl-10-ssl], [Link1][Link1-ssl], [Link2][Link2-ssl]
+| [Causal Inference Lab][ci-lab-repo] |  This repository contains code to estimate the causal effects of an intervention on some measurable outcome primarily in the health domain. | Naive ATE, TARNet, DragonNet, Double Machine Learning, T Learner, S Learner, Inverse Propensity based Learner, PEHE, MAE; Evaluation metrics: R Score, DR Score, Tau Risk, Tau IPTW Score, Tau DR Score, Tau S Score, Tau T Risk, Influence Score | 5 | [Infant Health and Development Program][IHDP], <br> [Jobs], [Twins], <br> [Berkeley admission], <br> [Government Census], [Compas] |
+| [VariationalNeuralAnnealing][vna-repo] | This repository contains code for the paper [Variational neural annealing][vna-paper]. Authors are Mohamed Hibat-Allah, Estelle M. Inack, Roeland Wiersema, Roger G. Melko & Juan Carrasquilla. | Variational neural annealing; Variational Classical Annealing (VCA), Variational Quantum Annealing, Regularized VQA, Classical-Quantum Optimization | 2 | [Edwards-Anderson][EA], [Sherrington-Kirkpatrick][SK] |
 --------
 
 [//]: # (Reference links for Github repositories)
@@ -32,6 +36,14 @@
 [fastgan-repo]: https://github.com/VectorInstitute/FastGAN-pytorch
 [absa-repo]: https://github.com/VectorInstitute/ABSA
 [naa-repo]: https://github.com/VectorInstitute/NAA
+[anomaly-repo]: https://github.com/VectorInstitute/anomaly-detection-project
+[ssl-repo]: https://github.com/VectorInstitute/SSL-Bootcamp
+[ci-lab-repo]: https://github.com/VectorInstitute/Causal_Inference_Laboratory
+[vna-repo]: https://github.com/VectorInstitute/VariationalNeuralAnnealing
+[covid-repo]: https://github.com/VectorInstitute/ProjectLongCovid-NER
+[hvaic-repo]: https://github.com/VectorInstitute/HV-Ai-C
+[flex-model-repo]: https://github.com/VectorInstitute/flex_model
+[vbll-repo]: https://github.com/VectorInstitute/vbll
 
 [//]: # (Reference links for Research papers)
 [laftr-paper]: https://arxiv.org/abs/1802.06309
@@ -40,6 +52,7 @@
 [nkb-paper]: https://arxiv.org/abs/2111.03543
 [fpf-paper]: https://www.dal.ca/sites/agri-food/research/canada-s-food-price-report-2022.html
 [absa-paper]: https://aclanthology.org/2021.emnlp-main.509/
+[vna-paper]: https://www.nature.com/articles/s42256-021-00401-3
 
 [//]: # (Reference links for datasets)
 [CIFAR10]: https://pytorch.org/vision/main/generated/torchvision.datasets.CIFAR10.html#torchvision.datasets.CIFAR10
@@ -90,10 +103,22 @@
 [ag_news]: https://huggingface.co/datasets/fancyzhx/ag_news
 [Tweet-data]: https://github.com/VectorInstitute/PromptEngineering/tree/main/resources/datasets
 [Other]: https://github.com/VectorInstitute/PromptEngineering/tree/main/src/reference_implementations/prompting_vector_llms/llm_prompting_examples/resources
-
-
 [Few shot images dataset]: https://drive.google.com/file/d/1aAJCZbXNHyraJ6Mi13dSbe7pTyfPXha0/view
 [Link-absa]: https://github.com/VectorInstitute/ABSA/tree/main/atsc_paper/atsc_prompts_modified/dataset_files
 [ELI5]: https://drive.google.com/drive/folders/1PDBiij-6JSxOtplOSc0hPTk9zL9n3qR6
 [MSMARCO]: https://drive.google.com/drive/folders/1LO3OtuDC_FSFktTgb2NfjPY2cse7WcTY
-
+[cluster-anomaly]: https://github.com/VectorInstitute/anomaly-detection-project/tree/main?tab=readme-ov-file#datasets
+[baq-ssl]: https://zenodo.org/records/3902671
+[brfss-ssl]: https://www.cdc.gov/brfss/
+[stroke-ssl]: https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset
+[stl-10-ssl]: https://cs.stanford.edu/~acoates/stl10/
+[Link1-ssl]: https://github.com/VectorInstitute/SSL-Bootcamp/tree/main/contrastive_learning/ICL/datasets/Classical
+[Link2-ssl]: https://github.com/VectorInstitute/SSL-Bootcamp/tree/main/contrastive_learning/LatentOE/DATA
+[IHDP]: https://github.com/VectorInstitute/Causal_Inference_Laboratory/tree/main/data/IHDP-100
+[Jobs]: https://github.com/VectorInstitute/Causal_Inference_Laboratory/tree/main/data/Jobs
+[Twins]: https://github.com/VectorInstitute/Causal_Inference_Laboratory/tree/main/data/TWINS
+[Berkeley admission]: https://github.com/VectorInstitute/Causal_Inference_Laboratory/tree/main/data/CFA
+[Government Census]: https://github.com/VectorInstitute/Causal_Inference_Laboratory/tree/main/data/CFA 
+[Compas]: https://github.com/VectorInstitute/Causal_Inference_Laboratory/tree/main/data/CFA
+[EA]: https://github.com/VectorInstitute/VariationalNeuralAnnealing/tree/main/data/EA
+[SK]: https://github.com/VectorInstitute/VariationalNeuralAnnealing/tree/main/data/SK
