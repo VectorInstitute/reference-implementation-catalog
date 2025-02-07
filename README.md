@@ -22,7 +22,9 @@
 | [VariationalNeuralAnnealing][vna-repo] | This repository contains code for the paper [Variational neural annealing][vna-paper]. Authors are Mohamed Hibat-Allah, Estelle M. Inack, Roeland Wiersema, Roger G. Melko & Juan Carrasquilla. | Variational neural annealing; Variational Classical Annealing (VCA), Variational Quantum Annealing, Regularized VQA, Classical-Quantum Optimization | 2 | [Edwards-Anderson][EA], [Sherrington-Kirkpatrick][SK] |
 | [HV-Ai-C][hvaic-repo] | This repository implements a Reinforcement Learning agent to optimize energy consumption within Data Centers. | RL agents performing Random action, Fixed action, Q Learning; Hyperspace Neighbor Penetration | - | - |
 | [Flex Model][flex-model-repo] | This repository contains code for the paper [FlexModel: A Framework for Interpretability of Distributed Large Language Models][flex-model-paper]. Authors are Matthew Choi, Muhammad Adil Asif, John Willes, David Emerson.| Distributed Interpretability | - | - |
-| [VBLL][vbll-repo] | This repository contains code for the paper [Variational Bayesian Last Layers][vbll-paper]. Authors are James Harrison, John Willes, Jasper Snoek. | Variational Bayesian Last Layers | 2 | [MNIST], [FashionMNIST]
+| [VBLL][vbll-repo] | This repository contains code for the paper [Variational Bayesian Last Layers][vbll-paper]. Authors are James Harrison, John Willes, Jasper Snoek. | Variational Bayesian Last Layers | 2 | [MNIST], [FashionMNIST] |
+| [RAG][rag-repo] | This repository contains demos for various Retrieval Augmented Generation techniques using different libraries. | Cloud search via LlamaHub,  Document search via LangChain, LlamaIndex for OpenAI and Cohere models, Hybrid Search via Weaviate Vector Store, Evaluation via RAGAS library, Websearch via LangChain | 3 | [Vectors 2021 Annual Report], [PubMed Doc], [Banking Deposits] |
+| [Finetuning and Alignment][fa-repo] | This repository contains demos for finetuning techniques for LLMs focussed on reducing computational cost. | DDP, FSDP, Instruction Tuning, LoRA, DoRA, QLora,Supervised finetuning | 3 | [samsam], [imdb], [Bias-DeBiased] |
 --------
 
 [//]: # (Reference links for Github repositories)
@@ -47,6 +49,9 @@
 [hvaic-repo]: https://github.com/VectorInstitute/HV-Ai-C
 [flex-model-repo]: https://github.com/VectorInstitute/flex_model
 [vbll-repo]: https://github.com/VectorInstitute/vbll
+[rag-repo]: https://github.com/VectorInstitute/rag_bootcamp
+[fa-repo]: https://github.com/VectorInstitute/finetuning-and-alignment
+[pe-lab-repo]: https://github.com/VectorInstitute/PromptEngineeringLaboratory
 
 [//]: # (Reference links for Research papers)
 [laftr-paper]: https://arxiv.org/abs/1802.06309
@@ -129,3 +134,9 @@
 [SK]: https://github.com/VectorInstitute/VariationalNeuralAnnealing/tree/main/data/SK
 [MNIST]: https://huggingface.co/datasets/ylecun/mnist
 [FashionMNIST]: https://huggingface.co/datasets/zalando-datasets/fashion_mnist
+[Vectors 2021 Annual Report]: https://github.com/VectorInstitute/rag_bootcamp/tree/main/cloud_search/source_documents
+[PubMed Doc]: https://github.com/VectorInstitute/rag_bootcamp/tree/main/pubmed_qa/data/pubmed_doc
+[Banking Deposits]: https://github.com/VectorInstitute/rag_bootcamp/tree/main/sql_search
+[samsam]: https://huggingface.co/datasets/Samsung/samsum
+[imdb]: https://github.com/VectorInstitute/finetuning-and-alignment/tree/main/data/imdb
+[Bias-DeBiased]: https://github.com/VectorInstitute/finetuning-and-alignment/tree/main/data
