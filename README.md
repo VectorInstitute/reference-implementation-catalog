@@ -25,6 +25,11 @@
 | [VBLL][vbll-repo] | This repository contains code for the paper [Variational Bayesian Last Layers][vbll-paper]. Authors are James Harrison, John Willes, Jasper Snoek. | Variational Bayesian Last Layers | 2 | [MNIST], [FashionMNIST] |
 | [RAG][rag-repo] | This repository contains demos for various Retrieval Augmented Generation techniques using different libraries. | Cloud search via LlamaHub,  Document search via LangChain, LlamaIndex for OpenAI and Cohere models, Hybrid Search via Weaviate Vector Store, Evaluation via RAGAS library, Websearch via LangChain | 3 | [Vectors 2021 Annual Report], [PubMed Doc], [Banking Deposits] |
 | [Finetuning and Alignment][fa-repo] | This repository contains demos for finetuning techniques for LLMs focussed on reducing computational cost. | DDP, FSDP, Instruction Tuning, LoRA, DoRA, QLora,Supervised finetuning | 3 | [samsam], [imdb], [Bias-DeBiased] |
+| [Prompt Engineering Laboratory][pe-lab-repo] | This repository contains demos for various Prompt Engineering techniques, along with examples for Bias quantification, text classification. | Stereotypical Bias Analysis, Sentiment inference, Finetuning using HF Library, Activation Generation, Train and Test Model for Activations without Prompts, RAG, ABSA, Few shot prompting, Zero shot prompting (Stochastic, Greedy, Likelihood Estimation), Role play prompting, LLM Prompt Summarization, Zero shot and few shot prompt translation, Few shot CoT, Zero shot CoT, Self-Consistent CoT prompting (Zero shot, 5-shot), Balanced Choice of Plausible Alternatives, Bootstrap Ensembling(Generation & MC formulation), Vote Ensembling. | 11 | [Crows-pairs][crow-pairs-pe-lab], [sst5][sst5-pe-lab], [czarnowska templates][czar-templ-pe-lab], [cnn_dailymail], [ag_news], [Weather and sports data], [Other] |
+| [bias-mitigation-unlearning][bmu-repo] | This repository contains code for the paper [Can Machine Unlearning Reduce Social Bias in Language Models?][bmu-repo] which was published at EMNLP'24 in the Industry track. Authors are Omkar Dige, Diljot Arneja, Tsz Fung Yau, Qixuan Zhang, Mohammad Bolandraftar, Xiaodan Zhu, Faiza Khan Khattak. | PCGU, Task vectors and DPO for Machine Unlearning | 20 | [BBQ][bbq-bmu], [Stereoset][stereoset-bmu], [Link1][link1-bmu], [Link2][link2-bmu] |
+[cyclops-workshop][cyclops-repo] | This repository contains demos for using [CyclOps] package for clinical ML evaluation and monitoring. | Xgboost | 1 | [Diabetes 130-US hospitals dataset for years 1999-2008][diabetes-cyclops] |
+[odessey][odessey-repo] | This is a library created with research done for the paper [EhrMamba: Towards Generalizable and Scalable Foundation Models for Electronic Health Records][odessey-paper] published at ArXiv'24. | 1 | EhrMamba, Xgboost, Bi-LSTM | [MIMIC-IV] |
+[News Media Bias][nmb-repo] | This repository contains code for libraries and experiments to recognise and evaluate bias and fakeness within news media articles via LLMs. | Bias evaluation via LLMs, finetuning and data annotation via LLM for fake news detection, Supervised finetuning for debiasing sentence, NER for biased phrases via LLMS, Evaluate using DeepEval library. | 4 | [News Media Bias Full data][nmb-data], [Toxigen], [Nela GT], [Debiaser data] |
 --------
 
 [//]: # (Reference links for Github repositories)
@@ -52,6 +57,10 @@
 [rag-repo]: https://github.com/VectorInstitute/rag_bootcamp
 [fa-repo]: https://github.com/VectorInstitute/finetuning-and-alignment
 [pe-lab-repo]: https://github.com/VectorInstitute/PromptEngineeringLaboratory
+[bmu-repo]: https://github.com/VectorInstitute/bias-mitigation-unlearning
+[cyclops-repo]: https://github.com/VectorInstitute/cyclops-workshop
+[odessey-repo]: https://github.com/VectorInstitute/odyssey
+[nmb-repo]: https://github.com/VectorInstitute/news-media-bias
 
 [//]: # (Reference links for Research papers)
 [laftr-paper]: https://arxiv.org/abs/1802.06309
@@ -63,6 +72,8 @@
 [vna-paper]: https://www.nature.com/articles/s42256-021-00401-3
 [flex-model-paper]: https://arxiv.org/abs/2312.03140
 [vbll-paper]: https://arxiv.org/abs/2404.11599
+[bmu-paper]: https://aclanthology.org/2024.emnlp-industry.71/
+[odessey-paper]: https://arxiv.org/pdf/2405.14567
 
 [//]: # (Reference links for datasets)
 [CIFAR10]: https://pytorch.org/vision/main/generated/torchvision.datasets.CIFAR10.html#torchvision.datasets.CIFAR10
@@ -140,3 +151,23 @@
 [samsam]: https://huggingface.co/datasets/Samsung/samsum
 [imdb]: https://github.com/VectorInstitute/finetuning-and-alignment/tree/main/data/imdb
 [Bias-DeBiased]: https://github.com/VectorInstitute/finetuning-and-alignment/tree/main/data
+[Crows-pairs][crow-pairs-pe-lab]: https://github.com/VectorInstitute/PromptEngineeringLaboratory/tree/main/src/reference_implementations/fairness_measurement/crow_s_pairs/resources
+[sst5][sst5-pe-lab]: https://github.com/VectorInstitute/PromptEngineeringLaboratory/tree/main/src/reference_implementations/fairness_measurement/czarnowska_analysis/resources
+[czarnowska templates][czar-templ-pe-lab]: https://github.com/VectorInstitute/PromptEngineeringLaboratory/tree/main/src/reference_implementations/fairness_measurement/resources/czarnowska_templates
+[cnn_dailymail]: https://huggingface.co/datasets/ccdv/cnn_dailymail
+[ag_news]: https://huggingface.co/datasets/fancyzhx/ag_news
+[Weather and sports data]: https://github.com/VectorInstitute/PromptEngineeringLaboratory/tree/main/src/reference_implementations/prompting_vector_llms/llm_basic_rag_example/resources
+[link1-bmu]: https://github.com/VectorInstitute/bias-mitigation-unlearning/tree/main/reddit_bias/data
+[bbq-bmu]: https://github.com/nyu-mll/BBQ/tree/main/data
+[stereoset-bmu]: https://github.com/moinnadeem/StereoSet/tree/master/data
+[link2-bmu]: https://github.com/VectorInstitute/bias-mitigation-unlearning/tree/main/task_vectors/src/datasets
+[diabetes-cyclops]: https://archive.ics.uci.edu/dataset/296/diabetes+130-us+hospitals+for+years+1999-2008
+[MIMIC-IV]: https://physionet.org/content/mimiciv/2.0/
+[nmb-data]: https://huggingface.co/datasets/newsmediabias/news-bias-full-data
+[Toxigen]: https://github.com/VectorInstitute/news-media-bias/blob/main/Evaluations/toxigen_eval/
+[Nela GT]: https://dataverse.harvard.edu/file.xhtml?fileId=6078140&version=2.0
+[Debiaser data]: https://github.com/VectorInstitute/news-media-bias/tree/main/UnBIAS-Debiaser%20library/datasets
+
+[//]: # (Miscellaneous reference links)
+
+[CyclOps]: https://github.com/VectorInstitute/cyclops
