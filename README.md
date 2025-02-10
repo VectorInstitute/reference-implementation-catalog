@@ -28,7 +28,8 @@
 | [Prompt Engineering Laboratory][pe-lab-repo] | This repository contains demos for various Prompt Engineering techniques, along with examples for Bias quantification, text classification. | Stereotypical Bias Analysis, Sentiment inference, Finetuning using HF Library, Activation Generation, Train and Test Model for Activations without Prompts, RAG, ABSA, Few shot prompting, Zero shot prompting (Stochastic, Greedy, Likelihood Estimation), Role play prompting, LLM Prompt Summarization, Zero shot and few shot prompt translation, Few shot CoT, Zero shot CoT, Self-Consistent CoT prompting (Zero shot, 5-shot), Balanced Choice of Plausible Alternatives, Bootstrap Ensembling(Generation & MC formulation), Vote Ensembling. | 11 | [Crows-pairs][crow-pairs-pe-lab], [sst5][sst5-pe-lab], [czarnowska templates][czar-templ-pe-lab], [cnn_dailymail], [ag_news], [Weather and sports data], [Other] |
 | [bias-mitigation-unlearning][bmu-repo] | This repository contains code for the paper [Can Machine Unlearning Reduce Social Bias in Language Models?][bmu-repo] which was published at EMNLP'24 in the Industry track. Authors are Omkar Dige, Diljot Arneja, Tsz Fung Yau, Qixuan Zhang, Mohammad Bolandraftar, Xiaodan Zhu, Faiza Khan Khattak. | PCGU, Task vectors and DPO for Machine Unlearning | 20 | [BBQ][bbq-bmu], [Stereoset][stereoset-bmu], [Link1][link1-bmu], [Link2][link2-bmu] |
 [cyclops-workshop][cyclops-repo] | This repository contains demos for using [CyclOps] package for clinical ML evaluation and monitoring. | Xgboost | 1 | [Diabetes 130-US hospitals dataset for years 1999-2008][diabetes-cyclops] |
-[odessey][odessey-repo] | This is a library created with research done for the paper [EhrMamba: Towards Generalizable and Scalable Foundation Models for Electronic Health Records][odessey-paper] published at ArXiv'24. | 1 | EhrMamba, Xgboost, Bi-LSTM | [MIMIC-IV] |
+[odessey][odessey-repo] | This is a library created with research done for the paper [EhrMamba: Towards Generalizable and Scalable Foundation Models for Electronic Health Records][odessey-paper] published at ArXiv'24. | 1 |EhrMamba, Xgboost, Bi-LSTM | [MIMIC-IV] |
+[Diffusion model bootcamp][diffusion-repo] | This repository contains demos for various diffusion models for tabular and time series data. | TabDDPM, TabSyn, ClavaDDPM, CSDI, TSDiff | 12 | [Physionet Challenge 2012], [wiki2000] | 
 [News Media Bias][nmb-repo] | This repository contains code for libraries and experiments to recognise and evaluate bias and fakeness within news media articles via LLMs. | Bias evaluation via LLMs, finetuning and data annotation via LLM for fake news detection, Supervised finetuning for debiasing sentence, NER for biased phrases via LLMS, Evaluate using DeepEval library. | 4 | [News Media Bias Full data][nmb-data], [Toxigen], [Nela GT], [Debiaser data] |
 --------
 
@@ -61,6 +62,7 @@
 [cyclops-repo]: https://github.com/VectorInstitute/cyclops-workshop
 [odessey-repo]: https://github.com/VectorInstitute/odyssey
 [nmb-repo]: https://github.com/VectorInstitute/news-media-bias
+[diffusion-repo]: https://github.com/VectorInstitute/diffusion_model_bootcamp
 
 [//]: # (Reference links for Research papers)
 [laftr-paper]: https://arxiv.org/abs/1802.06309
@@ -151,9 +153,9 @@
 [samsam]: https://huggingface.co/datasets/Samsung/samsum
 [imdb]: https://github.com/VectorInstitute/finetuning-and-alignment/tree/main/data/imdb
 [Bias-DeBiased]: https://github.com/VectorInstitute/finetuning-and-alignment/tree/main/data
-[Crows-pairs][crow-pairs-pe-lab]: https://github.com/VectorInstitute/PromptEngineeringLaboratory/tree/main/src/reference_implementations/fairness_measurement/crow_s_pairs/resources
-[sst5][sst5-pe-lab]: https://github.com/VectorInstitute/PromptEngineeringLaboratory/tree/main/src/reference_implementations/fairness_measurement/czarnowska_analysis/resources
-[czarnowska templates][czar-templ-pe-lab]: https://github.com/VectorInstitute/PromptEngineeringLaboratory/tree/main/src/reference_implementations/fairness_measurement/resources/czarnowska_templates
+[crow-pairs-pe-lab]: https://github.com/VectorInstitute/PromptEngineeringLaboratory/tree/main/src/reference_implementations/fairness_measurement/crow_s_pairs/resources
+[sst5-pe-lab]: https://github.com/VectorInstitute/PromptEngineeringLaboratory/tree/main/src/reference_implementations/fairness_measurement/czarnowska_analysis/resources
+[czar-templ-pe-lab]: https://github.com/VectorInstitute/PromptEngineeringLaboratory/tree/main/src/reference_implementations/fairness_measurement/resources/czarnowska_templates
 [cnn_dailymail]: https://huggingface.co/datasets/ccdv/cnn_dailymail
 [ag_news]: https://huggingface.co/datasets/fancyzhx/ag_news
 [Weather and sports data]: https://github.com/VectorInstitute/PromptEngineeringLaboratory/tree/main/src/reference_implementations/prompting_vector_llms/llm_basic_rag_example/resources
@@ -167,6 +169,8 @@
 [Toxigen]: https://github.com/VectorInstitute/news-media-bias/blob/main/Evaluations/toxigen_eval/
 [Nela GT]: https://dataverse.harvard.edu/file.xhtml?fileId=6078140&version=2.0
 [Debiaser data]: https://github.com/VectorInstitute/news-media-bias/tree/main/UnBIAS-Debiaser%20library/datasets
+[Physionet Challenge 2012]: https://physionet.org/files/challenge-2012/1.0.0/set-a.tar.gz?download
+[wiki2000]: https://github.com/awslabs/gluonts/raw/b89f203595183340651411a41eeb0ee60570a4d9/datasets/wiki2000_nips.tar.gz
 
 [//]: # (Miscellaneous reference links)
 
