@@ -1,3 +1,5 @@
+<a href="https://vectorinstitute.ai/"><img src="vector-logo-black.svg?raw=true)" width="175" align="right" /></a>
+
 # Reference Implementation Catalog
 
 This catalog is a collection of repositories for various Machine Learning techniques and algorithms implemented at Vector Institute. The table has the following columns:
