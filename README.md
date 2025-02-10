@@ -33,6 +33,11 @@
 [News Media Bias][nmb-repo] | This repository contains code for libraries and experiments to recognise and evaluate bias and fakeness within news media articles via LLMs. | Bias evaluation via LLMs, finetuning and data annotation via LLM for fake news detection, Supervised finetuning for debiasing sentence, NER for biased phrases via LLMS, Evaluate using DeepEval library. | 4 | [News Media Bias Full data][nmb-data], [Toxigen], [Nela GT], [Debiaser data] |
 --------
 
+**DISCLAIMER**
+- Many repositories contain code for reference purposes only. In order to run them, updates may be required to the code and environment files. 
+- Links for only publicly available datasets are provided. Many datasets used in the repositories are only available on the the Vector cluster.
+
+
 [//]: # (Reference links for Github repositories)
 [lafter-repo]: https://github.com/VectorInstitute/laftr
 [god-repo]: https://github.com/VectorInstitute/gram-ood-detection
