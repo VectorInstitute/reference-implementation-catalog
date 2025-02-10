@@ -1,10 +1,15 @@
 # Reference Implementation Catalog
 
-#TODO: Add an introduction here.
+This catalog is a collection of repositories for various Machine Learning techniques and algorithms implemented at Vector Institute. The table has the following columns:
+- **Repository**: Link to the Github repo.
+- **Description**: A brief introduction to the repository stating its purpose and links to published research papers.
+- **Algorithms**: List of ML algorithms demonstrated in the repo.
+- **Number of datasets**: Total number of datasets utilized in the repo.
+- **Datasets**: Links to any publicly available data. This is a subset of the total datasets mentioned in the repo.
 
 | Repository | Description | Algorithms  | Number of<br>datasets | Datasets  |
 | :--------- | :---------- | :---------: | :--------------------:| :-------: |
-| [laftr][lafter-repo] | <p>This repository contains code for the paper [Learning Adversarially Fair and Transferable Representations][laftr-paper] which was accepted at PMLR'18. <br> Authors are David Madras, Elliot Creager, Toniann Pitassi and Richard Zemel.</p> | laftr | 1 | [Adult] |
+| [laftr][lafter-repo] | This repository contains code for the paper [Learning Adversarially Fair and Transferable Representations][laftr-paper] which was accepted at PMLR'18. <br> Authors are David Madras, Elliot Creager, Toniann Pitassi and Richard Zemel. | laftr | 1 | [Adult] |
 | [gram-ood-detection][god-repo] | This repository contains code for the paper [Detecting Out-of-Distribution Examples with In-distribution Examples and Gram Matrices][god-paper] which was accepted at ICML'20. <br> Authors are Chandramouli Shama Sastry, Sageev Oore. | OOD detection using Gram matrices | 7 | [CIFAR10], [CIFAR100], [SVHN]|
 | [Computer_Vision_Project][cvp-repo] | This repository tackles different problems such as defect detection, footprint extraction, road obstacle detection, traffic incident detection, and segmentation of medical procedures. | Semantic segmentation using Unet, Unet++, FCN, DeepLabv3; Anomaly segmentation | 11 | [SpaceNet Building Detection V2], <br> [MVTEC], [ICDAR2015], [PASCAL_VOC] <br> [DOTA], [AVA], [UCF101-24] <br> [J-HMDB-21]|
 | [Privacy Enhancing Technologies][pet-repo] | This repository contains demos for Privacy, Homomorphic Encryption, Horizontal and Vertical Federated Learning, MIA, and PATE | Vanilla SGD, DP SGD, DP Logistic Regression, Homomorphic Encryption for MLP, Horizontal FL, Horizontal FL on MLP, Membership Inference Attacks (MIA) using DP, MIA using SAM, PATE, Vertical FL. | 9 | [Heart Disease], [Credit Card Fraud] <br> [Breaset Cancer Data], [TCGA] <br> [CIFAR10][cifar10-pet], [Home Credit Default Risk] <br> [Yelp], [Airbnb]|
