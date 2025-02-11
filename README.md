@@ -38,7 +38,7 @@ This catalog is a collection of repositories for various Machine Learning techni
 [odessey][odessey-repo] | This is a library created with research done for the paper [EhrMamba: Towards Generalizable and Scalable Foundation Models for Electronic Health Records][odessey-paper] published at ArXiv'24. <br>Authors are Adibvafa Fallahpour, Mahshid Alinoori, Wenqian Ye, Xu Cao, Arash Afkanpour, Amrit Krishnan. | EhrMamba, Xgboost, Bi-LSTM | 1 | [MIMIC-IV] |
 [Diffusion model bootcamp][diffusion-repo] | This repository contains demos for various diffusion models for tabular and time series data. | TabDDPM, TabSyn, ClavaDDPM, CSDI, TSDiff | 12 | [Physionet Challenge 2012], [wiki2000] | 
 [News Media Bias][nmb-repo] | This repository contains code for libraries and experiments to recognise and evaluate bias and fakeness within news media articles via LLMs. | Bias evaluation via LLMs, finetuning and data annotation via LLM for fake news detection, Supervised finetuning for debiasing sentence, NER for biased phrases via LLMS, Evaluate using DeepEval library. | 4 | [News Media Bias Full data][nmb-data], [Toxigen], [Nela GT], [Debiaser data] |
-[News Media Bias Plus][nmb-plus-repo] | Continuation of News Media Bias project, this repository contains code for libraries and experiments to collect and annotate data, recognise and evaluate bias and fakeness within news media articles via LLMs and LVMs. | Bias evaluation via LLMs and VLMs, finetuning and data annotation via LLM for fake news detection, supervised finetuning for debiasing sentence, NER for biased entities via LLMS. Published papers available on ArXiv'24: [ViLBias: A Comprehensive Framework for Bias Detection through Linguistic and Visual Cues , presenting Annotation Strategies, Evaluation, and Key Challenges][vilbias], [Fact or Fiction? Can LLMs be Reliable Annotators for Political Truths?][fact-or-fiction]| 2 | [News Media Bias Plus Full Data][nmb-plus-full-data], [NMB Plus Named Entities][nmb-plus-entities] |
+[News Media Bias Plus][nmb-plus-repo] | Continuation of News Media Bias project, this repository contains code for libraries and experiments to collect and annotate data, recognise and evaluate bias and fakeness within news media articles via LLMs and LVMs. | Bias evaluation via LLMs and VLMs, finetuning and data annotation via LLM for fake news detection, supervised finetuning for debiasing sentence, NER for biased entities via LLMS. Published papers available on ArXiv'24: [ViLBias: A Comprehensive Framework for Bias Detection through Linguistic and Visual Cues , presenting Annotation Strategies, Evaluation, and Key Challenges][vilbias-paper], [Fact or Fiction? Can LLMs be Reliable Annotators for Political Truths?][fact-or-fiction-paper]| 2 | [News Media Bias Plus Full Data][nmb-plus-full-data], [NMB Plus Named Entities][nmb-plus-entities] |
 
 --------
 
@@ -92,8 +92,8 @@ This catalog is a collection of repositories for various Machine Learning techni
 [vbll-paper]: https://arxiv.org/abs/2404.11599
 [bmu-paper]: https://aclanthology.org/2024.emnlp-industry.71/
 [odessey-paper]: https://arxiv.org/pdf/2405.14567
-[vilbias]: https://arxiv.org/abs/2412.17052
-[fact-or-fiction]: https://arxiv.org/abs/2411.05775
+[vilbias-paper]: https://arxiv.org/abs/2412.17052
+[fact-or-fiction-paper]: https://arxiv.org/abs/2411.05775
 
 [//]: # (Reference links for datasets)
 [CIFAR10]: https://pytorch.org/vision/main/generated/torchvision.datasets.CIFAR10.html#torchvision.datasets.CIFAR10
