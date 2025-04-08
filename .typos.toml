@@ -1,0 +1,15 @@
+[default]
+extend-ignore-re = [
+  "EHR",
+  "Ehr",
+  "Yau",
+  "Tak",
+  "DOTA"
+]
+
+[default.extend-words]
+Tak = "Tak"
+Yau = "Yau"
+EHR = "EHR"
+Ehr = "Ehr"
+DOTA = "DOTA"
