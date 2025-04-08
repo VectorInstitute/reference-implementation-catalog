@@ -6,7 +6,7 @@ readme = "README.md"
 authors = [ {name = "Vector AI Engineering", email = "ai_engineering@vectorinstitute.ai"}]
 license = "Apache-2.0"
 repository = "https://github.com/VectorInstitute/reference-implementation-catalog"
-requires-python = ">=3.10"
+requires-python = ">=3.12"
 dependencies = []
 
 [dependency-groups]
@@ -19,6 +19,7 @@ docs = [
 dev = [
     "pre-commit>=4.1.0",
     "ruff>=0.9.2",
+    "pip-audit>=2.7.3",
 ]
 
 [tool.ruff]
