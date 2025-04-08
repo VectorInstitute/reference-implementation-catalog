@@ -1,7 +1,5 @@
 [default]
 extend-ignore-re = [
-  "EHR",
-  "Ehr",
   "Yau",
   "Tak",
   "DOTA"
@@ -10,6 +8,4 @@ extend-ignore-re = [
 [default.extend-words]
 Tak = "Tak"
 Yau = "Yau"
-EHR = "EHR"
-Ehr = "Ehr"
 DOTA = "DOTA"
