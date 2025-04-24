@@ -50,6 +50,10 @@ range of AI domains.
 
 
 
+
+
+
+
 === "2024"
 
     <div class="grid cards" markdown>
@@ -255,23 +259,6 @@ range of AI domains.
     </div>
     <div class="card" markdown>
     <div class="header">
-        <h3><a href="https://github.com/VectorInstitute/vna" title="Go to Repository">VariationalNeuralAnnealing</a></h3>
-        <span class="tag year-tag">2023</span>
-    </div>
-    <p>This repository contains code for the paper [Variational neural annealing][vna-paper]. <br> Authors are Mohamed Hibat-Allah, Estelle M. Inack, Roeland Wiersema, Roger G. Melko & Juan Carrasquilla.</p>
-    <div class="tag-container">
-        <span class="tag" data-tippy="Variational neural annealing">Variational neural annealing</span>
-        <span class="tag" data-tippy="Variational Classical Annealing (VCA)">Variational Classical Annealing (VCA)</span>
-        <span class="tag" data-tippy="Variational Quantum Annealing">Variational Quantum Annealing</span>
-        <span class="tag" data-tippy="Regularized VQA">Regularized VQA</span>
-        <span class="tag" data-tippy="Classical-Quantum Optimization">Classical-Quantum Optimization</span>
-    </div>
-    <div class="datasets">
-        <strong>Datasets:</strong> <span class="dataset-tag">Edwards-Anderson</span> <span class="dataset-tag">EA</span>  <span class="dataset-tag">Sherrington-Kirkpatrick</span> <span class="dataset-tag">SK</span>
-    </div>
-    </div>
-    <div class="card" markdown>
-    <div class="header">
         <h3><a href="https://github.com/VectorInstitute/hvaic" title="Go to Repository">HV-Ai-C</a></h3>
         <span class="tag year-tag">2023</span>
     </div>
@@ -371,22 +358,6 @@ range of AI domains.
     </div>
     <div class="card" markdown>
     <div class="header">
-        <h3><a href="https://github.com/VectorInstitute/absa" title="Go to Repository">ABSA</a></h3>
-        <span class="tag year-tag">2022</span>
-    </div>
-    <p>This repository contains code for the paper [Open Aspect Target Sentiment Classification with Natural Language Prompts][absa-paper]. <br> Authors are Ronald Seoh, Ian Birle, Mrinal Tak, Haw-Shiuan Chang, Brian Pinette, Alfred Hough.</p>
-    <div class="tag-container">
-        <span class="tag" data-tippy="Zero-shot inference for sentiment using PLM and openprompt">Zero-shot inference for sentiment using PLM and openprompt</span>
-        <span class="tag" data-tippy="Few-shot inference for sentiment using PLM">Few-shot inference for sentiment using PLM</span>
-        <span class="tag" data-tippy="Zero-shot ATSC with Prompts using BERT and OPT">Zero-shot ATSC with Prompts using BERT and OPT</span>
-        <span class="tag" data-tippy="Zero-shot inference of aspect term and generate sentiment polarity using NLTK pipeline">Zero-shot inference of aspect term and generate sentiment polarity using NLTK pipeline</span>
-    </div>
-    <div class="datasets">
-        <strong>Datasets:</strong> <span class="dataset-tag">Link</span> <span class="dataset-tag">Link-absa</span>
-    </div>
-    </div>
-    <div class="card" markdown>
-    <div class="header">
         <h3><a href="https://github.com/VectorInstitute/naa" title="Go to Repository">NAA</a></h3>
         <span class="tag year-tag">2022</span>
     </div>
@@ -442,23 +413,6 @@ range of AI domains.
     </div>
     <div class="card" markdown>
     <div class="header">
-        <h3><a href="https://github.com/VectorInstitute/nkb" title="Go to Repository">NeuralKernelBandits</a></h3>
-        <span class="tag year-tag">2021</span>
-    </div>
-    <p>This repository contains code for the paper [An Empirical Study of Neural Kernel Bandits][nkb-paper] which was accepted in NeurIPS'21. <br> Authors are Lisicki, Michal, Arash Afkanpour, and Graham W. Taylor.</p>
-    <div class="tag-container">
-        <span class="tag" data-tippy="Neural tangent kernel">Neural tangent kernel</span>
-        <span class="tag" data-tippy="Conjugate kernel">Conjugate kernel</span>
-        <span class="tag" data-tippy="NNGP">NNGP</span>
-        <span class="tag" data-tippy="Deep ensembles">Deep ensembles</span>
-        <span class="tag" data-tippy="Randomized Priors">Randomized Priors</span>
-    </div>
-    <div class="datasets">
-        <strong>Datasets:</strong> <span class="dataset-tag">Mushroom</span>  <span class="dataset-tag">Statlog</span>  <span class="dataset-tag">Adult</span> <span class="dataset-tag">adult-nkb</span>  <span class="dataset-tag">US Census 1990</span>  <span class="dataset-tag">Covertype</span>
-    </div>
-    </div>
-    <div class="card" markdown>
-    <div class="header">
         <h3><a href="https://github.com/VectorInstitute/fpf" title="Go to Repository">foodprice-forecasting</a></h3>
         <span class="tag year-tag">2021</span>
     </div>
@@ -499,40 +453,3 @@ range of AI domains.
 
     </div>
 
-=== "2019"
-
-    <div class="grid cards" markdown>
-    <div class="card" markdown>
-    <div class="header">
-        <h3><a href="https://github.com/VectorInstitute/god" title="Go to Repository">gram-ood-detection</a></h3>
-        <span class="tag year-tag">2019</span>
-    </div>
-    <p>This repository contains code for the paper [Detecting Out-of-Distribution Examples with In-distribution Examples and Gram Matrices][god-paper] which was accepted at ICML'20. <br> Authors are Chandramouli Shama Sastry, Sageev Oore.</p>
-    <div class="tag-container">
-        <span class="tag" data-tippy="OOD detection using Gram matrices">OOD detection using Gram matrices</span>
-    </div>
-    <div class="datasets">
-        <strong>Datasets:</strong> <span class="dataset-tag">CIFAR10</span>  <span class="dataset-tag">CIFAR100</span>  <span class="dataset-tag">SVHN</span>
-    </div>
-    </div>
-
-    </div>
-
-=== "2018"
-
-    <div class="grid cards" markdown>
-    <div class="card" markdown>
-    <div class="header">
-        <h3><a href="https://github.com/VectorInstitute/lafter" title="Go to Repository">laftr</a></h3>
-        <span class="tag year-tag">2018</span>
-    </div>
-    <p>This repository contains code for the paper [Learning Adversarially Fair and Transferable Representations][laftr-paper] which was accepted at PMLR'18. <br> Authors are David Madras, Elliot Creager, Toniann Pitassi and Richard Zemel.</p>
-    <div class="tag-container">
-        <span class="tag" data-tippy="laftr">laftr</span>
-    </div>
-    <div class="datasets">
-        <strong>Datasets:</strong> <span class="dataset-tag">Adult</span>
-    </div>
-    </div>
-
-    </div>
