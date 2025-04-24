@@ -450,7 +450,7 @@
 <h1 id="vector-institute-reference-implementation-catalog">Vector Institute Reference Implementation Catalog<a class="headerlink" href="#vector-institute-reference-implementation-catalog" title="Permanent link">&para;</a></h1>
 <div class="catalog-header">
 <p>Welcome to the Vector Institute Reference Implementation Catalog!
-The catalog is a curated collection of high-quality AI algorithm implementations
+The catalog is a curated collection of high quality implementations
 developed by researchers and engineers at the Vector Institute. This catalog provides
 access to repositories that demonstrate state-of-the-art techniques across a wide
 range of AI domains.</p>
@@ -458,6 +458,21 @@ range of AI domains.</p>
 <div class="catalog-stats">
   <div class="stat">
     <div class="stat-number">100+</div>
+<style>
+.dataset-tag {
+  display: inline-block;
+  background-color: #6a5acd;
+  color: white;
+  padding: 0.1rem 0.4rem;
+  border-radius: 0.8rem;
+  margin-right: 0.2rem;
+  margin-bottom: 0.2rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+</style>
+
     <div class="stat-label">Reference Implementations</div>
   </div>
   <div class="stat">
@@ -467,154 +482,151 @@ range of AI domains.</p>
 </div>
 
 <h2 id="browse-implementations-by-year">Browse Implementations by Year<a class="headerlink" href="#browse-implementations-by-year" title="Permanent link">&para;</a></h2>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">2024</label><label for="__tabbed_1_2">2023</label><label for="__tabbed_1_3">2022</label><label for="__tabbed_1_4">2021 &amp; Earlier</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:5"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">2024</label><label for="__tabbed_1_2">2023</label><label for="__tabbed_1_3">2022</label><label for="__tabbed_1_4">2021</label><label for="__tabbed_1_5">2020</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p><div class="grid cards" markdown>
 <div class="card" markdown>
 <div class="header">
-    <h3><a href="https://github.com/VectorInstitute/rag_bootcamp" title="Go to Repository">RAG Bootcamp</a></h3>
+    <h3><a href="https://github.com/VectorInstitute/rag" title="Go to Repository">RAG</a></h3>
     <span class="tag year-tag">2024</span>
 </div>
-<p>Comprehensive demos for various Retrieval Augmented Generation techniques.</p>
+<p>This repository contains demos for various Retrieval Augmented Generation techniques using different libraries.</p>
 <div class="tag-container">
-    <span class="tag" data-tippy="Cloud-based search implementations">Cloud search</span>
-    <span class="tag" data-tippy="Document retrieval techniques">Document search</span>
-    <span class="tag" data-tippy="LlamaIndex for vector search">LlamaIndex</span>
-    <span class="tag" data-tippy="Hybrid keyword and vector search">Hybrid Search</span>
+    <span class="tag" data-tippy="Cloud search via LlamaHub">Cloud search via LlamaHub</span>
+    <span class="tag" data-tippy="Document search via LangChain">Document search via LangChain</span>
+    <span class="tag" data-tippy="LlamaIndex for OpenAI and Cohere models">LlamaIndex for OpenAI and Cohere models</span>
+    <span class="tag" data-tippy="Hybrid Search via Weaviate Vector Store">Hybrid Search via Weaviate Vector Store</span>
+    <span class="tag" data-tippy="Evaluation via RAGAS library">Evaluation via RAGAS library</span>
 </div>
 <div class="datasets">
-    <strong>Datasets:</strong> 3 public datasets including Vector's 2021 Annual Report
+    <strong>Datasets:</strong> <span class="dataset-tag">Vectors 2021 Annual Report</span>  <span class="dataset-tag">PubMed Doc</span>  <span class="dataset-tag">Banking Deposits</span>
 </div>
-</div></p>
-<p><div class="card" markdown>
+</div>
+<div class="card" markdown>
 <div class="header">
-    <h3><a href="https://github.com/VectorInstitute/finetuning-and-alignment" title="Go to Repository">Finetuning and Alignment</a></h3>
+    <h3><a href="https://github.com/VectorInstitute/fa" title="Go to Repository">Finetuning and Alignment</a></h3>
     <span class="tag year-tag">2024</span>
 </div>
-<p>Demos for LLM finetuning techniques focused on reducing computational cost.</p>
+<p>This repository contains demos for finetuning techniques for LLMs focussed on reducing computational cost.</p>
 <div class="tag-container">
-    <span class="tag" data-tippy="Distributed Data Parallel">DDP</span>
-    <span class="tag" data-tippy="Fully Sharded Data Parallel">FSDP</span>
-    <span class="tag" data-tippy="Low-Rank Adaptation">LoRA</span>
-    <span class="tag" data-tippy="DoRA finetuning technique">DoRA</span>
-    <span class="tag" data-tippy="Quantized LoRA">QLora</span>
+    <span class="tag" data-tippy="DDP">DDP</span>
+    <span class="tag" data-tippy="FSDP">FSDP</span>
+    <span class="tag" data-tippy="Instruction Tuning">Instruction Tuning</span>
+    <span class="tag" data-tippy="LoRA">LoRA</span>
+    <span class="tag" data-tippy="DoRA">DoRA</span>
 </div>
 <div class="datasets">
-    <strong>Datasets:</strong> 3 public datasets including IMDB
+    <strong>Datasets:</strong> <span class="dataset-tag">samsam</span>  <span class="dataset-tag">imdb</span>  <span class="dataset-tag">Bias-DeBiased</span>
 </div>
-</div></p>
-<p><div class="card" markdown>
+</div>
+<div class="card" markdown>
 <div class="header">
-    <h3><a href="https://github.com/VectorInstitute/PromptEngineeringLaboratory" title="Go to Repository">Prompt Engineering Laboratory</a></h3>
+    <h3><a href="https://github.com/VectorInstitute/pe-lab" title="Go to Repository">Prompt Engineering Laboratory</a></h3>
     <span class="tag year-tag">2024</span>
 </div>
-<p>Demos for various prompt engineering techniques and bias quantification.</p>
+<p>This repository contains demos for various Prompt Engineering techniques, along with examples for Bias quantification, text classification.</p>
 <div class="tag-container">
-    <span class="tag" data-tippy="Methods for analyzing and measuring bias">Bias Analysis</span>
-    <span class="tag" data-tippy="Sentiment analysis and inference">Sentiment Inference</span>
-    <span class="tag" data-tippy="Retrieval Augmented Generation">RAG</span>
-    <span class="tag" data-tippy="Reasoning through problems step-by-step">Chain-of-Thought</span>
+    <span class="tag" data-tippy="Stereotypical Bias Analysis">Stereotypical Bias Analysis</span>
+    <span class="tag" data-tippy="Sentiment inference">Sentiment inference</span>
+    <span class="tag" data-tippy="Finetuning using HF Library">Finetuning using HF Library</span>
+    <span class="tag" data-tippy="Activation Generation">Activation Generation</span>
+    <span class="tag" data-tippy="Train and Test Model for Activations without Prompts">Train and Test Model for Activations without Prompts</span>
 </div>
 <div class="datasets">
-    <strong>Datasets:</strong> 11 datasets including Crows-pairs
+    <strong>Datasets:</strong> <span class="dataset-tag">Crows-pairs</span> <span class="dataset-tag">crow-pairs-pe-lab</span>  <span class="dataset-tag">sst5</span> <span class="dataset-tag">sst5-pe-lab</span>  <span class="dataset-tag">czarnowska templates</span> <span class="dataset-tag">czar-templ-pe-lab</span>  <span class="dataset-tag">cnn_dailymail</span>  <span class="dataset-tag">ag_news</span>  <span class="dataset-tag">Weather and sports data</span>  <span class="dataset-tag">Other</span>
 </div>
-</div></p>
-<p><div class="card" markdown>
+</div>
+<div class="card" markdown>
 <div class="header">
-    <h3><a href="https://github.com/VectorInstitute/bias-mitigation-unlearning" title="Go to Repository">Bias Mitigation Unlearning</a></h3>
+    <h3><a href="https://github.com/VectorInstitute/bmu" title="Go to Repository">bias-mitigation-unlearning</a></h3>
     <span class="tag year-tag">2024</span>
 </div>
-<p>Code for the EMNLP'24 paper "Can Machine Unlearning Reduce Social Bias in Language Models?"</p>
+<p>This repository contains code for the paper [Can Machine Unlearning Reduce Social Bias in Language Models?][bmu-paper] which was published at EMNLP'24 in the Industry track. <br>Authors are Omkar Dige, Diljot Arneja, Tsz Fung Yau, Qixuan Zhang, Mohammad Bolandraftar, Xiaodan Zhu, Faiza Khan Khattak.</p>
 <div class="tag-container">
-    <span class="tag" data-tippy="Parameter-Space Catastrophic-Forgetting Guided Unlearning">PCGU</span>
-    <span class="tag" data-tippy="Task vectors for unlearning">Task vectors</span>
-    <span class="tag" data-tippy="Direct Preference Optimization">DPO</span>
-    <span class="tag" data-tippy="Techniques to forget specific information">Machine Unlearning</span>
+    <span class="tag" data-tippy="PCGU">PCGU</span>
+    <span class="tag" data-tippy="Task vectors and DPO for Machine Unlearning">Task vectors and DPO for Machine Unlearning</span>
 </div>
 <div class="datasets">
-    <strong>Datasets:</strong> 20 datasets including BBQ and Stereoset
+    <strong>Datasets:</strong> <span class="dataset-tag">BBQ</span> <span class="dataset-tag">bbq-bmu</span>  <span class="dataset-tag">Stereoset</span> <span class="dataset-tag">stereoset-bmu</span>  <span class="dataset-tag">Link1</span> <span class="dataset-tag">link1-bmu</span>  <span class="dataset-tag">Link2</span> <span class="dataset-tag">link2-bmu</span>
 </div>
-</div></p>
-<p><div class="card" markdown>
+</div>
+<div class="card" markdown>
 <div class="header">
-    <h3><a href="https://github.com/VectorInstitute/cyclops-workshop" title="Go to Repository">CyclOps Workshop</a></h3>
+    <h3><a href="https://github.com/VectorInstitute/cyclops" title="Go to Repository">cyclops-workshop</a></h3>
     <span class="tag year-tag">2024</span>
 </div>
-<p>Demos for using the CyclOps package for clinical ML evaluation and monitoring.</p>
+<p>This repository contains demos for using [CyclOps] package for clinical ML evaluation and monitoring.</p>
 <div class="tag-container">
-    <span class="tag" data-tippy="XGBoost for clinical prediction">XGBoost</span>
-    <span class="tag" data-tippy="Machine learning for clinical applications">Clinical ML</span>
-    <span class="tag" data-tippy="Model evaluation techniques">Evaluation</span>
-    <span class="tag" data-tippy="Model monitoring in production">Monitoring</span>
+    <span class="tag" data-tippy="XGBoost">XGBoost</span>
 </div>
 <div class="datasets">
-    <strong>Datasets:</strong> Diabetes 130-US hospitals dataset
+    <strong>Datasets:</strong> <span class="dataset-tag">Diabetes 130-US hospitals dataset for years 1999-2008</span> <span class="dataset-tag">diabetes-cyclops</span>
 </div>
-</div></p>
-<p><div class="card" markdown>
+</div>
+<div class="card" markdown>
 <div class="header">
-    <h3><a href="https://github.com/VectorInstitute/odyssey" title="Go to Repository">Odyssey</a></h3>
+    <h3><a href="https://github.com/VectorInstitute/odyssey" title="Go to Repository">odyssey</a></h3>
     <span class="tag year-tag">2024</span>
 </div>
-<p>Library for the paper "EHRMamba: Towards Generalizable and Scalable Foundation Models for Electronic Health Records"</p>
+<p>This is a library created with research done for the paper [EHRMamba: Towards Generalizable and Scalable Foundation Models for Electronic Health Records][odyssey-paper] published at ArXiv'24. <br>Authors are Adibvafa Fallahpour, Mahshid Alinoori, Wenqian Ye, Xu Cao, Arash Afkanpour, Amrit Krishnan.</p>
 <div class="tag-container">
-    <span class="tag" data-tippy="State Space Models for EHR data">EHRMamba</span>
-    <span class="tag" data-tippy="Gradient boosting for EHR">XGBoost</span>
-    <span class="tag" data-tippy="Bidirectional LSTM networks">Bi-LSTM</span>
-    <span class="tag" data-tippy="Healthcare applications">Healthcare</span>
+    <span class="tag" data-tippy="EHRMamba">EHRMamba</span>
+    <span class="tag" data-tippy="XGBoost">XGBoost</span>
+    <span class="tag" data-tippy="Bi-LSTM">Bi-LSTM</span>
 </div>
 <div class="datasets">
-    <strong>Datasets:</strong> MIMIC-IV
+    <strong>Datasets:</strong> <span class="dataset-tag">MIMIC-IV</span>
 </div>
-</div></p>
-<p><div class="card" markdown>
+</div>
+<div class="card" markdown>
 <div class="header">
-    <h3><a href="https://github.com/VectorInstitute/diffusion_model_bootcamp" title="Go to Repository">Diffusion Model Bootcamp</a></h3>
+    <h3><a href="https://github.com/VectorInstitute/diffusion" title="Go to Repository">Diffusion model bootcamp</a></h3>
     <span class="tag year-tag">2024</span>
 </div>
-<p>Demos for various diffusion models for tabular and time series data.</p>
+<p>This repository contains demos for various diffusion models for tabular and time series data.</p>
 <div class="tag-container">
-    <span class="tag" data-tippy="Tabular Denoising Diffusion Probabilistic Models">TabDDPM</span>
-    <span class="tag" data-tippy="Tabular Synthesis with diffusion">TabSyn</span>
-    <span class="tag" data-tippy="Clava Denoising Diffusion">ClavaDDPM</span>
-    <span class="tag" data-tippy="Conditional Score-based Diffusion">CSDI</span>
-    <span class="tag" data-tippy="Time Series Diffusion">TSDiff</span>
+    <span class="tag" data-tippy="TabDDPM">TabDDPM</span>
+    <span class="tag" data-tippy="TabSyn">TabSyn</span>
+    <span class="tag" data-tippy="ClavaDDPM">ClavaDDPM</span>
+    <span class="tag" data-tippy="CSDI">CSDI</span>
+    <span class="tag" data-tippy="TSDiff">TSDiff</span>
 </div>
 <div class="datasets">
-    <strong>Datasets:</strong> 12 datasets including Physionet Challenge 2012
+    <strong>Datasets:</strong> <span class="dataset-tag">Physionet Challenge 2012</span>  <span class="dataset-tag">wiki2000</span>
 </div>
-</div></p>
-<p><div class="card" markdown>
+</div>
+<div class="card" markdown>
 <div class="header">
-    <h3><a href="https://github.com/VectorInstitute/news-media-bias" title="Go to Repository">News Media Bias</a></h3>
+    <h3><a href="https://github.com/VectorInstitute/nmb" title="Go to Repository">News Media Bias</a></h3>
     <span class="tag year-tag">2024</span>
 </div>
-<p>Libraries and experiments to recognize and evaluate bias in news media via LLMs.</p>
+<p>This repository contains code for libraries and experiments to recognise and evaluate bias and fakeness within news media articles via LLMs.</p>
 <div class="tag-container">
-    <span class="tag" data-tippy="Methods for evaluating bias">Bias Evaluation</span>
-    <span class="tag" data-tippy="Supervised finetuning techniques">Supervised Finetuning</span>
-    <span class="tag" data-tippy="Named Entity Recognition">NER</span>
-    <span class="tag" data-tippy="Deep evaluation frameworks">DeepEval</span>
+    <span class="tag" data-tippy="Bias evaluation via LLMs">Bias evaluation via LLMs</span>
+    <span class="tag" data-tippy="finetuning and data annotation via LLM for fake news detection">finetuning and data annotation via LLM for fake news detection</span>
+    <span class="tag" data-tippy="Supervised finetuning for debiasing sentence">Supervised finetuning for debiasing sentence</span>
+    <span class="tag" data-tippy="NER for biased phrases via LLMS">NER for biased phrases via LLMS</span>
+    <span class="tag" data-tippy="Evaluate using DeepEval library">Evaluate using DeepEval library</span>
 </div>
 <div class="datasets">
-    <strong>Datasets:</strong> 4 datasets including News Media Bias Full data
+    <strong>Datasets:</strong> <span class="dataset-tag">News Media Bias Full data</span> <span class="dataset-tag">nmb-data</span>  <span class="dataset-tag">Toxigen</span>  <span class="dataset-tag">Nela GT</span>  <span class="dataset-tag">Debiaser data</span>
 </div>
-</div></p>
-<p><div class="card" markdown>
+</div>
+<div class="card" markdown>
 <div class="header">
-    <h3><a href="https://github.com/VectorInstitute/news-media-bias-plus" title="Go to Repository">News Media Bias Plus</a></h3>
+    <h3><a href="https://github.com/VectorInstitute/nmb-plus" title="Go to Repository">News Media Bias Plus</a></h3>
     <span class="tag year-tag">2024</span>
 </div>
-<p>Extension of News Media Bias project with LLMs and LVMs.</p>
+<p>Continuation of News Media Bias project, this repository contains code for libraries and experiments to collect and annotate data, recognise and evaluate bias and fakeness within news media articles via LLMs and LVMs.</p>
 <div class="tag-container">
-    <span class="tag" data-tippy="Methods for evaluating bias">Bias Evaluation</span>
-    <span class="tag" data-tippy="Vision Language Models">VLMs</span>
-    <span class="tag" data-tippy="Data annotation methodologies">Data Annotation</span>
-    <span class="tag" data-tippy="Visual cues for analysis">Visual Cues</span>
+    <span class="tag" data-tippy="Bias evaluation via LLMs and VLMs">Bias evaluation via LLMs and VLMs</span>
+    <span class="tag" data-tippy="finetuning and data annotation via LLM for fake news detection">finetuning and data annotation via LLM for fake news detection</span>
+    <span class="tag" data-tippy="supervised finetuning for debiasing sentence">supervised finetuning for debiasing sentence</span>
+    <span class="tag" data-tippy="NER for biased entities via LLMS">NER for biased entities via LLMS</span>
 </div>
 <div class="datasets">
-    <strong>Datasets:</strong> 2 datasets with full data and named entities
+    <strong>Datasets:</strong> <span class="dataset-tag">News Media Bias Plus Full Data</span> <span class="dataset-tag">nmb-plus-full-data</span>  <span class="dataset-tag">NMB Plus Named Entities</span> <span class="dataset-tag">nmb-plus-entities</span>
 </div>
 </div></p>
 </div>
@@ -623,106 +635,95 @@ range of AI domains.</p>
 <p><div class="grid cards" markdown>
 <div class="card" markdown>
 <div class="header">
-    <h3><a href="https://github.com/VectorInstitute/anomaly-detection-project" title="Go to Repository">Anomaly Detection</a></h3>
+    <h3><a href="https://github.com/VectorInstitute/anomaly" title="Go to Repository">Anomaly Detection Project</a></h3>
     <span class="tag year-tag">2023</span>
 </div>
-<p>Demos for various supervised and unsupervised anomaly detection techniques.</p>
+<p>This repository contains demos for various supervised and unsupervised anomaly detection techniques in domains such as Fraud Detection, Network Intrusion Detection, System Monitoring and image, Video Analysis.</p>
 <div class="tag-container">
-    <span class="tag">AMNet</span>
-    <span class="tag">GCN</span>
-    <span class="tag">SAGE</span>
-    <span class="tag">OCGNN</span>
-    <span class="tag">DeepSAD</span>
+    <span class="tag" data-tippy="AMNet">AMNet</span>
+    <span class="tag" data-tippy="GCN">GCN</span>
+    <span class="tag" data-tippy="SAGE">SAGE</span>
+    <span class="tag" data-tippy="OCGNN">OCGNN</span>
+    <span class="tag" data-tippy="DON">DON</span>
 </div>
 <div class="datasets">
-    <strong>Datasets:</strong> 5 datasets including On Vector Cluster
+    <strong>Datasets:</strong> <span class="dataset-tag">On Vector Cluster</span> <span class="dataset-tag">cluster-anomaly</span>
 </div>
-</div></p>
-<p><div class="card" markdown>
+</div>
+<div class="card" markdown>
 <div class="header">
-    <h3><a href="https://github.com/VectorInstitute/SSL-Bootcamp" title="Go to Repository">SSL Bootcamp</a></h3>
+    <h3><a href="https://github.com/VectorInstitute/ssl" title="Go to Repository">SSL Bootcamp</a></h3>
     <span class="tag year-tag">2023</span>
 </div>
-<p>Demos for self-supervised techniques like contrastive learning and masked modeling.</p>
+<p>This repository contains demos for self-supervised techniques such as contrastive learning, masked modeling and self distillation.</p>
 <div class="tag-container">
-    <span class="tag">Contrastive Learning</span>
-    <span class="tag">LatentOD-AD</span>
-    <span class="tag">TabRet</span>
-    <span class="tag">SimMTM</span>
+    <span class="tag" data-tippy="Internal Contrastive Learning">Internal Contrastive Learning</span>
+    <span class="tag" data-tippy="LatentOD-AD">LatentOD-AD</span>
+    <span class="tag" data-tippy="TabRet">TabRet</span>
+    <span class="tag" data-tippy="SimMTM">SimMTM</span>
+    <span class="tag" data-tippy="Data2Vec">Data2Vec</span>
 </div>
 <div class="datasets">
-    <strong>Datasets:</strong> 52 datasets including Beijing Air Quality
+    <strong>Datasets:</strong> <span class="dataset-tag">Beijing Air Quality</span> <span class="dataset-tag">baq-ssl</span>  <span class="dataset-tag">BRFSS</span> <span class="dataset-tag">brfss-ssl</span>  <span class="dataset-tag">Stroke Prediction</span> <span class="dataset-tag">stroke-ssl</span>  <span class="dataset-tag">STL10</span> <span class="dataset-tag">stl-10-ssl</span>  <span class="dataset-tag">Link1</span> <span class="dataset-tag">Link1-ssl</span>  <span class="dataset-tag">Link2</span> <span class="dataset-tag">Link2-ssl</span>
 </div>
-</div></p>
-<p><div class="card" markdown>
+</div>
+<div class="card" markdown>
 <div class="header">
-    <h3><a href="https://github.com/VectorInstitute/Causal_Inference_Laboratory" title="Go to Repository">Causal Inference Lab</a></h3>
+    <h3><a href="https://github.com/VectorInstitute/ci-lab" title="Go to Repository">Causal Inference Lab</a></h3>
     <span class="tag year-tag">2023</span>
 </div>
-<p>Code to estimate causal effects of interventions on measurable outcomes.</p>
+<p>This repository contains code to estimate the causal effects of an intervention on some measurable outcome primarily in the health domain.</p>
 <div class="tag-container">
-    <span class="tag">TARNet</span>
-    <span class="tag">DragonNet</span>
-    <span class="tag">Double ML</span>
-    <span class="tag">T Learner</span>
-    <span class="tag">S Learner</span>
+    <span class="tag" data-tippy="Naive ATE">Naive ATE</span>
+    <span class="tag" data-tippy="TARNet">TARNet</span>
+    <span class="tag" data-tippy="DragonNet">DragonNet</span>
+    <span class="tag" data-tippy="Double Machine Learning">Double Machine Learning</span>
+    <span class="tag" data-tippy="T Learner">T Learner</span>
 </div>
 <div class="datasets">
-    <strong>Datasets:</strong> 5 datasets including IHDP
+    <strong>Datasets:</strong> <span class="dataset-tag">Infant Health and Development Program</span> <span class="dataset-tag">IHDP</span>  <span class="dataset-tag">Jobs</span>  <span class="dataset-tag">Twins</span>  <span class="dataset-tag">Berkeley admission</span>  <span class="dataset-tag">Government Census</span>  <span class="dataset-tag">Compas</span>
 </div>
-</div></p>
-<p><div class="card" markdown>
+</div>
+<div class="card" markdown>
 <div class="header">
-    <h3><a href="https://github.com/VectorInstitute/VariationalNeuralAnnealing" title="Go to Repository">Variational Neural Annealing</a></h3>
+    <h3><a href="https://github.com/VectorInstitute/hvaic" title="Go to Repository">HV-Ai-C</a></h3>
     <span class="tag year-tag">2023</span>
 </div>
-<p>Code for the paper "Variational neural annealing" in Nature Machine Intelligence.</p>
+<p>This repository implements a Reinforcement Learning agent to optimize energy consumption within Data Centers.</p>
 <div class="tag-container">
-    <span class="tag">VCA</span>
-    <span class="tag">VQA</span>
-    <span class="tag">Regularized VQA</span>
-    <span class="tag">Classical-Quantum Optimization</span>
+    <span class="tag" data-tippy="RL agents performing Random action">RL agents performing Random action</span>
+    <span class="tag" data-tippy="Fixed action">Fixed action</span>
+    <span class="tag" data-tippy="Q Learning">Q Learning</span>
+    <span class="tag" data-tippy="Hyperspace Neighbor Penetration">Hyperspace Neighbor Penetration</span>
 </div>
 <div class="datasets">
-    <strong>Datasets:</strong> Edwards-Anderson and Sherrington-Kirkpatrick
+    <strong>Datasets:</strong> <em>No public datasets available</em>
 </div>
-</div></p>
-<p><div class="card" markdown>
+</div>
+<div class="card" markdown>
 <div class="header">
-    <h3><a href="https://github.com/VectorInstitute/HV-Ai-C" title="Go to Repository">HV-Ai-C</a></h3>
+    <h3><a href="https://github.com/VectorInstitute/flex-model" title="Go to Repository">Flex Model</a></h3>
     <span class="tag year-tag">2023</span>
 </div>
-<p>Reinforcement Learning agent to optimize energy consumption in Data Centers.</p>
+<p>This repository contains code for the paper [FlexModel: A Framework for Interpretability of Distributed Large Language Models][flex-model-paper]. <br> Authors are Matthew Choi, Muhammad Adil Asif, John Willes, David Emerson.</p>
 <div class="tag-container">
-    <span class="tag">Q Learning</span>
-    <span class="tag">Random Action</span>
-    <span class="tag">Fixed Action</span>
-    <span class="tag">Hyperspace Neighbor Penetration</span>
+    <span class="tag" data-tippy="Distributed Interpretability">Distributed Interpretability</span>
 </div>
-</div></p>
-<p><div class="card" markdown>
-<div class="header">
-    <h3><a href="https://github.com/VectorInstitute/flex_model" title="Go to Repository">Flex Model</a></h3>
-    <span class="tag year-tag">2023</span>
+<div class="datasets">
+    <strong>Datasets:</strong> <em>No public datasets available</em>
 </div>
-<p>Code for "FlexModel: A Framework for Interpretability of Distributed Large Language Models."</p>
-<div class="tag-container">
-    <span class="tag">Distributed Interpretability</span>
-    <span class="tag">LLMs</span>
 </div>
-</div></p>
-<p><div class="card" markdown>
+<div class="card" markdown>
 <div class="header">
     <h3><a href="https://github.com/VectorInstitute/vbll" title="Go to Repository">VBLL</a></h3>
     <span class="tag year-tag">2023</span>
 </div>
-<p>Code for the paper "Variational Bayesian Last Layers."</p>
+<p>This repository contains code for the paper [Variational Bayesian Last Layers][vbll-paper]. <br> Authors are James Harrison, John Willes, Jasper Snoek.</p>
 <div class="tag-container">
-    <span class="tag">Variational Bayesian</span>
-    <span class="tag">Last Layers</span>
+    <span class="tag" data-tippy="Variational Bayesian Last Layers">Variational Bayesian Last Layers</span>
 </div>
 <div class="datasets">
-    <strong>Datasets:</strong> MNIST and FashionMNIST
+    <strong>Datasets:</strong> <span class="dataset-tag">MNIST</span>  <span class="dataset-tag">FashionMNIST</span>
 </div>
 </div></p>
 </div>
@@ -731,84 +732,70 @@ range of AI domains.</p>
 <p><div class="grid cards" markdown>
 <div class="card" markdown>
 <div class="header">
-    <h3><a href="https://github.com/VectorInstitute/recommender_systems_project" title="Go to Repository">Recommendation Systems</a></h3>
+    <h3><a href="https://github.com/VectorInstitute/recsys" title="Go to Repository">Recommendation Systems</a></h3>
     <span class="tag year-tag">2022</span>
 </div>
-<p>Demos for various RecSys techniques such as Collaborative Filtering and Knowledge Graph.</p>
+<p>This repository contains demos for various RecSys techniques such as Collaborative Filtering, Knowledge Graph, RL based, Sequence Aware, Session based etc.</p>
 <div class="tag-container">
-    <span class="tag">SVD++</span>
-    <span class="tag">NeuMF</span>
-    <span class="tag">Two Tower</span>
-    <span class="tag">SlateQ</span>
-    <span class="tag">BERT4rec</span>
+    <span class="tag" data-tippy="SVD++">SVD++</span>
+    <span class="tag" data-tippy="NeuMF">NeuMF</span>
+    <span class="tag" data-tippy="Plot based">Plot based</span>
+    <span class="tag" data-tippy="Two tower">Two tower</span>
+    <span class="tag" data-tippy="SVD">SVD</span>
 </div>
 <div class="datasets">
-    <strong>Datasets:</strong> 7 datasets including Amazon and MovieLens
+    <strong>Datasets:</strong> <span class="dataset-tag">Amazon-recsys</span>  <span class="dataset-tag">careervillage</span>  <span class="dataset-tag">movielens-recsys</span>  <span class="dataset-tag">tmdb</span>  <span class="dataset-tag">LastFM</span>  <span class="dataset-tag">yoochoose</span>
 </div>
-</div></p>
-<p><div class="card" markdown>
+</div>
+<div class="card" markdown>
 <div class="header">
-    <h3><a href="https://github.com/VectorInstitute/forecasting-with-dl" title="Go to Repository">Forecasting with Deep Learning</a></h3>
+    <h3><a href="https://github.com/VectorInstitute/forecasting-dl" title="Go to Repository">Forecasting with Deep Learning</a></h3>
     <span class="tag year-tag">2022</span>
 </div>
-<p>Demos for forecasting techniques for time series and spatiotemporal data.</p>
+<p>This repository contains demos for a variety of forecasting techniques for Univariate and Multivariate time series, spatiotemporal forecasting etc.</p>
 <div class="tag-container">
-    <span class="tag">Exponential Smoothing</span>
-    <span class="tag">Prophet</span>
-    <span class="tag">NBeats</span>
-    <span class="tag">DeepAR</span>
-    <span class="tag">Autoformer</span>
+    <span class="tag" data-tippy="Exponential Smoothing">Exponential Smoothing</span>
+    <span class="tag" data-tippy="Persistence Forecasting">Persistence Forecasting</span>
+    <span class="tag" data-tippy="Mean Window Forecast">Mean Window Forecast</span>
+    <span class="tag" data-tippy="Prophet">Prophet</span>
+    <span class="tag" data-tippy="Neuralphophet">Neuralphophet</span>
 </div>
 <div class="datasets">
-    <strong>Datasets:</strong> 11 datasets including Canadian Weather Station Data
+    <strong>Datasets:</strong> <span class="dataset-tag">Canadian Weather Station Data</span>  <span class="dataset-tag">BoC Exchange rate</span>  <span class="dataset-tag">Electricity Consumption</span>  <span class="dataset-tag">Road Traffic Occupancy</span>  <span class="dataset-tag">Influenza-Like Illness Patient Ratios</span>  <span class="dataset-tag">Walmart M5 Retail Product Sales</span>  <span class="dataset-tag">WeatherBench</span>  <span class="dataset-tag">Grocery Store Sales</span>  <span class="dataset-tag">Economic Data with Food CPI</span>
 </div>
-</div></p>
-<p><div class="card" markdown>
+</div>
+<div class="card" markdown>
 <div class="header">
-    <h3><a href="https://github.com/VectorInstitute/PromptEngineering" title="Go to Repository">Prompt Engineering</a></h3>
+    <h3><a href="https://github.com/VectorInstitute/pe" title="Go to Repository">Prompt Engineering</a></h3>
     <span class="tag year-tag">2022</span>
 </div>
-<p>Demos for prompt engineering techniques including fairness and finetuning.</p>
+<p>This repository contains demos for a variety of Prompt Engineering techniques such as fairness measurement via sentiment analysis, finetuning, prompt tuning, prompt ensembling etc.</p>
 <div class="tag-container">
-    <span class="tag">Bias Quantification</span>
-    <span class="tag">Probing</span>
-    <span class="tag">Prompt-tuning</span>
-    <span class="tag">Ensembles</span>
+    <span class="tag" data-tippy="Bias Quantification & Probing">Bias Quantification &amp; Probing</span>
+    <span class="tag" data-tippy="Stereotypical Bias Analysis">Stereotypical Bias Analysis</span>
+    <span class="tag" data-tippy="Binary sentiment analysis task">Binary sentiment analysis task</span>
+    <span class="tag" data-tippy="Finetuning using HF Library">Finetuning using HF Library</span>
+    <span class="tag" data-tippy="Gradient-Search for Instruction Prefix">Gradient-Search for Instruction Prefix</span>
 </div>
 <div class="datasets">
-    <strong>Datasets:</strong> 10 datasets including Crow-pairs and SST5
+    <strong>Datasets:</strong> <span class="dataset-tag">Crow-pairs</span>  <span class="dataset-tag">sst5</span>  <span class="dataset-tag">cnn_dailymail</span>  <span class="dataset-tag">ag_news</span>  <span class="dataset-tag">Tweet-data</span>  <span class="dataset-tag">Other</span>
 </div>
-</div></p>
-<p><div class="card" markdown>
+</div>
+<div class="card" markdown>
 <div class="header">
-    <h3><a href="https://github.com/VectorInstitute/ABSA" title="Go to Repository">ABSA</a></h3>
+    <h3><a href="https://github.com/VectorInstitute/naa" title="Go to Repository">NAA</a></h3>
     <span class="tag year-tag">2022</span>
 </div>
-<p>Code for the paper "Open Aspect Target Sentiment Classification with Natural Language Prompts."</p>
+<p>This repository contains code for the paper [Bringing the State-of-the-Art to Customers: A Neural Agent Assistant Framework for Customer Service Support][naa-paper] published at EMNLP'22 in the industry track. <br> Authors are Stephen Obadinma, Faiza Khan Khattak, Shirley Wang, Tania Sidhorn, Elaine Lau, Sean Robertson, Jingcheng Niu, Winnie Au, Alif Munim, Karthik Raja Kalaiselvi Bhaskar.</p>
 <div class="tag-container">
-    <span class="tag">Zero-shot</span>
-    <span class="tag">Few-shot</span>
-    <span class="tag">BERT</span>
-    <span class="tag">OPT</span>
+    <span class="tag" data-tippy="Context Retrieval using SBERT bi-encoder">Context Retrieval using SBERT bi-encoder</span>
+    <span class="tag" data-tippy="Context Retrieval using SBERT cross-encoder">Context Retrieval using SBERT cross-encoder</span>
+    <span class="tag" data-tippy="Intent identification using BERT">Intent identification using BERT</span>
+    <span class="tag" data-tippy="Few Shot Multi-Class Text Classification with BERT">Few Shot Multi-Class Text Classification with BERT</span>
+    <span class="tag" data-tippy="Multi-Class Text Classification with BERT">Multi-Class Text Classification with BERT</span>
 </div>
 <div class="datasets">
-    <strong>Datasets:</strong> 4 datasets for sentiment analysis
-</div>
-</div></p>
-<p><div class="card" markdown>
-<div class="header">
-    <h3><a href="https://github.com/VectorInstitute/NAA" title="Go to Repository">NAA</a></h3>
-    <span class="tag year-tag">2022</span>
-</div>
-<p>Code for the EMNLP'22 paper "A Neural Agent Assistant Framework for Customer Service Support."</p>
-<div class="tag-container">
-    <span class="tag">SBERT</span>
-    <span class="tag">Intent Identification</span>
-    <span class="tag">Text Classification</span>
-    <span class="tag">GPT2</span>
-</div>
-<div class="datasets">
-    <strong>Datasets:</strong> ELI5 and MSMARCO
+    <strong>Datasets:</strong> <span class="dataset-tag">ELI5</span>  <span class="dataset-tag">MSMARCO</span>
 </div>
 </div></p>
 </div>
@@ -817,109 +804,71 @@ range of AI domains.</p>
 <p><div class="grid cards" markdown>
 <div class="card" markdown>
 <div class="header">
-    <h3><a href="https://github.com/VectorInstitute/PETs-Bootcamp" title="Go to Repository">Privacy Enhancing Technologies</a></h3>
+    <h3><a href="https://github.com/VectorInstitute/pet" title="Go to Repository">Privacy Enhancing Technologies</a></h3>
     <span class="tag year-tag">2021</span>
 </div>
-<p>Demos for Privacy, Homomorphic Encryption, Federated Learning, MIA, and PATE.</p>
+<p>This repository contains demos for Privacy, Homomorphic Encryption, Horizontal and Vertical Federated Learning, MIA, and PATE.</p>
 <div class="tag-container">
-    <span class="tag">DP SGD</span>
-    <span class="tag">Homomorphic Encryption</span>
-    <span class="tag">FL</span>
-    <span class="tag">PATE</span>
+    <span class="tag" data-tippy="Vanilla SGD">Vanilla SGD</span>
+    <span class="tag" data-tippy="DP SGD">DP SGD</span>
+    <span class="tag" data-tippy="DP Logistic Regression">DP Logistic Regression</span>
+    <span class="tag" data-tippy="Homomorphic Encryption for MLP">Homomorphic Encryption for MLP</span>
+    <span class="tag" data-tippy="Horizontal FL">Horizontal FL</span>
 </div>
 <div class="datasets">
-    <strong>Datasets:</strong> 9 datasets including Heart Disease and CIFAR10
+    <strong>Datasets:</strong> <span class="dataset-tag">Heart Disease</span>  <span class="dataset-tag">Credit Card Fraud</span>  <span class="dataset-tag">Breaset Cancer Data</span>  <span class="dataset-tag">TCGA</span>  <span class="dataset-tag">CIFAR10</span> <span class="dataset-tag">cifar10-pet</span>  <span class="dataset-tag">Home Credit Default Risk</span>  <span class="dataset-tag">Yelp</span>  <span class="dataset-tag">Airbnb</span>
 </div>
-</div></p>
-<p><div class="card" markdown>
+</div>
+<div class="card" markdown>
 <div class="header">
-    <h3><a href="https://github.com/VectorInstitute/SSGVQAP" title="Go to Repository">SSGVQAP</a></h3>
+    <h3><a href="https://github.com/VectorInstitute/ssgvap" title="Go to Repository">SSGVQAP</a></h3>
     <span class="tag year-tag">2021</span>
 </div>
-<p>Code for the ACL'20 paper for COVID-19 question-answer generation.</p>
+<p>This repository contains code for the paper [A Smart System to Generate and Validate Question Answer Pairs for COVID-19 Literature][ssgvap-paper] which was accepted in ACL'20. <br> Authors are Rohan Bhambhoria, Luna Feng, Dawn Sepehr, John Chen, Conner Cowling, Sedef Kocak, Elham Dolatabadi.</p>
 <div class="tag-container">
-    <span class="tag">Active Learning</span>
-    <span class="tag">AL-Uncertainty</span>
-    <span class="tag">AL-Clustering</span>
+    <span class="tag" data-tippy="An Active Learning Strategy for Data Selection">An Active Learning Strategy for Data Selection</span>
+    <span class="tag" data-tippy="AL-Uncertainty">AL-Uncertainty</span>
+    <span class="tag" data-tippy="AL-Clustering">AL-Clustering</span>
 </div>
 <div class="datasets">
-    <strong>Datasets:</strong> CORD-19
+    <strong>Datasets:</strong> <span class="dataset-tag">CORD-19</span>
 </div>
-</div></p>
-<p><div class="card" markdown>
+</div>
+<div class="card" markdown>
 <div class="header">
-    <h3><a href="https://github.com/VectorInstitute/NeuralKernelBandits" title="Go to Repository">Neural Kernel Bandits</a></h3>
+    <h3><a href="https://github.com/VectorInstitute/fpf" title="Go to Repository">foodprice-forecasting</a></h3>
     <span class="tag year-tag">2021</span>
 </div>
-<p>Code for the NeurIPS'21 paper "An Empirical Study of Neural Kernel Bandits."</p>
+<p>This repository replicates the experiments described on pages 16 and 17 of the [2022 Edition of Canada's Food Price Report][fpf-paper].</p>
 <div class="tag-container">
-    <span class="tag">Neural Tangent Kernel</span>
-    <span class="tag">Conjugate Kernel</span>
-    <span class="tag">Deep Ensembles</span>
-    <span class="tag">UCB</span>
+    <span class="tag" data-tippy="Time series forecasting using Prophet">Time series forecasting using Prophet</span>
+    <span class="tag" data-tippy="Time series forecasting using Neural prophet">Time series forecasting using Neural prophet</span>
+    <span class="tag" data-tippy="Interpretable time series forecasting using N-BEATS">Interpretable time series forecasting using N-BEATS</span>
+    <span class="tag" data-tippy="Ensemble of the above methods">Ensemble of the above methods</span>
 </div>
 <div class="datasets">
-    <strong>Datasets:</strong> 7 datasets including Mushroom and Covertype
+    <strong>Datasets:</strong> <span class="dataset-tag">FRED Economic Data</span>
 </div>
 </div></p>
-<p><div class="card" markdown>
+</div>
+</div>
+<div class="tabbed-block">
+<p><div class="grid cards" markdown>
+<div class="card" markdown>
 <div class="header">
-    <h3><a href="https://github.com/VectorInstitute/foodprice-forecasting" title="Go to Repository">Foodprice Forecasting</a></h3>
-    <span class="tag year-tag">2021</span>
-</div>
-<p>Replicates experiments from the 2022 Edition of Canada's Food Price Report.</p>
-<div class="tag-container">
-    <span class="tag">Prophet</span>
-    <span class="tag">Neural Prophet</span>
-    <span class="tag">N-BEATS</span>
-    <span class="tag">Ensemble</span>
-</div>
-<div class="datasets">
-    <strong>Datasets:</strong> FRED Economic Data
-</div>
-</div></p>
-<p><div class="card" markdown>
-<div class="header">
-    <h3><a href="https://github.com/VectorInstitute/Computer_Vision_Project" title="Go to Repository">Computer Vision Project</a></h3>
+    <h3><a href="https://github.com/VectorInstitute/cvp" title="Go to Repository">Computer_Vision_Project</a></h3>
     <span class="tag year-tag">2020</span>
 </div>
-<p>Tackles problems like defect detection, footprint extraction, and segmentation.</p>
+<p>This repository tackles different problems such as defect detection, footprint extraction, road obstacle detection, traffic incident detection, and segmentation of medical procedures.</p>
 <div class="tag-container">
-    <span class="tag">Unet</span>
-    <span class="tag">Unet++</span>
-    <span class="tag">FCN</span>
-    <span class="tag">DeepLabv3</span>
+    <span class="tag" data-tippy="Semantic segmentation using Unet">Semantic segmentation using Unet</span>
+    <span class="tag" data-tippy="Unet++">Unet++</span>
+    <span class="tag" data-tippy="FCN">FCN</span>
+    <span class="tag" data-tippy="DeepLabv3">DeepLabv3</span>
+    <span class="tag" data-tippy="Anomaly segmentation">Anomaly segmentation</span>
 </div>
 <div class="datasets">
-    <strong>Datasets:</strong> 11 datasets including SpaceNet and MVTEC
-</div>
-</div></p>
-<p><div class="card" markdown>
-<div class="header">
-    <h3><a href="https://github.com/VectorInstitute/gram-ood-detection" title="Go to Repository">Gram OOD Detection</a></h3>
-    <span class="tag year-tag">2019</span>
-</div>
-<p>Code for the ICML'20 paper on OOD detection with Gram matrices.</p>
-<div class="tag-container">
-    <span class="tag">OOD Detection</span>
-    <span class="tag">Gram Matrices</span>
-</div>
-<div class="datasets">
-    <strong>Datasets:</strong> CIFAR10, CIFAR100, SVHN
-</div>
-</div></p>
-<p><div class="card" markdown>
-<div class="header">
-    <h3><a href="https://github.com/VectorInstitute/laftr" title="Go to Repository">LAFTR</a></h3>
-    <span class="tag year-tag">2018</span>
-</div>
-<p>Code for "Learning Adversarially Fair and Transferable Representations" (PMLR'18).</p>
-<div class="tag-container">
-    <span class="tag">Fair Representations</span>
-    <span class="tag">Adversarial Learning</span>
-</div>
-<div class="datasets">
-    <strong>Datasets:</strong> Adult
+    <strong>Datasets:</strong> <span class="dataset-tag">SpaceNet Building Detection V2</span>  <span class="dataset-tag">MVTEC</span>  <span class="dataset-tag">ICDAR2015</span>  <span class="dataset-tag">PASCAL_VOC</span>  <span class="dataset-tag">DOTA</span>  <span class="dataset-tag">AVA</span>  <span class="dataset-tag">UCF101-24</span>  <span class="dataset-tag">J-HMDB-21</span>
 </div>
 </div></p>
 </div>
