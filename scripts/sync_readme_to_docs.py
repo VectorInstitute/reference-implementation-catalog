@@ -26,10 +26,14 @@ SIMPLE_MARKDOWN_LINK_PATTERN = re.compile(r"\[(.*?)\]")
 def format_datasets(datasets_text: str) -> str:
     """Format dataset text into a nicer representation.
 
-    Args:
-        datasets_text: Raw dataset text from README.md
+    Parameters
+    ----------
+    datasets_text : str
+        Raw dataset text from README.md
 
-    Returns:
+    Returns
+    -------
+    str
         Formatted dataset HTML
 
     """
@@ -94,8 +98,10 @@ def format_datasets(datasets_text: str) -> str:
 def parse_readme_table() -> Dict[str, List[Dict]]:
     """Parse the reference implementations table from README.md.
 
-    Returns:
-        Dict with years as keys and lists of implementation details as values.
+    Returns
+    -------
+    Dict[str, List[Dict]]
+        Dictionary with years as keys and lists of implementation details as values.
 
     """
     readme_path = Path("README.md")
@@ -143,10 +149,14 @@ def parse_readme_table() -> Dict[str, List[Dict]]:
 def generate_card_html(impl: Dict) -> str:
     """Generate HTML for a single implementation card.
 
-    Args:
-        impl: Dictionary containing implementation details
+    Parameters
+    ----------
+    impl : Dict
+        Dictionary containing implementation details
 
-    Returns:
+    Returns
+    -------
+    str
         HTML string for the implementation card
 
     """
@@ -184,10 +194,14 @@ def generate_card_html(impl: Dict) -> str:
 def get_year_sections(content: str) -> Dict[str, Tuple[int, int, str]]:
     """Extract year sections from the markdown content.
 
-    Args:
-        content: The markdown content
+    Parameters
+    ----------
+    content : str
+        The markdown content
 
-    Returns:
+    Returns
+    -------
+    Dict[str, Tuple[int, int, str]]
         Dictionary mapping years to their (start_pos, end_pos, section_content)
 
     """
@@ -213,11 +227,16 @@ def get_year_sections(content: str) -> Dict[str, Tuple[int, int, str]]:
 def generate_year_section(year: str, implementations: List[Dict]) -> str:
     """Generate a complete year section with all implementations.
 
-    Args:
-        year: The year for this section
-        implementations: List of implementation details
+    Parameters
+    ----------
+    year : str
+        The year for this section
+    implementations : List[Dict]
+        List of implementation details
 
-    Returns:
+    Returns
+    -------
+    str
         Formatted year section
 
     """
@@ -235,11 +254,16 @@ def rebuild_document(
 ) -> str:
     """Completely rebuild the document with all year sections.
 
-    Args:
-        original_content: The original markdown content
-        implementations_by_year: Dictionary with implementations by year
+    Parameters
+    ----------
+    original_content : str
+        The original markdown content
+    implementations_by_year : Dict[str, List[Dict]]
+        Dictionary with implementations grouped by year
 
-    Returns:
+    Returns
+    -------
+    str
         Updated markdown content
 
     """
@@ -271,8 +295,10 @@ def rebuild_document(
 def update_docs_index(implementations_by_year: Dict[str, List[Dict]]) -> None:
     """Update the docs/index.md file with cards for all implementations.
 
-    Args:
-        implementations_by_year: Dictionary of implementations grouped by year
+    Parameters
+    ----------
+    implementations_by_year : Dict[str, List[Dict]]
+        Dictionary of implementations grouped by year
 
     """
     docs_index_path = Path("docs/index.md")
@@ -337,7 +363,10 @@ def update_docs_index(implementations_by_year: Dict[str, List[Dict]]) -> None:
 
 
 def main() -> None:
-    """Run main function to sync README.md implementations to docs/index.md."""
+    """Run main function to sync README.md implementations to docs/index.md.
+
+    This function orchestrates the entire synchronization process from README.md to docs/index.md.
+    """
     print("Syncing reference implementations from README.md to docs/index.md...")
     implementations_by_year = parse_readme_table()
 
