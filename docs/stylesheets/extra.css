@@ -193,6 +193,13 @@
   color: var(--md-default-fg-color--light);
   border-top: 1px dashed rgba(0,0,0,0.07);
   padding-top: 0.3rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.datasets strong {
+  margin-right: 0.5rem;
 }
 
 .catalog-stats {

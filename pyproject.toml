@@ -9,6 +9,9 @@ repository = "https://github.com/VectorInstitute/reference-implementation-catalo
 requires-python = ">=3.12"
 dependencies = []
 
+[project.scripts]
+sync-readme = "scripts.sync_readme_to_docs:main"
+
 [dependency-groups]
 docs = [
     "mkdocs>=1.6.0",

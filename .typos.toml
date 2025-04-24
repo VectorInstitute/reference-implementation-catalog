@@ -9,3 +9,4 @@ extend-ignore-re = [
 Tak = "Tak"
 Yau = "Yau"
 DOTA = "DOTA"
+EHR = "EHR"
