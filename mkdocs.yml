@@ -54,9 +54,13 @@ theme:
     - toc.follow
     - navigation.expand
     - header.autohide
+    - navigation.instant.progress
+    - navigation.path
+    - navigation.prune
+    - content.tabs.link
   icon:
     repo: fontawesome/brands/github
-  logo: assets/reference-implementations-logo.png
+  logo: assets/vector-logo.svg
   logo_footer: assets/vector-logo.svg
   name: material
   palette:

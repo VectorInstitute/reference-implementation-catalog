@@ -23,3 +23,5 @@ To submit issues or suggestions, please use our provided templates:
 * [Request a feature](https://github.com/VectorInstitute/reference-implementation-catalog/issues/new?template=feature_request.md) - for suggesting improvements or new additions
 
 For any questions, please reach out to the AI Engineering team at Vector Institute.
+
+<div style="margin-bottom: 4rem;"></div>

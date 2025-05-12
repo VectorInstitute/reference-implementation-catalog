@@ -1,17 +1,73 @@
-# Vector Institute Reference Implementation Catalog
+---
+hide:
+  - navigation
+  - toc
+---
 
-<div class="catalog-header" markdown>
-Welcome to the Vector Institute Reference Implementation Catalog!
-The catalog is a curated collection of high quality implementations
-developed by researchers and engineers at the Vector Institute. This catalog provides
-access to repositories that demonstrate state-of-the-art techniques across a wide
-range of AI domains.
+<!-- Hero section with background image -->
+<div class="hero-section" markdown>
+  <div class="hero-content">
+    <h1></h1>
+    <p>A curated collection of high-quality AI implementations developed by researchers and engineers at the Vector Institute</p>
+    <a href="#browse-implementations-by-year" class="md-button md-button--primary">Browse Implementations</a>
+    <a href="https://github.com/VectorInstitute/reference-implementation-catalog" class="md-button md-button--primary">View on GitHub</a>
+  </div>
 </div>
 
-<div class="catalog-stats">
-  <div class="stat">
-    <div class="stat-number">100+</div>
+<!-- Custom styling for the hero section -->
 <style>
+.hero-section {
+  position: relative;
+  padding: 5rem 4rem;
+  text-align: center;
+  color: white;
+  background-color: var(--md-primary-fg-color);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url('assets/splash.png');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0; /* Remove margins */
+  padding: 0;
+  width: 100vw; /* Full viewport width */
+  max-width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  min-height: 70vh;
+}
+
+.hero-content {
+  max-width: 800px;
+  z-index: 10;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+  font-family: 'Roboto', sans-serif;
+}
+
+.hero-content p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.7);
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.4;
+  color: #f8f8f8;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
+
 .dataset-tag {
   display: inline-block;
   background-color: #6a5acd;
@@ -26,6 +82,9 @@ range of AI domains.
 }
 </style>
 
+<div class="catalog-stats">
+  <div class="stat">
+    <div class="stat-number">100+</div>
     <div class="stat-label">Reference Implementations</div>
   </div>
   <div class="stat">
@@ -456,4 +515,3 @@ range of AI domains.
     </div>
 
     </div>
-
