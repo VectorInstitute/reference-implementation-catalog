@@ -6,6 +6,7 @@ and updates the cards in docs/index.md. It automatically groups implementations
 by type and ensures changes in YAML files are reflected in the documentation.
 """
 
+import datetime
 import re
 from collections import defaultdict
 from pathlib import Path
@@ -19,6 +20,56 @@ BROWSE_HEADING_PATTERN = r"## Browse Implementations by Type"
 MARKDOWN_LINK_PATTERN = re.compile(r"\[(.*?)\]\[(.*?)\]")
 # Pattern to match simple Markdown links [text]
 SIMPLE_MARKDOWN_LINK_PATTERN = re.compile(r"\[(.*?)\]")
+
+
+def format_tags(items_list, tag_class) -> str:
+    """Format items into tags with links when URLs are available.
+
+    Parameters
+    ----------
+    items_list : List
+        List of item names or objects with name/url fields from YAML file
+    tag_class : str
+        CSS class to apply to the tags
+
+    Returns
+    -------
+    str
+        Formatted HTML with tags
+
+    """
+    if not items_list:
+        return f"<em>No {tag_class.replace('-tag', '')} available</em>"
+
+    # Create tags for each item in the list
+    formatted_text = ""
+    for item in items_list:
+        # Handle both string items and dict items with name/url fields
+        if isinstance(item, dict) and "name" in item:
+            item_name = item["name"].strip()
+            item_url = item.get("url", "")
+
+            if item_url:
+                formatted_text += f'<a href="{item_url}" class="{tag_class}" target="_blank">{item_name}</a>  '
+            else:
+                formatted_text += f'<span class="{tag_class}">{item_name}</span>  '
+        else:
+            item_text = str(item).strip()
+            if item_text:
+                formatted_text += f'<span class="{tag_class}">{item_text}</span>  '
+
+    # Add a final check to ensure no broken spans
+    if "<span" in formatted_text and formatted_text.count(
+        "<span"
+    ) != formatted_text.count("</span"):
+        # Try to repair broken spans
+        formatted_text = re.sub(
+            r"<span([^>]*?)>([^<]*?)(?!<\/span>)(\s|$)",
+            r"<span\1>\2</span>\3",
+            formatted_text,
+        )
+
+    return formatted_text.rstrip()
 
 
 def format_datasets(datasets_list) -> str:
@@ -35,38 +86,45 @@ def format_datasets(datasets_list) -> str:
         Formatted dataset HTML
 
     """
-    if not datasets_list:
-        return "<em>No public datasets available</em>"
+    return format_tags(datasets_list, "dataset-tag")
 
-    # Create dataset tags for each dataset in the list
-    formatted_text = ""
-    for dataset in datasets_list:
-        # Handle both string datasets and dict datasets with name/url fields
-        if isinstance(dataset, dict) and "name" in dataset:
-            dataset_name = dataset["name"].strip()
-            dataset_url = dataset.get("url", "")
 
-            if dataset_url:
-                formatted_text += f'<a href="{dataset_url}" class="dataset-tag" target="_blank">{dataset_name}</a>  '
-            else:
-                formatted_text += f'<span class="dataset-tag">{dataset_name}</span>  '
-        else:
-            dataset_text = str(dataset).strip()
-            if dataset_text:
-                formatted_text += f'<span class="dataset-tag">{dataset_text}</span>  '
+def count_total_implementations(implementations_by_type: Dict[str, List[Dict]]) -> int:
+    """Count the total number of algorithm implementations across all repositories.
 
-    # Add a final check to ensure no broken spans
-    if "<span" in formatted_text and formatted_text.count(
-        "<span"
-    ) != formatted_text.count("</span"):
-        # Try to repair broken spans
-        formatted_text = re.sub(
-            r"<span([^>]*?)>([^<]*?)(?!<\/span>)(\s|$)",
-            r"<span\1>\2</span>\3",
-            formatted_text,
-        )
+    Parameters
+    ----------
+    implementations_by_type : Dict[str, List[Dict]]
+        Dictionary with types as keys and lists of implementation details as values.
 
-    return formatted_text.rstrip()
+    Returns
+    -------
+    int
+        The total count of all algorithm implementations.
+
+    """
+    total_count = 0
+    for _impl_type, implementations in implementations_by_type.items():
+        for impl in implementations:
+            # Count the algorithms in each implementation
+            if "algorithms" in impl and impl["algorithms"]:
+                total_count += len(impl["algorithms"])
+
+    return total_count
+
+
+def calculate_years_of_research() -> int:
+    """Calculate the years of research since 2019.
+
+    Returns
+    -------
+    int
+        The number of years since 2019 (inclusive).
+
+    """
+    current_year = datetime.datetime.now().year
+    start_year = 2019
+    return current_year - start_year + 1  # +1 to include the start year
 
 
 def parse_yaml_repositories() -> Dict[str, List[Dict]]:
@@ -117,16 +175,24 @@ def generate_card_html(impl: Dict) -> str:
         HTML string for the implementation card
 
     """
-    # Extract up to 5 algorithms to display as tags
+    # Extract algorithms to display as tags
     algorithms = impl.get("algorithms", [])
     tag_html = ""
 
-    # Create algorithm tags (limit to 5 for display)
-    display_algos = algorithms[:5]
-    for algo in display_algos:
-        algo_text = str(algo).strip()
-        if algo_text:
-            tag_html += f'        <span class="tag" data-tippy="{algo_text}">{algo_text}</span>\n'
+    # Create algorithm tags with data-tippy attribute
+    for algo in algorithms:
+        if isinstance(algo, dict) and "name" in algo:
+            algo_name = algo["name"].strip()
+            algo_url = algo.get("url", "")
+
+            if algo_url:
+                tag_html += f'        <a href="{algo_url}" class="tag" target="_blank">{algo_name}</a>  '
+            else:
+                tag_html += f'        <span class="tag" data-tippy="{algo_name}">{algo_name}</span>  '
+        else:
+            algo_text = str(algo).strip()
+            if algo_text:
+                tag_html += f'        <span class="tag" data-tippy="{algo_text}">{algo_text}</span>  '
 
     # Format datasets
     formatted_datasets = format_datasets(impl.get("public_datasets", []))
@@ -253,26 +319,23 @@ def rebuild_document(
         Updated markdown content
 
     """
-    # Find the position after the "Browse Implementations by Type" heading
+    # Split the document into parts
+    # 1. Find where the front matter ends (this is used later)
+    # 2. Find the heading position
     heading_match = re.search(BROWSE_HEADING_PATTERN, original_content)
     if not heading_match:
         raise ValueError("Could not find 'Browse Implementations by Type' heading")
 
-    heading_end = heading_match.end()
+    heading_start = heading_match.start()
 
-    # Get content before the first type section
-    pre_content = original_content[:heading_end]
+    # 3. Get content before the heading (includes front matter, scripts, hero, style, and stats)
+    pre_heading_content = original_content[:heading_start]
 
-    # Find the first type section
-    type_match = re.search(TYPE_TAB_PATTERN, original_content)
-    if type_match:
-        pre_content = original_content[: type_match.start()]
-
-    # Build the new content with the pre-content
-    new_content = pre_content + "\n\n"
+    # 4. Build the new content with proper structure
+    new_content = pre_heading_content + "\n\n## Browse Implementations by Type\n\n"
 
     # Define the desired type order
-    type_order = ["bootcamp", "tool", "applied-research"]
+    type_order = ["applied-research", "bootcamp", "tool"]
 
     # Add sections in the specified order, followed by any other types alphabetically
     for type_value in type_order:
@@ -433,22 +496,41 @@ def update_docs_index(implementations_by_type: Dict[str, List[Dict]]) -> None:
         # No need to replace CSS as it's already there
         pass
     else:
-        # Add the CSS after the header area
-        header_end_marker = "</div>"
-        header_section_end = original_content.find(
-            header_end_marker, original_content.find("catalog-stats")
-        )
-
-        if header_section_end > 0:
+        # Add the CSS at the beginning of the document, after the front matter
+        front_matter_end = original_content.find("---", 5) + 3  # Find the second "---"
+        if front_matter_end > 3:
             original_content = (
-                original_content[: header_section_end + len(header_end_marker)]
+                original_content[:front_matter_end]
+                + "\n"
                 + css_for_tags
-                + original_content[header_section_end + len(header_end_marker) :]
+                + original_content[front_matter_end:]
             )
 
     # Update the heading from "by Year" to "by Type"
     original_content = original_content.replace(
         "## Browse Implementations by Year", "## Browse Implementations by Type"
+    )
+
+    # Update the statistics section with dynamic values
+    total_implementations = count_total_implementations(implementations_by_type)
+    years_of_research = calculate_years_of_research()
+
+    # Update the statistics section
+    stats_pattern = r'<div class="catalog-stats">.*?<div class="stat-number">.*?</div>.*?<div class="stat-number">.*?</div>.*?</div>(?:\s*</div>\s*</div>)*'
+    stats_replacement = f"""<div class="catalog-stats">
+  <div class="stat">
+    <div class="stat-number">{total_implementations}</div>
+    <div class="stat-label">Implementations</div>
+  </div>
+  <div class="stat">
+    <div class="stat-number">{years_of_research}</div>
+    <div class="stat-label">Years of Research</div>
+  </div>
+</div>"""
+
+    # Make sure we only replace the exact catalog-stats div, not any nested divs
+    original_content = re.sub(
+        stats_pattern, stats_replacement, original_content, flags=re.DOTALL, count=1
     )
 
     # Create an entirely new document
@@ -463,7 +545,7 @@ def update_docs_index(implementations_by_type: Dict[str, List[Dict]]) -> None:
 
     # Print summary
     print(
-        f"Updated {docs_index_path} with {sum(len(impls) for impls in implementations_by_type.values())} repositories"
+        f"Updated {docs_index_path} with {sum(len(impls) for impls in implementations_by_type.values())} repositories and {total_implementations} total implementations"
     )
     if new_types:
         print(

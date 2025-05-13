@@ -1,0 +1,46 @@
+name: fl4health
+repo_id: fl4health-repo
+description: "A flexible, modular, and easy to use library to facilitate federated learning research and development in healthcare settings"
+algorithms:
+  - name: FedAvg
+    url: https://arxiv.org/abs/1602.05629
+  - name: FedOpt
+    url: https://arxiv.org/abs/2003.00295
+  - name: FedProx
+    url: https://arxiv.org/abs/1812.06127
+  - name: SCAFFOLD
+    url: https://arxiv.org/abs/1910.06378
+  - name: MOON
+    url: https://arxiv.org/abs/2103.16257
+  - name: FedDG-GA
+    url: https://arxiv.org/abs/2103.06030
+  - name: FLASH
+    url: https://proceedings.mlr.press/v202/panchal23a/panchal23a.pdf
+  - name: FedPM
+    url: https://arxiv.org/pdf/2209.15328
+  - name: Personal FL
+    url: https://arxiv.org/abs/2205.13692
+  - name: FedBN
+    url: https://arxiv.org/abs/2102.07623
+  - name: FedPer
+    url: https://arxiv.org/abs/1912.00818
+  - name: FedRep
+    url: https://arxiv.org/abs/2303.05206
+  - name: Ditto
+    url: https://arxiv.org/abs/2012.04221
+  - name: MR-MTL
+    url: https://arxiv.org/abs/2206.07902
+  - name: APFL
+    url: https://arxiv.org/abs/2003.13461
+  - name: PerFCL
+    url: https://ieeexplore.ieee.org/document/10020518/
+  - name: FENDA-FL
+    url: https://arxiv.org/pdf/2309.16825.pdf
+  - name: FENDA+Ditto
+    url: null
+public_datasets:
+  - name: Physionet Challenge 2012
+  - name: wiki2000
+type: tool
+year: 2024
+github_url: https://github.com/VectorInstitute/fl4health
