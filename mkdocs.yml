@@ -31,7 +31,7 @@ plugins:
   - search
 repo_url: https://github.com/VectorInstitute/reference-implementation-catalog
 repo_name: VectorInstitute/reference-implementation-catalog
-site_name: Vector Institute Reference Implementation Catalog
+site_name: Vector Institute Implementation Catalog
 extra_javascript:
   - https://unpkg.com/@popperjs/core@2
   - https://unpkg.com/tippy.js@6

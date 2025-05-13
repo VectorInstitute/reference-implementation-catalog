@@ -216,6 +216,12 @@
   float: right;
 }
 
+.card .type-tag {
+  background-color: #2e8b57; /* Forest green color */
+  margin-right: 5px;
+  float: right;
+}
+
 .card .datasets {
   font-size: 0.8rem;
   margin-top: auto;

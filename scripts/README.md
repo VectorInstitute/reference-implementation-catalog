@@ -1,23 +1,23 @@
-# Reference Implementation Catalog Scripts
+# Implementation Catalog Scripts
 
-This directory contains automation scripts for maintaining the Vector Institute Reference Implementation Catalog.
+This directory contains automation scripts for maintaining the Vector Institute Implementation Catalog.
 
 ## Sync README to Docs
 
-The `sync_readme_to_docs.py` script automates the process of keeping the documentation site in sync with the reference implementations listed in the main README.md file.
+The `sync_readme_to_docs.py` script automates the process of keeping the documentation site in sync with the implementations listed in the main README.md file.
 
 ### How It Works
 
 The script:
 
-1. Parses the reference implementation table from README.md
+1. Parses the implementation table from README.md
 2. Extracts all implementation details including:
    - Repository name and link
    - Description
    - Algorithms/techniques used
    - Dataset information
    - Year of publication
-3. Generates HTML cards for each implementation grouped by year
+3. Generates HTML cards for each implementation grouped by type
 4. Updates the docs/index.md file with the generated cards
 5. Preserves the overall structure of docs/index.md
 
