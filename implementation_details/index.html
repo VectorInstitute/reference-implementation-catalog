@@ -18,7 +18,7 @@
     
     
       
-        <title>Implementation Details - Vector Institute Reference Implementation Catalog</title>
+        <title>Implementation Details - Vector Institute Implementation Catalog</title>
       
     
     
@@ -88,9 +88,9 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Vector Institute Reference Implementation Catalog" class="md-header__button md-logo" aria-label="Vector Institute Reference Implementation Catalog" data-md-component="logo">
+    <a href=".." title="Vector Institute Implementation Catalog" class="md-header__button md-logo" aria-label="Vector Institute Implementation Catalog" data-md-component="logo">
       
-<img src="../assets/reference-implementations-logo.png" alt="logo">
+<img src="../assets/vector-logo.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -101,7 +101,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Vector Institute Reference Implementation Catalog
+            Vector Institute Implementation Catalog
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -276,12 +276,12 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Vector Institute Reference Implementation Catalog" class="md-nav__button md-logo" aria-label="Vector Institute Reference Implementation Catalog" data-md-component="logo">
+    <a href=".." title="Vector Institute Implementation Catalog" class="md-nav__button md-logo" aria-label="Vector Institute Implementation Catalog" data-md-component="logo">
       
-<img src="../assets/reference-implementations-logo.png" alt="logo">
+<img src="../assets/vector-logo.svg" alt="logo">
 
     </a>
-    Vector Institute Reference Implementation Catalog
+    Vector Institute Implementation Catalog
   </label>
   
     <div class="md-nav__source">
@@ -386,6 +386,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#repository-organization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Repository Organization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#contributing" class="md-nav__link">
     <span class="md-ellipsis">
       Contributing
@@ -438,6 +447,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#repository-organization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Repository Organization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#contributing" class="md-nav__link">
     <span class="md-ellipsis">
       Contributing
@@ -472,6 +490,13 @@
 <li><strong>Description</strong>: Brief introduction to the repository's purpose and links to relevant research papers</li>
 <li><strong>Algorithms</strong>: List of ML algorithms demonstrated in the repository</li>
 <li><strong>Datasets</strong>: Information on datasets used, with links to publicly available data</li>
+<li><strong>Type</strong>: The category of implementation:<ul>
+<li><strong>bootcamp</strong>: Educational implementations developed for workshops and learning purposes</li>
+<li><strong>tool</strong>: Utility libraries and tools for broader use</li>
+<li><strong>applied-research</strong>: Research code tied to specific projects or papers</li>
+</ul>
+</li>
+<li><strong>Year</strong>: The year the implementation was published</li>
 </ul>
 <h2 id="usage-notes">Usage Notes<a class="headerlink" href="#usage-notes" title="Permanent link">&para;</a></h2>
 <div class="admonition note">
@@ -481,6 +506,14 @@
 <li>Links for only publicly available datasets are provided. Many datasets used in the repositories are only available on the Vector cluster.</li>
 </ul>
 </div>
+<h2 id="repository-organization">Repository Organization<a class="headerlink" href="#repository-organization" title="Permanent link">&para;</a></h2>
+<p>The catalog is organized by implementation type to help you quickly find the resources you need:</p>
+<ul>
+<li><strong>Bootcamp implementations</strong>: Educational resources designed for workshops and learning purposes</li>
+<li><strong>Tool implementations</strong>: Utility libraries and general-purpose tools</li>
+<li><strong>Applied Research implementations</strong>: Code tied to specific research projects or papers</li>
+</ul>
+<p>Each implementation includes algorithm tags, dataset information, and other metadata to aid in discovery.</p>
 <h2 id="contributing">Contributing<a class="headerlink" href="#contributing" title="Permanent link">&para;</a></h2>
 <p>If you are a Vector researcher or engineer and would like to add your implementation to this catalog, you can contribute by following our <a href="https://github.com/VectorInstitute/reference-implementation-catalog/blob/main/CONTRIBUTING.md">contribution guidelines</a>.</p>
 <p>To submit issues or suggestions, please use our provided templates:</p>
@@ -489,6 +522,7 @@
 <li><a href="https://github.com/VectorInstitute/reference-implementation-catalog/issues/new?template=feature_request.md">Request a feature</a> - for suggesting improvements or new additions</li>
 </ul>
 <p>For any questions, please reach out to the AI Engineering team at Vector Institute.</p>
+<div style="margin-bottom: 4rem;"></div>
 
 
 
@@ -506,6 +540,8 @@
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
@@ -582,10 +618,12 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
     
     
       
-      <script id="__config" type="application/json">{"base": "..", "features": ["content.code.annotate", "content.code.copy", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "toc.follow", "navigation.expand", "header.autohide"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "..", "features": ["content.code.annotate", "content.code.copy", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "toc.follow", "navigation.expand", "header.autohide", "navigation.instant.progress", "navigation.path", "navigation.prune", "content.tabs.link"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>

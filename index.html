@@ -18,7 +18,7 @@
     
     
       
-        <title>Vector Institute Reference Implementation Catalog</title>
+        <title>Vector Institute Implementation Catalog</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#vector-institute-reference-implementation-catalog" class="md-skip">
+        <a href="#browse-implementations-by-type" class="md-skip">
           Skip to content
         </a>
       
@@ -88,9 +88,9 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="Vector Institute Reference Implementation Catalog" class="md-header__button md-logo" aria-label="Vector Institute Reference Implementation Catalog" data-md-component="logo">
+    <a href="." title="Vector Institute Implementation Catalog" class="md-header__button md-logo" aria-label="Vector Institute Implementation Catalog" data-md-component="logo">
       
-<img src="assets/reference-implementations-logo.png" alt="logo">
+<img src="assets/vector-logo.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -101,7 +101,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Vector Institute Reference Implementation Catalog
+            Vector Institute Implementation Catalog
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -265,7 +265,9 @@
           
             
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -276,12 +278,12 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Vector Institute Reference Implementation Catalog" class="md-nav__button md-logo" aria-label="Vector Institute Reference Implementation Catalog" data-md-component="logo">
+    <a href="." title="Vector Institute Implementation Catalog" class="md-nav__button md-logo" aria-label="Vector Institute Implementation Catalog" data-md-component="logo">
       
-<img src="assets/reference-implementations-logo.png" alt="logo">
+<img src="assets/vector-logo.svg" alt="logo">
 
     </a>
-    Vector Institute Reference Implementation Catalog
+    Vector Institute Implementation Catalog
   </label>
   
     <div class="md-nav__source">
@@ -310,8 +312,6 @@
       
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
-      
-        
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
@@ -345,8 +345,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -355,9 +353,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#browse-implementations-by-year" class="md-nav__link">
+  <a href="#browse-implementations-by-type" class="md-nav__link">
     <span class="md-ellipsis">
-      Browse Implementations by Year
+      Browse Implementations by Type
     </span>
   </a>
   
@@ -401,7 +399,9 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -409,8 +409,6 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
-  
-    
   
   
     <label class="md-nav__title" for="__toc">
@@ -420,9 +418,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#browse-implementations-by-year" class="md-nav__link">
+  <a href="#browse-implementations-by-type" class="md-nav__link">
     <span class="md-ellipsis">
-      Browse Implementations by Year
+      Browse Implementations by Type
     </span>
   </a>
   
@@ -441,24 +439,73 @@
               <article class="md-content__inner md-typeset">
                 
                   
+  
+
 
 
   
   
 
 
-<h1 id="vector-institute-reference-implementation-catalog">Vector Institute Reference Implementation Catalog<a class="headerlink" href="#vector-institute-reference-implementation-catalog" title="Permanent link">&para;</a></h1>
-<div class="catalog-header">
-<p>Welcome to the Vector Institute Reference Implementation Catalog!
-The catalog is a curated collection of high quality implementations
-developed by researchers and engineers at the Vector Institute. This catalog provides
-access to repositories that demonstrate state-of-the-art techniques across a wide
-range of AI domains.</p>
+<!-- Hero section with background image -->
+<div class="hero-section">
+<div class="hero-content">
+    <h1></h1>
+    <p>A curated collection of high-quality AI implementations developed by researchers and engineers at the Vector Institute</p>
+    <a href="#browse-implementations-by-type" class="md-button md-button--primary">Browse Implementations</a>
+    <a href="https://github.com/VectorInstitute/reference-implementation-catalog" class="md-button md-button--primary">View on GitHub</a>
+  </div>
 </div>
-<div class="catalog-stats">
-  <div class="stat">
-    <div class="stat-number">100+</div>
+<!-- Custom styling for the hero section -->
+
 <style>
+.hero-section {
+  position: relative;
+  padding: 5rem 4rem;
+  text-align: center;
+  color: white;
+  background-color: var(--md-primary-fg-color);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url('assets/splash.png');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  position: relative;
+  min-height: 70vh;
+}
+
+.hero-content {
+  max-width: 800px;
+  z-index: 10;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+  font-family: 'Roboto', sans-serif;
+}
+
+.hero-content p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.7);
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.4;
+  color: #f8f8f8;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
+
 .dataset-tag {
   display: inline-block;
   background-color: #6a5acd;
@@ -471,9 +518,31 @@ range of AI domains.</p>
   font-weight: 500;
   white-space: nowrap;
 }
+
+.type-tag {
+  display: inline-block;
+  background-color: #2e8b57;
+  color: white;
+  padding: 0.1rem 0.4rem;
+  border-radius: 0.8rem;
+  margin-right: 0.2rem;
+  margin-bottom: 0.2rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.year-tag {
+  background-color: #eb088a; /* Pink color instead of black */
+  color: white;
+  float: right;
+}
 </style>
 
-    <div class="stat-label">Reference Implementations</div>
+<div class="catalog-stats">
+  <div class="stat">
+    <div class="stat-number">100+</div>
+    <div class="stat-label">Implementations</div>
   </div>
   <div class="stat">
     <div class="stat-number">7</div>
@@ -481,15 +550,16 @@ range of AI domains.</p>
   </div>
 </div>
 
-<h2 id="browse-implementations-by-year">Browse Implementations by Year<a class="headerlink" href="#browse-implementations-by-year" title="Permanent link">&para;</a></h2>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:5"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">2024</label><label for="__tabbed_1_2">2023</label><label for="__tabbed_1_3">2022</label><label for="__tabbed_1_4">2021</label><label for="__tabbed_1_5">2020</label></div>
+<h2 id="browse-implementations-by-type">Browse Implementations by Type<a class="headerlink" href="#browse-implementations-by-type" title="Permanent link">&para;</a></h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">bootcamp</label><label for="__tabbed_1_2">tool</label><label for="__tabbed_1_3">applied-research</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p><div class="grid cards" markdown>
 <div class="card" markdown>
 <div class="header">
-    <h3><a href="https://github.com/VectorInstitute/rag" title="Go to Repository">RAG</a></h3>
+    <h3><a href="https://github.com/VectorInstitute/rag" title="Go to Repository">rag-bootcamp</a></h3>
     <span class="tag year-tag">2024</span>
+    <span class="tag type-tag">bootcamp</span>
 </div>
 <p>This repository contains demos for various Retrieval Augmented Generation techniques using different libraries.</p>
 <div class="tag-container">
@@ -505,8 +575,9 @@ range of AI domains.</p>
 </div>
 <div class="card" markdown>
 <div class="header">
-    <h3><a href="https://github.com/VectorInstitute/fa" title="Go to Repository">Finetuning and Alignment</a></h3>
+    <h3><a href="https://github.com/VectorInstitute/fa" title="Go to Repository">finetuning-and-alignment</a></h3>
     <span class="tag year-tag">2024</span>
+    <span class="tag type-tag">bootcamp</span>
 </div>
 <p>This repository contains demos for finetuning techniques for LLMs focussed on reducing computational cost.</p>
 <div class="tag-container">
@@ -524,6 +595,7 @@ range of AI domains.</p>
 <div class="header">
     <h3><a href="https://github.com/VectorInstitute/pe-lab" title="Go to Repository">Prompt Engineering Laboratory</a></h3>
     <span class="tag year-tag">2024</span>
+    <span class="tag type-tag">bootcamp</span>
 </div>
 <p>This repository contains demos for various Prompt Engineering techniques, along with examples for Bias quantification, text classification.</p>
 <div class="tag-container">
@@ -539,22 +611,9 @@ range of AI domains.</p>
 </div>
 <div class="card" markdown>
 <div class="header">
-    <h3><a href="https://github.com/VectorInstitute/bmu" title="Go to Repository">bias-mitigation-unlearning</a></h3>
-    <span class="tag year-tag">2024</span>
-</div>
-<p>This repository contains code for the paper [Can Machine Unlearning Reduce Social Bias in Language Models?][bmu-paper] which was published at EMNLP'24 in the Industry track. <br>Authors are Omkar Dige, Diljot Arneja, Tsz Fung Yau, Qixuan Zhang, Mohammad Bolandraftar, Xiaodan Zhu, Faiza Khan Khattak.</p>
-<div class="tag-container">
-    <span class="tag" data-tippy="PCGU">PCGU</span>
-    <span class="tag" data-tippy="Task vectors and DPO for Machine Unlearning">Task vectors and DPO for Machine Unlearning</span>
-</div>
-<div class="datasets">
-    <strong>Datasets:</strong> <span class="dataset-tag">BBQ</span> <span class="dataset-tag">bbq-bmu</span>  <span class="dataset-tag">Stereoset</span> <span class="dataset-tag">stereoset-bmu</span>  <span class="dataset-tag">Link1</span> <span class="dataset-tag">link1-bmu</span>  <span class="dataset-tag">Link2</span> <span class="dataset-tag">link2-bmu</span>
-</div>
-</div>
-<div class="card" markdown>
-<div class="header">
     <h3><a href="https://github.com/VectorInstitute/cyclops" title="Go to Repository">cyclops-workshop</a></h3>
     <span class="tag year-tag">2024</span>
+    <span class="tag type-tag">bootcamp</span>
 </div>
 <p>This repository contains demos for using [CyclOps] package for clinical ML evaluation and monitoring.</p>
 <div class="tag-container">
@@ -566,23 +625,9 @@ range of AI domains.</p>
 </div>
 <div class="card" markdown>
 <div class="header">
-    <h3><a href="https://github.com/VectorInstitute/odyssey" title="Go to Repository">odyssey</a></h3>
+    <h3><a href="https://github.com/VectorInstitute/diffusion" title="Go to Repository">diffusion-model-bootcamp</a></h3>
     <span class="tag year-tag">2024</span>
-</div>
-<p>This is a library created with research done for the paper [EHRMamba: Towards Generalizable and Scalable Foundation Models for Electronic Health Records][odyssey-paper] published at ArXiv'24. <br>Authors are Adibvafa Fallahpour, Mahshid Alinoori, Wenqian Ye, Xu Cao, Arash Afkanpour, Amrit Krishnan.</p>
-<div class="tag-container">
-    <span class="tag" data-tippy="EHRMamba">EHRMamba</span>
-    <span class="tag" data-tippy="XGBoost">XGBoost</span>
-    <span class="tag" data-tippy="Bi-LSTM">Bi-LSTM</span>
-</div>
-<div class="datasets">
-    <strong>Datasets:</strong> <span class="dataset-tag">MIMIC-IV</span>
-</div>
-</div>
-<div class="card" markdown>
-<div class="header">
-    <h3><a href="https://github.com/VectorInstitute/diffusion" title="Go to Repository">Diffusion model bootcamp</a></h3>
-    <span class="tag year-tag">2024</span>
+    <span class="tag type-tag">bootcamp</span>
 </div>
 <p>This repository contains demos for various diffusion models for tabular and time series data.</p>
 <div class="tag-container">
@@ -600,6 +645,7 @@ range of AI domains.</p>
 <div class="header">
     <h3><a href="https://github.com/VectorInstitute/nmb" title="Go to Repository">News Media Bias</a></h3>
     <span class="tag year-tag">2024</span>
+    <span class="tag type-tag">bootcamp</span>
 </div>
 <p>This repository contains code for libraries and experiments to recognise and evaluate bias and fakeness within news media articles via LLMs.</p>
 <div class="tag-container">
@@ -617,6 +663,7 @@ range of AI domains.</p>
 <div class="header">
     <h3><a href="https://github.com/VectorInstitute/nmb-plus" title="Go to Repository">News Media Bias Plus</a></h3>
     <span class="tag year-tag">2024</span>
+    <span class="tag type-tag">bootcamp</span>
 </div>
 <p>Continuation of News Media Bias project, this repository contains code for libraries and experiments to collect and annotate data, recognise and evaluate bias and fakeness within news media articles via LLMs and LVMs.</p>
 <div class="tag-container">
@@ -628,15 +675,12 @@ range of AI domains.</p>
 <div class="datasets">
     <strong>Datasets:</strong> <span class="dataset-tag">News Media Bias Plus Full Data</span> <span class="dataset-tag">nmb-plus-full-data</span>  <span class="dataset-tag">NMB Plus Named Entities</span> <span class="dataset-tag">nmb-plus-entities</span>
 </div>
-</div></p>
 </div>
-</div>
-<div class="tabbed-block">
-<p><div class="grid cards" markdown>
 <div class="card" markdown>
 <div class="header">
     <h3><a href="https://github.com/VectorInstitute/anomaly" title="Go to Repository">Anomaly Detection Project</a></h3>
     <span class="tag year-tag">2023</span>
+    <span class="tag type-tag">bootcamp</span>
 </div>
 <p>This repository contains demos for various supervised and unsupervised anomaly detection techniques in domains such as Fraud Detection, Network Intrusion Detection, System Monitoring and image, Video Analysis.</p>
 <div class="tag-container">
@@ -654,6 +698,7 @@ range of AI domains.</p>
 <div class="header">
     <h3><a href="https://github.com/VectorInstitute/ssl" title="Go to Repository">SSL Bootcamp</a></h3>
     <span class="tag year-tag">2023</span>
+    <span class="tag type-tag">bootcamp</span>
 </div>
 <p>This repository contains demos for self-supervised techniques such as contrastive learning, masked modeling and self distillation.</p>
 <div class="tag-container">
@@ -671,6 +716,7 @@ range of AI domains.</p>
 <div class="header">
     <h3><a href="https://github.com/VectorInstitute/ci-lab" title="Go to Repository">Causal Inference Lab</a></h3>
     <span class="tag year-tag">2023</span>
+    <span class="tag type-tag">bootcamp</span>
 </div>
 <p>This repository contains code to estimate the causal effects of an intervention on some measurable outcome primarily in the health domain.</p>
 <div class="tag-container">
@@ -688,6 +734,7 @@ range of AI domains.</p>
 <div class="header">
     <h3><a href="https://github.com/VectorInstitute/hvaic" title="Go to Repository">HV-Ai-C</a></h3>
     <span class="tag year-tag">2023</span>
+    <span class="tag type-tag">bootcamp</span>
 </div>
 <p>This repository implements a Reinforcement Learning agent to optimize energy consumption within Data Centers.</p>
 <div class="tag-container">
@@ -704,6 +751,7 @@ range of AI domains.</p>
 <div class="header">
     <h3><a href="https://github.com/VectorInstitute/flex-model" title="Go to Repository">Flex Model</a></h3>
     <span class="tag year-tag">2023</span>
+    <span class="tag type-tag">bootcamp</span>
 </div>
 <p>This repository contains code for the paper [FlexModel: A Framework for Interpretability of Distributed Large Language Models][flex-model-paper]. <br> Authors are Matthew Choi, Muhammad Adil Asif, John Willes, David Emerson.</p>
 <div class="tag-container">
@@ -717,6 +765,7 @@ range of AI domains.</p>
 <div class="header">
     <h3><a href="https://github.com/VectorInstitute/vbll" title="Go to Repository">VBLL</a></h3>
     <span class="tag year-tag">2023</span>
+    <span class="tag type-tag">bootcamp</span>
 </div>
 <p>This repository contains code for the paper [Variational Bayesian Last Layers][vbll-paper]. <br> Authors are James Harrison, John Willes, Jasper Snoek.</p>
 <div class="tag-container">
@@ -725,15 +774,12 @@ range of AI domains.</p>
 <div class="datasets">
     <strong>Datasets:</strong> <span class="dataset-tag">MNIST</span>  <span class="dataset-tag">FashionMNIST</span>
 </div>
-</div></p>
 </div>
-</div>
-<div class="tabbed-block">
-<p><div class="grid cards" markdown>
 <div class="card" markdown>
 <div class="header">
     <h3><a href="https://github.com/VectorInstitute/recsys" title="Go to Repository">Recommendation Systems</a></h3>
     <span class="tag year-tag">2022</span>
+    <span class="tag type-tag">bootcamp</span>
 </div>
 <p>This repository contains demos for various RecSys techniques such as Collaborative Filtering, Knowledge Graph, RL based, Sequence Aware, Session based etc.</p>
 <div class="tag-container">
@@ -751,6 +797,7 @@ range of AI domains.</p>
 <div class="header">
     <h3><a href="https://github.com/VectorInstitute/forecasting-dl" title="Go to Repository">Forecasting with Deep Learning</a></h3>
     <span class="tag year-tag">2022</span>
+    <span class="tag type-tag">bootcamp</span>
 </div>
 <p>This repository contains demos for a variety of forecasting techniques for Univariate and Multivariate time series, spatiotemporal forecasting etc.</p>
 <div class="tag-container">
@@ -768,6 +815,7 @@ range of AI domains.</p>
 <div class="header">
     <h3><a href="https://github.com/VectorInstitute/pe" title="Go to Repository">Prompt Engineering</a></h3>
     <span class="tag year-tag">2022</span>
+    <span class="tag type-tag">bootcamp</span>
 </div>
 <p>This repository contains demos for a variety of Prompt Engineering techniques such as fairness measurement via sentiment analysis, finetuning, prompt tuning, prompt ensembling etc.</p>
 <div class="tag-container">
@@ -785,6 +833,7 @@ range of AI domains.</p>
 <div class="header">
     <h3><a href="https://github.com/VectorInstitute/naa" title="Go to Repository">NAA</a></h3>
     <span class="tag year-tag">2022</span>
+    <span class="tag type-tag">bootcamp</span>
 </div>
 <p>This repository contains code for the paper [Bringing the State-of-the-Art to Customers: A Neural Agent Assistant Framework for Customer Service Support][naa-paper] published at EMNLP'22 in the industry track. <br> Authors are Stephen Obadinma, Faiza Khan Khattak, Shirley Wang, Tania Sidhorn, Elaine Lau, Sean Robertson, Jingcheng Niu, Winnie Au, Alif Munim, Karthik Raja Kalaiselvi Bhaskar.</p>
 <div class="tag-container">
@@ -797,15 +846,12 @@ range of AI domains.</p>
 <div class="datasets">
     <strong>Datasets:</strong> <span class="dataset-tag">ELI5</span>  <span class="dataset-tag">MSMARCO</span>
 </div>
-</div></p>
 </div>
-</div>
-<div class="tabbed-block">
-<p><div class="grid cards" markdown>
 <div class="card" markdown>
 <div class="header">
     <h3><a href="https://github.com/VectorInstitute/pet" title="Go to Repository">Privacy Enhancing Technologies</a></h3>
     <span class="tag year-tag">2021</span>
+    <span class="tag type-tag">bootcamp</span>
 </div>
 <p>This repository contains demos for Privacy, Homomorphic Encryption, Horizontal and Vertical Federated Learning, MIA, and PATE.</p>
 <div class="tag-container">
@@ -823,6 +869,7 @@ range of AI domains.</p>
 <div class="header">
     <h3><a href="https://github.com/VectorInstitute/ssgvap" title="Go to Repository">SSGVQAP</a></h3>
     <span class="tag year-tag">2021</span>
+    <span class="tag type-tag">bootcamp</span>
 </div>
 <p>This repository contains code for the paper [A Smart System to Generate and Validate Question Answer Pairs for COVID-19 Literature][ssgvap-paper] which was accepted in ACL'20. <br> Authors are Rohan Bhambhoria, Luna Feng, Dawn Sepehr, John Chen, Conner Cowling, Sedef Kocak, Elham Dolatabadi.</p>
 <div class="tag-container">
@@ -838,6 +885,7 @@ range of AI domains.</p>
 <div class="header">
     <h3><a href="https://github.com/VectorInstitute/fpf" title="Go to Repository">foodprice-forecasting</a></h3>
     <span class="tag year-tag">2021</span>
+    <span class="tag type-tag">bootcamp</span>
 </div>
 <p>This repository replicates the experiments described on pages 16 and 17 of the [2022 Edition of Canada's Food Price Report][fpf-paper].</p>
 <div class="tag-container">
@@ -849,15 +897,12 @@ range of AI domains.</p>
 <div class="datasets">
     <strong>Datasets:</strong> <span class="dataset-tag">FRED Economic Data</span>
 </div>
-</div></p>
 </div>
-</div>
-<div class="tabbed-block">
-<p><div class="grid cards" markdown>
 <div class="card" markdown>
 <div class="header">
     <h3><a href="https://github.com/VectorInstitute/cvp" title="Go to Repository">Computer_Vision_Project</a></h3>
     <span class="tag year-tag">2020</span>
+    <span class="tag type-tag">bootcamp</span>
 </div>
 <p>This repository tackles different problems such as defect detection, footprint extraction, road obstacle detection, traffic incident detection, and segmentation of medical procedures.</p>
 <div class="tag-container">
@@ -873,6 +918,45 @@ range of AI domains.</p>
 </div></p>
 </div>
 </div>
+<div class="tabbed-block">
+<p><div class="grid cards" markdown>
+<div class="card" markdown>
+<div class="header">
+    <h3><a href="https://github.com/VectorInstitute/odyssey" title="Go to Repository">odyssey</a></h3>
+    <span class="tag year-tag">2024</span>
+    <span class="tag type-tag">tool</span>
+</div>
+<p>This is a library created with research done for the paper [EHRMamba: Towards Generalizable and Scalable Foundation Models for Electronic Health Records][odyssey-paper] published at ArXiv'24. <br>Authors are Adibvafa Fallahpour, Mahshid Alinoori, Wenqian Ye, Xu Cao, Arash Afkanpour, Amrit Krishnan.</p>
+<div class="tag-container">
+    <span class="tag" data-tippy="EHRMamba">EHRMamba</span>
+    <span class="tag" data-tippy="XGBoost">XGBoost</span>
+    <span class="tag" data-tippy="Bi-LSTM">Bi-LSTM</span>
+</div>
+<div class="datasets">
+    <strong>Datasets:</strong> <span class="dataset-tag">MIMIC-IV</span>
+</div>
+</div></p>
+</div>
+</div>
+<div class="tabbed-block">
+<p><div class="grid cards" markdown>
+<div class="card" markdown>
+<div class="header">
+    <h3><a href="https://github.com/VectorInstitute/bmu" title="Go to Repository">bias-mitigation-unlearning</a></h3>
+    <span class="tag year-tag">2024</span>
+    <span class="tag type-tag">applied-research</span>
+</div>
+<p>This repository contains code for the paper [Can Machine Unlearning Reduce Social Bias in Language Models?][bmu-paper] which was published at EMNLP'24 in the Industry track. <br>Authors are Omkar Dige, Diljot Arneja, Tsz Fung Yau, Qixuan Zhang, Mohammad Bolandraftar, Xiaodan Zhu, Faiza Khan Khattak.</p>
+<div class="tag-container">
+    <span class="tag" data-tippy="PCGU">PCGU</span>
+    <span class="tag" data-tippy="Task vectors and DPO for Machine Unlearning">Task vectors and DPO for Machine Unlearning</span>
+</div>
+<div class="datasets">
+    <strong>Datasets:</strong> <span class="dataset-tag">BBQ</span> <span class="dataset-tag">bbq-bmu</span>  <span class="dataset-tag">Stereoset</span> <span class="dataset-tag">stereoset-bmu</span>  <span class="dataset-tag">Link1</span> <span class="dataset-tag">link1-bmu</span>  <span class="dataset-tag">Link2</span> <span class="dataset-tag">link2-bmu</span>
+</div>
+</div></p>
+</div>
+</div>
 </div>
 </div>
 
@@ -882,8 +966,13 @@ range of AI domains.</p>
 
 
 
+  
+  
 
 
+
+
+  
 
 
 
@@ -892,6 +981,8 @@ range of AI domains.</p>
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
@@ -906,6 +997,8 @@ range of AI domains.</p>
         <footer class="md-footer">
   
     
+      
+        
       
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
@@ -968,10 +1061,12 @@ range of AI domains.</p>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
     
     
       
-      <script id="__config" type="application/json">{"base": ".", "features": ["content.code.annotate", "content.code.copy", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "toc.follow", "navigation.expand", "header.autohide"], "search": "assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": ".", "features": ["content.code.annotate", "content.code.copy", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "toc.follow", "navigation.expand", "header.autohide", "navigation.instant.progress", "navigation.path", "navigation.prune", "content.tabs.link"], "search": "assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="assets/javascripts/bundle.c8b220af.min.js"></script>
