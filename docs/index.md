@@ -17,6 +17,7 @@ hide:
 <!-- Custom styling for the hero section -->
 
 
+
 <style>
 .hero-section {
   position: relative;
@@ -103,6 +104,7 @@ hide:
 
 
 
+
 <div class="catalog-stats">
   <div class="stat">
     <div class="stat-number">100+</div>
@@ -115,6 +117,8 @@ hide:
 </div>
 
 ## Browse Implementations by Type
+
+
 
 
 
@@ -563,3 +567,4 @@ hide:
     </div>
 
     </div>
+
