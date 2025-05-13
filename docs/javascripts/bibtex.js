@@ -42,35 +42,34 @@ document.addEventListener('DOMContentLoaded', function() {
     function hideModal() {
       modal.style.display = 'none';
       // Remove any event listeners added during display
-      const oldModal = document.getElementById('bibtex-modal');
-      if (oldModal) {
-        const newModal = oldModal.cloneNode(true);
-        oldModal.parentNode.replaceChild(newModal, oldModal);
-        // Re-add close functionality
-        const newCloseBtn = newModal.querySelector('.bibtex-close');
-        if (newCloseBtn) {
-          newCloseBtn.addEventListener('click', hideModal);
-        }
-        // Re-add copy functionality
-        const newCopyBtn = document.getElementById('bibtex-copy');
-        if (newCopyBtn) {
-          newCopyBtn.addEventListener('click', function() {
-            const content = document.getElementById('bibtex-content').textContent;
-            navigator.clipboard.writeText(content)
-              .then(() => {
-                const originalText = newCopyBtn.textContent;
-                newCopyBtn.textContent = 'Copied!';
-                newCopyBtn.classList.add('copied');
-                setTimeout(() => {
-                  newCopyBtn.textContent = originalText;
-                  newCopyBtn.classList.remove('copied');
-                }, 2000);
-              })
-              .catch(err => {
-                console.error('Could not copy text: ', err);
-              });
+      // Remove event listeners for close button
+      const closeBtn = modal.querySelector('.bibtex-close');
+      if (closeBtn) {
+        closeBtn.removeEventListener('click', hideModal);
+      }
+
+      // Remove event listeners for copy button
+      const copyBtn = document.getElementById('bibtex-copy');
+      if (copyBtn) {
+        copyBtn.removeEventListener('click', handleCopy);
+      }
+
+      // Helper function to handle copy functionality
+      function handleCopy() {
+        const content = document.getElementById('bibtex-content').textContent;
+        navigator.clipboard.writeText(content)
+          .then(() => {
+            const originalText = copyBtn.textContent;
+            copyBtn.textContent = 'Copied!';
+            copyBtn.classList.add('copied');
+            setTimeout(() => {
+              copyBtn.textContent = originalText;
+              copyBtn.classList.remove('copied');
+            }, 2000);
+          })
+          .catch(err => {
+            console.error('Could not copy text: ', err);
           });
-        }
       }
     }
 
