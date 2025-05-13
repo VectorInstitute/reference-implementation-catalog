@@ -294,11 +294,17 @@ def rebuild_document(
     # Add sections in the specified order, followed by any other types alphabetically
     for type_value in type_order:
         if type_value in implementations_by_type:
-            new_content += generate_type_section(type_value, implementations_by_type[type_value])
+            new_content += generate_type_section(
+                type_value, implementations_by_type[type_value]
+            )
 
     # Add any remaining types that weren't in the predefined order
-    for type_value in sorted([t for t in implementations_by_type.keys() if t not in type_order]):
-        new_content += generate_type_section(type_value, implementations_by_type[type_value])
+    for type_value in sorted(
+        [t for t in implementations_by_type if t not in type_order]
+    ):
+        new_content += generate_type_section(
+            type_value, implementations_by_type[type_value]
+        )
 
     return new_content
 
@@ -409,7 +415,9 @@ def update_docs_index(implementations_by_type: Dict[str, List[Dict]]) -> None:
         # Replace the existing style block to include both dataset and type tags
         style_start = original_content.find("<style>")
         style_end = original_content.find("</style>", style_start) + len("</style>")
-        original_content = original_content[:style_start] + css_for_tags + original_content[style_end:]
+        original_content = (
+            original_content[:style_start] + css_for_tags + original_content[style_end:]
+        )
     else:
         # Add the CSS after the header area
         header_end_marker = "</div>"
@@ -426,8 +434,7 @@ def update_docs_index(implementations_by_type: Dict[str, List[Dict]]) -> None:
 
     # Update the heading from "by Year" to "by Type"
     original_content = original_content.replace(
-        "## Browse Implementations by Year",
-        "## Browse Implementations by Type"
+        "## Browse Implementations by Year", "## Browse Implementations by Type"
     )
 
     # Create an entirely new document
