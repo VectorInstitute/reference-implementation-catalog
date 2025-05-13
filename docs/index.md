@@ -291,6 +291,10 @@ a.dataset-tag:hover {
 
 
 
+
+
+
+
 ## Browse Implementations by Type
 
 === "applied-research"
@@ -351,11 +355,8 @@ a.dataset-tag:hover {
     <div class="tag-container">
         <a href="https://arxiv.org/abs/1602.05629" class="tag" target="_blank">FedAvg</a>          <a href="https://arxiv.org/abs/2003.00295" class="tag" target="_blank">FedOpt</a>          <a href="https://arxiv.org/abs/1812.06127" class="tag" target="_blank">FedProx</a>          <a href="https://arxiv.org/abs/1910.06378" class="tag" target="_blank">SCAFFOLD</a>          <a href="https://arxiv.org/abs/2103.16257" class="tag" target="_blank">MOON</a>          <a href="https://arxiv.org/abs/2103.06030" class="tag" target="_blank">FedDG-GA</a>          <a href="https://proceedings.mlr.press/v202/panchal23a/panchal23a.pdf" class="tag" target="_blank">FLASH</a>          <a href="https://arxiv.org/pdf/2209.15328" class="tag" target="_blank">FedPM</a>          <a href="https://arxiv.org/abs/2205.13692" class="tag" target="_blank">Personal FL</a>          <a href="https://arxiv.org/abs/2102.07623" class="tag" target="_blank">FedBN</a>          <a href="https://arxiv.org/abs/1912.00818" class="tag" target="_blank">FedPer</a>          <a href="https://arxiv.org/abs/2303.05206" class="tag" target="_blank">FedRep</a>          <a href="https://arxiv.org/abs/2012.04221" class="tag" target="_blank">Ditto</a>          <a href="https://arxiv.org/abs/2206.07902" class="tag" target="_blank">MR-MTL</a>          <a href="https://arxiv.org/abs/2003.13461" class="tag" target="_blank">APFL</a>          <a href="https://ieeexplore.ieee.org/document/10020518/" class="tag" target="_blank">PerFCL</a>          <a href="https://arxiv.org/pdf/2309.16825.pdf" class="tag" target="_blank">FENDA-FL</a>          <span class="tag" data-tippy="FENDA+Ditto">FENDA+Ditto</span>
     </div>
-    <div class="datasets">
-        <strong>Datasets:</strong> <span class="dataset-tag">Physionet Challenge 2012</span>  <span class="dataset-tag">wiki2000</span>
-    </div>
+
 
     </div>
 
     </div>
-

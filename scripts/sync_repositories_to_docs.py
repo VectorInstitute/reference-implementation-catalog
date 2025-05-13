@@ -39,7 +39,8 @@ def format_tags(items_list, tag_class) -> str:
 
     """
     if not items_list:
-        return f"<em>No {tag_class.replace('-tag', '')} available</em>"
+        # Returning an empty string is intentional to avoid rendering unnecessary UI elements
+        return ""
 
     # Create tags for each item in the list
     formatted_text = ""
@@ -224,6 +225,13 @@ def generate_card_html(impl: Dict) -> str:
         {paper_html}
     </div>"""
 
+    # Prepare datasets section HTML if datasets exist
+    datasets_html = ""
+    if formatted_datasets:
+        datasets_html = f"""    <div class="datasets">
+        <strong>Datasets:</strong> {formatted_datasets}
+    </div>"""
+
     # Create the card HTML with proper indentation
     return f"""    <div class="card" markdown>
     <div class="header">
@@ -235,9 +243,7 @@ def generate_card_html(impl: Dict) -> str:
     <div class="tag-container">
 {tag_html.rstrip() if tag_html else "        <!-- No tags available -->"}
     </div>
-    <div class="datasets">
-        <strong>Datasets:</strong> {formatted_datasets}
-    </div>
+{datasets_html}
 {citation_html if citation_html else ""}
     </div>
 """
