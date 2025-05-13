@@ -1,0 +1,18 @@
+name: bias-mitigation-unlearning
+repo_id: bmu-repo
+description: "A repository for social bias mitigation in LLMs using machine unlearning"
+algorithms:
+  - Negation via Task Vectors
+  - PCGU
+type: applied-research
+year: 2024
+github_url: https://github.com/VectorInstitute/bias-mitigation-unlearning
+paper_url: https://aclanthology.org/2024.emnlp-industry.71/
+bibtex: dige2024can
+public_datasets:
+  - name: BBQ
+    url: https://github.com/nyu-mll/BBQ/tree/main/data
+  - name: Stereoset
+    url: https://github.com/moinnadeem/StereoSet/tree/master/data
+  - name: RedditBias
+    url: https://github.com/VectorInstitute/bias-mitigation-unlearning/tree/main/reddit_bias/data

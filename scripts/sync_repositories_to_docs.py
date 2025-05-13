@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Sync repos from README.md to docs/index.md.
+"""Sync repos from YAML files to docs/index.md.
 
-This script extracts the repositories list from README.md and
-updates the cards in docs/index.md. It automatically groups implementations
-by type and ensures changes in README.md are reflected in the documentation.
+This script reads repository information from YAML files in the repositories/ directory
+and updates the cards in docs/index.md. It automatically groups implementations
+by type and ensures changes in YAML files are reflected in the documentation.
 """
 
 import re
@@ -11,10 +11,8 @@ from collections import defaultdict
 from pathlib import Path
 from typing import Dict, List, Tuple
 
-# Regular expressions to parse README.md table rows
-REPO_ROW_PATTERN = re.compile(
-    r"\| \[(.*?)\]\[(.*?-repo)\] \| (.*?) \| (.*?) \| (.*?) \| (.*?) \| (.*?) \| (\d{4}) \|"
-)
+import yaml
+
 TYPE_TAB_PATTERN = re.compile(r'=== "([^"]*)"')
 BROWSE_HEADING_PATTERN = r"## Browse Implementations by Type"
 # Pattern to match Markdown links [text][reference]
@@ -23,13 +21,13 @@ MARKDOWN_LINK_PATTERN = re.compile(r"\[(.*?)\]\[(.*?)\]")
 SIMPLE_MARKDOWN_LINK_PATTERN = re.compile(r"\[(.*?)\]")
 
 
-def format_datasets(datasets_text: str) -> str:
+def format_datasets(datasets_list) -> str:
     """Format dataset text into a nicer representation.
 
     Parameters
     ----------
-    datasets_text : str
-        Raw dataset text from README.md
+    datasets_list : List
+        List of dataset names or dataset objects from YAML file
 
     Returns
     -------
@@ -37,49 +35,25 @@ def format_datasets(datasets_text: str) -> str:
         Formatted dataset HTML
 
     """
-    if not datasets_text or datasets_text == "-":
+    if not datasets_list:
         return "<em>No public datasets available</em>"
 
-    # If it contains numbers with text, e.g. "3 datasets including..."
-    if re.match(r"^\d+\s+", datasets_text):
-        count_match = re.match(r"^(\d+)\s+[^,]+", datasets_text)
-        if count_match:
-            count = count_match.group(1)
-            # Remove the count part and format the rest
-            main_text = (
-                datasets_text.split(",", 1)[-1].strip() if "," in datasets_text else ""
-            )
-            if main_text:
-                return f"{count} public datasets including {main_text}"
-            return f"{count} public datasets"
+    # Create dataset tags for each dataset in the list
+    formatted_text = ""
+    for dataset in datasets_list:
+        # Handle both string datasets and dict datasets with name/url fields
+        if isinstance(dataset, dict) and "name" in dataset:
+            dataset_name = dataset["name"].strip()
+            dataset_url = dataset.get("url", "")
 
-    # Format markdown links to look like tags
-    formatted_text = datasets_text
-
-    # Clean up any malformed brackets first
-    formatted_text = formatted_text.replace("][", "] [")
-
-    # Replace markdown links with spans
-    def replace_markdown_link(match):
-        text = match.group(1)
-        # Clean any remaining brackets that might break HTML
-        text = text.replace("[", "").replace("]", "")
-        return f'<span class="dataset-tag">{text}</span>'
-
-    # First check for [text][reference] format
-    formatted_text = MARKDOWN_LINK_PATTERN.sub(replace_markdown_link, formatted_text)
-
-    # Then check for simple [text] format
-    formatted_text = SIMPLE_MARKDOWN_LINK_PATTERN.sub(
-        replace_markdown_link, formatted_text
-    )
-
-    # Clean up any remaining markdown formatting
-    formatted_text = formatted_text.replace("[", "").replace("]", "")
-
-    # Replace commas and <br> with proper separators
-    formatted_text = formatted_text.replace(",", " ")
-    formatted_text = formatted_text.replace("<br>", " ")
+            if dataset_url:
+                formatted_text += f'<a href="{dataset_url}" class="dataset-tag" target="_blank">{dataset_name}</a>  '
+            else:
+                formatted_text += f'<span class="dataset-tag">{dataset_name}</span>  '
+        else:
+            dataset_text = str(dataset).strip()
+            if dataset_text:
+                formatted_text += f'<span class="dataset-tag">{dataset_text}</span>  '
 
     # Add a final check to ensure no broken spans
     if "<span" in formatted_text and formatted_text.count(
@@ -92,11 +66,11 @@ def format_datasets(datasets_text: str) -> str:
             formatted_text,
         )
 
-    return formatted_text
+    return formatted_text.rstrip()
 
 
-def parse_readme_table() -> Dict[str, List[Dict]]:
-    """Parse the implementations table from README.md.
+def parse_yaml_repositories() -> Dict[str, List[Dict]]:
+    """Parse the implementations from YAML files in repositories/ directory.
 
     Returns
     -------
@@ -104,46 +78,27 @@ def parse_readme_table() -> Dict[str, List[Dict]]:
         Dictionary with types as keys and lists of implementation details as values.
 
     """
-    readme_path = Path("README.md")
-    if not readme_path.exists():
-        raise FileNotFoundError(f"README.md not found at {readme_path.absolute()}")
+    repos_dir = Path("repositories")
+    if not repos_dir.exists():
+        raise FileNotFoundError(
+            f"repositories/ directory not found at {repos_dir.absolute()}"
+        )
 
-    readme_content = readme_path.read_text(encoding="utf-8")
+    # Find all YAML files in the repositories directory
+    yaml_files = list(repos_dir.glob("*.yaml")) + list(repos_dir.glob("*.yml"))
 
-    # Extract all table rows with repository information
+    if not yaml_files:
+        raise FileNotFoundError(f"No YAML files found in {repos_dir.absolute()}")
+
+    # Extract repository information from each YAML file
     implementations_by_type = defaultdict(list)
 
-    for match in REPO_ROW_PATTERN.finditer(readme_content):
-        (
-            repo_name,
-            repo_id,
-            description,
-            algorithms,
-            datasets_count,
-            public_datasets,
-            type_value,
-            year,
-        ) = match.groups()
+    for yaml_file in yaml_files:
+        with open(yaml_file, "r", encoding="utf-8") as f:
+            repo_data = yaml.safe_load(f)
 
-        # Extract algorithms as a list
-        algo_list = []
-        for algo_ in algorithms.split(","):
-            algo = algo_.strip()
-            if algo:
-                algo_list.append(algo)
-
-        implementations_by_type[type_value.strip()].append(
-            {
-                "name": repo_name,
-                "repo_id": repo_id,
-                "description": description.strip(),
-                "algorithms": algo_list,
-                "datasets_count": datasets_count.strip(),
-                "public_datasets": public_datasets.strip(),
-                "type": type_value.strip(),
-                "year": year,
-            }
-        )
+        # Add the repository to the appropriate type list
+        implementations_by_type[repo_data["type"]].append(repo_data)
 
     return implementations_by_type
 
@@ -163,23 +118,50 @@ def generate_card_html(impl: Dict) -> str:
 
     """
     # Extract up to 5 algorithms to display as tags
-    algorithms = impl["algorithms"]
+    algorithms = impl.get("algorithms", [])
     tag_html = ""
 
     # Create algorithm tags (limit to 5 for display)
     display_algos = algorithms[:5]
-    for algo_ in display_algos:
-        algo = algo_.strip()
-        if algo:
-            tag_html += f'        <span class="tag" data-tippy="{algo}">{algo}</span>\n'
+    for algo in display_algos:
+        algo_text = str(algo).strip()
+        if algo_text:
+            tag_html += f'        <span class="tag" data-tippy="{algo_text}">{algo_text}</span>\n'
 
     # Format datasets
-    formatted_datasets = format_datasets(impl["public_datasets"])
+    formatted_datasets = format_datasets(impl.get("public_datasets", []))
+
+    # Get the repository URL - either from github_url or construct from repo_id
+    if "github_url" in impl:
+        repo_url = impl["github_url"]
+    else:
+        repo_id = impl["repo_id"].replace("-repo", "")
+        repo_url = f"https://github.com/VectorInstitute/{repo_id}"
+
+    # Add BibTeX citation button if available
+    bibtex_html = ""
+    if "bibtex" in impl:
+        bibtex_id = impl["bibtex"]
+        bibtex_html = f'<a href="#" class="bibtex-button" data-bibtex-id="{bibtex_id}" title="View Citation">Cite</a>'
+
+    # Add paper link if available
+    paper_html = ""
+    if "paper_url" in impl:
+        paper_url = impl["paper_url"]
+        paper_html = f'<a href="{paper_url}" class="paper-link" title="View Paper" target="_blank">Paper</a>'
+
+    # Combine citation links
+    citation_html = ""
+    if bibtex_html or paper_html:
+        citation_html = f"""    <div class="citation-links">
+        {bibtex_html}
+        {paper_html}
+    </div>"""
 
     # Create the card HTML with proper indentation
     return f"""    <div class="card" markdown>
     <div class="header">
-        <h3><a href="https://github.com/VectorInstitute/{impl["repo_id"].replace("-repo", "")}" title="Go to Repository">{impl["name"]}</a></h3>
+        <h3><a href="{repo_url}" title="Go to Repository">{impl["name"]}</a></h3>
         <span class="tag year-tag">{impl["year"]}</span>
         <span class="tag type-tag">{impl["type"]}</span>
     </div>
@@ -190,6 +172,7 @@ def generate_card_html(impl: Dict) -> str:
     <div class="datasets">
         <strong>Datasets:</strong> {formatted_datasets}
     </div>
+{citation_html if citation_html else ""}
     </div>
 """
 
@@ -421,17 +404,34 @@ def update_docs_index(implementations_by_type: Dict[str, List[Dict]]) -> None:
   float: right;
   font-weight: 600;
 }
+
+.citation-links {
+  margin-top: 0.75rem;
+  display: flex;
+  gap: 0.75rem;
+}
+
+.citation-links a {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  text-decoration: none;
+  color: #333;
+  transition: background-color 0.2s;
+}
+
+.citation-links a:hover {
+  background-color: #e0e0e0;
+}
 </style>
 """
 
     # Check if the CSS is already in the document
     if "<style>" in original_content:
-        # Replace the existing style block to include both dataset and type tags
-        style_start = original_content.find("<style>")
-        style_end = original_content.find("</style>", style_start) + len("</style>")
-        original_content = (
-            original_content[:style_start] + css_for_tags + original_content[style_end:]
-        )
+        # No need to replace CSS as it's already there
+        pass
     else:
         # Add the CSS after the header area
         header_end_marker = "</div>"
@@ -472,15 +472,15 @@ def update_docs_index(implementations_by_type: Dict[str, List[Dict]]) -> None:
 
 
 def main() -> None:
-    """Run main function to sync README.md implementations to docs/index.md.
+    """Run main function to sync YAML repositories to docs/index.md.
 
-    This function orchestrates the entire synchronization process from README.md to docs/index.md.
+    This function orchestrates the entire synchronization process from YAML files to docs/index.md.
     """
-    print("Syncing implementations from README.md to docs/index.md...")
-    implementations_by_type = parse_readme_table()
+    print("Syncing implementations from YAML files to docs/index.md...")
+    implementations_by_type = parse_yaml_repositories()
 
     if not implementations_by_type:
-        print("No repositories found in README.md. Nothing to update.")
+        print("No repositories found in YAML files. Nothing to update.")
         return
 
     total_count = sum(len(impls) for impls in implementations_by_type.values())
