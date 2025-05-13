@@ -39,6 +39,7 @@ def format_tags(items_list, tag_class) -> str:
 
     """
     if not items_list:
+        # Returning an empty string is intentional to avoid rendering unnecessary UI elements
         return ""
 
     # Create tags for each item in the list
