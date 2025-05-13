@@ -1,8 +1,8 @@
 /* Vector brand colors */
 [data-md-color-primary="vector"] {
-  --md-primary-fg-color: #eb088a;
-  --md-primary-fg-color--light: #f252a5;
-  --md-primary-fg-color--dark: #b00068;
+  --md-primary-fg-color: #c30672; /* Darker pink */
+  --md-primary-fg-color--light: #d83a8e; /* Adjusted lighter shade */
+  --md-primary-fg-color--dark: #9a0058; /* Adjusted darker shade */
   --md-primary-bg-color: hsla(0, 0%, 100%, 1);
   --md-primary-bg-color--light: hsla(0, 0%, 100%, 0.7);
 }
@@ -50,6 +50,35 @@
 
 .md-footer-vector img:hover {
   opacity: 1;
+}
+
+/* Hero button styling */
+.md-button {
+  display: inline-block;
+  padding: 0.625em 1.25em;
+  font-size: 0.85em;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: 0.25em;
+  transition: all 0.25s;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+  cursor: pointer;
+  margin: 0.5em;
+}
+
+.md-button--primary {
+  background-color: var(--md-primary-fg-color);
+  border: 0.1em solid var(--md-primary-fg-color);
+  color: var(--md-primary-bg-color);
+}
+
+.md-button:hover {
+  background-color: var(--md-accent-fg-color);
+  border-color: var(--md-accent-fg-color);
+  color: var(--md-primary-bg-color);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,.3);
 }
 
 /* Make the inner footer grid elements distribute evenly */
@@ -187,6 +216,12 @@
   float: right;
 }
 
+.card .type-tag {
+  background-color: #2e8b57; /* Forest green color */
+  margin-right: 5px;
+  float: right;
+}
+
 .card .datasets {
   font-size: 0.8rem;
   margin-top: auto;
@@ -259,18 +294,40 @@
 .md-content {
   max-width: 100% !important;
   width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow-x: hidden !important;
 }
 
 .md-content__inner {
-  margin: 0 auto !important;
-  padding: 0 1rem !important;
+  margin: 0 !important;
+  padding: 0 !important;
   max-width: 100% !important;
   width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+/* Add padding to main content area, except for the hero section */
+.md-content__inner > *:not(.hero-section):not(style) {
+  padding-left: 3rem !important;
+  padding-right: 3rem !important;
 }
 
 .md-grid {
   max-width: 100% !important;
   width: 100% !important;
+  margin: 0 !important;
+}
+
+/* Override any max-width restriction */
+.md-main {
+  max-width: 100% !important;
+  width: 100vw !important;
+  overflow-x: hidden !important;
+}
+
+body {
+  overflow-x: hidden !important;
 }
 
 /* Overwrite any container width limitations */
@@ -350,7 +407,8 @@
 
 /* Header logo styling */
 .md-header__button.md-logo img {
-  height: 2rem;
+  height: 1.8rem;
   width: auto;
-  opacity: 0.9;
+  opacity: 1;
+  padding: 0.2rem;
 }

@@ -1,17 +1,70 @@
-# Vector Institute Reference Implementation Catalog
+---
+hide:
+  - navigation
+  - toc
+---
 
-<div class="catalog-header" markdown>
-Welcome to the Vector Institute Reference Implementation Catalog!
-The catalog is a curated collection of high quality implementations
-developed by researchers and engineers at the Vector Institute. This catalog provides
-access to repositories that demonstrate state-of-the-art techniques across a wide
-range of AI domains.
+<!-- Hero section with background image -->
+<div class="hero-section" markdown>
+  <div class="hero-content">
+    <h1></h1>
+    <p>A curated collection of high-quality AI implementations developed by researchers and engineers at the Vector Institute</p>
+    <a href="#browse-implementations-by-type" class="md-button md-button--primary">Browse Implementations</a>
+    <a href="https://github.com/VectorInstitute/reference-implementation-catalog" class="md-button md-button--primary">View on GitHub</a>
+  </div>
 </div>
 
-<div class="catalog-stats">
-  <div class="stat">
-    <div class="stat-number">100+</div>
+<!-- Custom styling for the hero section -->
+
+
 <style>
+.hero-section {
+  position: relative;
+  padding: 5rem 4rem;
+  text-align: center;
+  color: white;
+  background-color: var(--md-primary-fg-color);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url('assets/splash.png');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  position: relative;
+  min-height: 70vh;
+}
+
+.hero-content {
+  max-width: 800px;
+  z-index: 10;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+  font-family: 'Roboto', sans-serif;
+}
+
+.hero-content p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.7);
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.4;
+  color: #f8f8f8;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
+
 .dataset-tag {
   display: inline-block;
   background-color: #6a5acd;
@@ -24,9 +77,36 @@ range of AI domains.
   font-weight: 500;
   white-space: nowrap;
 }
+
+.type-tag {
+  display: inline-block;
+  background-color: #2e8b57;
+  color: white;
+  padding: 0.1rem 0.4rem;
+  border-radius: 0.8rem;
+  margin-right: 0.2rem;
+  margin-bottom: 0.2rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.year-tag {
+  background-color: #eb088a; /* Pink color instead of black */
+  color: white;
+  float: right;
+}
 </style>
 
-    <div class="stat-label">Reference Implementations</div>
+
+
+
+
+
+<div class="catalog-stats">
+  <div class="stat">
+    <div class="stat-number">100+</div>
+    <div class="stat-label">Implementations</div>
   </div>
   <div class="stat">
     <div class="stat-number">7</div>
@@ -34,7 +114,7 @@ range of AI domains.
   </div>
 </div>
 
-## Browse Implementations by Year
+## Browse Implementations by Type
 
 
 
@@ -58,13 +138,30 @@ range of AI domains.
 
 
 
-=== "2024"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=== "bootcamp"
 
     <div class="grid cards" markdown>
     <div class="card" markdown>
     <div class="header">
-        <h3><a href="https://github.com/VectorInstitute/rag" title="Go to Repository">RAG</a></h3>
+        <h3><a href="https://github.com/VectorInstitute/rag" title="Go to Repository">rag-bootcamp</a></h3>
         <span class="tag year-tag">2024</span>
+        <span class="tag type-tag">bootcamp</span>
     </div>
     <p>This repository contains demos for various Retrieval Augmented Generation techniques using different libraries.</p>
     <div class="tag-container">
@@ -80,8 +177,9 @@ range of AI domains.
     </div>
     <div class="card" markdown>
     <div class="header">
-        <h3><a href="https://github.com/VectorInstitute/fa" title="Go to Repository">Finetuning and Alignment</a></h3>
+        <h3><a href="https://github.com/VectorInstitute/fa" title="Go to Repository">finetuning-and-alignment</a></h3>
         <span class="tag year-tag">2024</span>
+        <span class="tag type-tag">bootcamp</span>
     </div>
     <p>This repository contains demos for finetuning techniques for LLMs focussed on reducing computational cost.</p>
     <div class="tag-container">
@@ -99,6 +197,7 @@ range of AI domains.
     <div class="header">
         <h3><a href="https://github.com/VectorInstitute/pe-lab" title="Go to Repository">Prompt Engineering Laboratory</a></h3>
         <span class="tag year-tag">2024</span>
+        <span class="tag type-tag">bootcamp</span>
     </div>
     <p>This repository contains demos for various Prompt Engineering techniques, along with examples for Bias quantification, text classification.</p>
     <div class="tag-container">
@@ -114,22 +213,9 @@ range of AI domains.
     </div>
     <div class="card" markdown>
     <div class="header">
-        <h3><a href="https://github.com/VectorInstitute/bmu" title="Go to Repository">bias-mitigation-unlearning</a></h3>
-        <span class="tag year-tag">2024</span>
-    </div>
-    <p>This repository contains code for the paper [Can Machine Unlearning Reduce Social Bias in Language Models?][bmu-paper] which was published at EMNLP'24 in the Industry track. <br>Authors are Omkar Dige, Diljot Arneja, Tsz Fung Yau, Qixuan Zhang, Mohammad Bolandraftar, Xiaodan Zhu, Faiza Khan Khattak.</p>
-    <div class="tag-container">
-        <span class="tag" data-tippy="PCGU">PCGU</span>
-        <span class="tag" data-tippy="Task vectors and DPO for Machine Unlearning">Task vectors and DPO for Machine Unlearning</span>
-    </div>
-    <div class="datasets">
-        <strong>Datasets:</strong> <span class="dataset-tag">BBQ</span> <span class="dataset-tag">bbq-bmu</span>  <span class="dataset-tag">Stereoset</span> <span class="dataset-tag">stereoset-bmu</span>  <span class="dataset-tag">Link1</span> <span class="dataset-tag">link1-bmu</span>  <span class="dataset-tag">Link2</span> <span class="dataset-tag">link2-bmu</span>
-    </div>
-    </div>
-    <div class="card" markdown>
-    <div class="header">
         <h3><a href="https://github.com/VectorInstitute/cyclops" title="Go to Repository">cyclops-workshop</a></h3>
         <span class="tag year-tag">2024</span>
+        <span class="tag type-tag">bootcamp</span>
     </div>
     <p>This repository contains demos for using [CyclOps] package for clinical ML evaluation and monitoring.</p>
     <div class="tag-container">
@@ -141,23 +227,9 @@ range of AI domains.
     </div>
     <div class="card" markdown>
     <div class="header">
-        <h3><a href="https://github.com/VectorInstitute/odyssey" title="Go to Repository">odyssey</a></h3>
+        <h3><a href="https://github.com/VectorInstitute/diffusion" title="Go to Repository">diffusion-model-bootcamp</a></h3>
         <span class="tag year-tag">2024</span>
-    </div>
-    <p>This is a library created with research done for the paper [EHRMamba: Towards Generalizable and Scalable Foundation Models for Electronic Health Records][odyssey-paper] published at ArXiv'24. <br>Authors are Adibvafa Fallahpour, Mahshid Alinoori, Wenqian Ye, Xu Cao, Arash Afkanpour, Amrit Krishnan.</p>
-    <div class="tag-container">
-        <span class="tag" data-tippy="EHRMamba">EHRMamba</span>
-        <span class="tag" data-tippy="XGBoost">XGBoost</span>
-        <span class="tag" data-tippy="Bi-LSTM">Bi-LSTM</span>
-    </div>
-    <div class="datasets">
-        <strong>Datasets:</strong> <span class="dataset-tag">MIMIC-IV</span>
-    </div>
-    </div>
-    <div class="card" markdown>
-    <div class="header">
-        <h3><a href="https://github.com/VectorInstitute/diffusion" title="Go to Repository">Diffusion model bootcamp</a></h3>
-        <span class="tag year-tag">2024</span>
+        <span class="tag type-tag">bootcamp</span>
     </div>
     <p>This repository contains demos for various diffusion models for tabular and time series data.</p>
     <div class="tag-container">
@@ -175,6 +247,7 @@ range of AI domains.
     <div class="header">
         <h3><a href="https://github.com/VectorInstitute/nmb" title="Go to Repository">News Media Bias</a></h3>
         <span class="tag year-tag">2024</span>
+        <span class="tag type-tag">bootcamp</span>
     </div>
     <p>This repository contains code for libraries and experiments to recognise and evaluate bias and fakeness within news media articles via LLMs.</p>
     <div class="tag-container">
@@ -192,6 +265,7 @@ range of AI domains.
     <div class="header">
         <h3><a href="https://github.com/VectorInstitute/nmb-plus" title="Go to Repository">News Media Bias Plus</a></h3>
         <span class="tag year-tag">2024</span>
+        <span class="tag type-tag">bootcamp</span>
     </div>
     <p>Continuation of News Media Bias project, this repository contains code for libraries and experiments to collect and annotate data, recognise and evaluate bias and fakeness within news media articles via LLMs and LVMs.</p>
     <div class="tag-container">
@@ -204,16 +278,11 @@ range of AI domains.
         <strong>Datasets:</strong> <span class="dataset-tag">News Media Bias Plus Full Data</span> <span class="dataset-tag">nmb-plus-full-data</span>  <span class="dataset-tag">NMB Plus Named Entities</span> <span class="dataset-tag">nmb-plus-entities</span>
     </div>
     </div>
-
-    </div>
-
-=== "2023"
-
-    <div class="grid cards" markdown>
     <div class="card" markdown>
     <div class="header">
         <h3><a href="https://github.com/VectorInstitute/anomaly" title="Go to Repository">Anomaly Detection Project</a></h3>
         <span class="tag year-tag">2023</span>
+        <span class="tag type-tag">bootcamp</span>
     </div>
     <p>This repository contains demos for various supervised and unsupervised anomaly detection techniques in domains such as Fraud Detection, Network Intrusion Detection, System Monitoring and image, Video Analysis.</p>
     <div class="tag-container">
@@ -231,6 +300,7 @@ range of AI domains.
     <div class="header">
         <h3><a href="https://github.com/VectorInstitute/ssl" title="Go to Repository">SSL Bootcamp</a></h3>
         <span class="tag year-tag">2023</span>
+        <span class="tag type-tag">bootcamp</span>
     </div>
     <p>This repository contains demos for self-supervised techniques such as contrastive learning, masked modeling and self distillation.</p>
     <div class="tag-container">
@@ -248,6 +318,7 @@ range of AI domains.
     <div class="header">
         <h3><a href="https://github.com/VectorInstitute/ci-lab" title="Go to Repository">Causal Inference Lab</a></h3>
         <span class="tag year-tag">2023</span>
+        <span class="tag type-tag">bootcamp</span>
     </div>
     <p>This repository contains code to estimate the causal effects of an intervention on some measurable outcome primarily in the health domain.</p>
     <div class="tag-container">
@@ -265,6 +336,7 @@ range of AI domains.
     <div class="header">
         <h3><a href="https://github.com/VectorInstitute/hvaic" title="Go to Repository">HV-Ai-C</a></h3>
         <span class="tag year-tag">2023</span>
+        <span class="tag type-tag">bootcamp</span>
     </div>
     <p>This repository implements a Reinforcement Learning agent to optimize energy consumption within Data Centers.</p>
     <div class="tag-container">
@@ -281,6 +353,7 @@ range of AI domains.
     <div class="header">
         <h3><a href="https://github.com/VectorInstitute/flex-model" title="Go to Repository">Flex Model</a></h3>
         <span class="tag year-tag">2023</span>
+        <span class="tag type-tag">bootcamp</span>
     </div>
     <p>This repository contains code for the paper [FlexModel: A Framework for Interpretability of Distributed Large Language Models][flex-model-paper]. <br> Authors are Matthew Choi, Muhammad Adil Asif, John Willes, David Emerson.</p>
     <div class="tag-container">
@@ -294,6 +367,7 @@ range of AI domains.
     <div class="header">
         <h3><a href="https://github.com/VectorInstitute/vbll" title="Go to Repository">VBLL</a></h3>
         <span class="tag year-tag">2023</span>
+        <span class="tag type-tag">bootcamp</span>
     </div>
     <p>This repository contains code for the paper [Variational Bayesian Last Layers][vbll-paper]. <br> Authors are James Harrison, John Willes, Jasper Snoek.</p>
     <div class="tag-container">
@@ -303,16 +377,11 @@ range of AI domains.
         <strong>Datasets:</strong> <span class="dataset-tag">MNIST</span>  <span class="dataset-tag">FashionMNIST</span>
     </div>
     </div>
-
-    </div>
-
-=== "2022"
-
-    <div class="grid cards" markdown>
     <div class="card" markdown>
     <div class="header">
         <h3><a href="https://github.com/VectorInstitute/recsys" title="Go to Repository">Recommendation Systems</a></h3>
         <span class="tag year-tag">2022</span>
+        <span class="tag type-tag">bootcamp</span>
     </div>
     <p>This repository contains demos for various RecSys techniques such as Collaborative Filtering, Knowledge Graph, RL based, Sequence Aware, Session based etc.</p>
     <div class="tag-container">
@@ -330,6 +399,7 @@ range of AI domains.
     <div class="header">
         <h3><a href="https://github.com/VectorInstitute/forecasting-dl" title="Go to Repository">Forecasting with Deep Learning</a></h3>
         <span class="tag year-tag">2022</span>
+        <span class="tag type-tag">bootcamp</span>
     </div>
     <p>This repository contains demos for a variety of forecasting techniques for Univariate and Multivariate time series, spatiotemporal forecasting etc.</p>
     <div class="tag-container">
@@ -347,6 +417,7 @@ range of AI domains.
     <div class="header">
         <h3><a href="https://github.com/VectorInstitute/pe" title="Go to Repository">Prompt Engineering</a></h3>
         <span class="tag year-tag">2022</span>
+        <span class="tag type-tag">bootcamp</span>
     </div>
     <p>This repository contains demos for a variety of Prompt Engineering techniques such as fairness measurement via sentiment analysis, finetuning, prompt tuning, prompt ensembling etc.</p>
     <div class="tag-container">
@@ -364,6 +435,7 @@ range of AI domains.
     <div class="header">
         <h3><a href="https://github.com/VectorInstitute/naa" title="Go to Repository">NAA</a></h3>
         <span class="tag year-tag">2022</span>
+        <span class="tag type-tag">bootcamp</span>
     </div>
     <p>This repository contains code for the paper [Bringing the State-of-the-Art to Customers: A Neural Agent Assistant Framework for Customer Service Support][naa-paper] published at EMNLP'22 in the industry track. <br> Authors are Stephen Obadinma, Faiza Khan Khattak, Shirley Wang, Tania Sidhorn, Elaine Lau, Sean Robertson, Jingcheng Niu, Winnie Au, Alif Munim, Karthik Raja Kalaiselvi Bhaskar.</p>
     <div class="tag-container">
@@ -377,16 +449,11 @@ range of AI domains.
         <strong>Datasets:</strong> <span class="dataset-tag">ELI5</span>  <span class="dataset-tag">MSMARCO</span>
     </div>
     </div>
-
-    </div>
-
-=== "2021"
-
-    <div class="grid cards" markdown>
     <div class="card" markdown>
     <div class="header">
         <h3><a href="https://github.com/VectorInstitute/pet" title="Go to Repository">Privacy Enhancing Technologies</a></h3>
         <span class="tag year-tag">2021</span>
+        <span class="tag type-tag">bootcamp</span>
     </div>
     <p>This repository contains demos for Privacy, Homomorphic Encryption, Horizontal and Vertical Federated Learning, MIA, and PATE.</p>
     <div class="tag-container">
@@ -404,6 +471,7 @@ range of AI domains.
     <div class="header">
         <h3><a href="https://github.com/VectorInstitute/ssgvap" title="Go to Repository">SSGVQAP</a></h3>
         <span class="tag year-tag">2021</span>
+        <span class="tag type-tag">bootcamp</span>
     </div>
     <p>This repository contains code for the paper [A Smart System to Generate and Validate Question Answer Pairs for COVID-19 Literature][ssgvap-paper] which was accepted in ACL'20. <br> Authors are Rohan Bhambhoria, Luna Feng, Dawn Sepehr, John Chen, Conner Cowling, Sedef Kocak, Elham Dolatabadi.</p>
     <div class="tag-container">
@@ -419,6 +487,7 @@ range of AI domains.
     <div class="header">
         <h3><a href="https://github.com/VectorInstitute/fpf" title="Go to Repository">foodprice-forecasting</a></h3>
         <span class="tag year-tag">2021</span>
+        <span class="tag type-tag">bootcamp</span>
     </div>
     <p>This repository replicates the experiments described on pages 16 and 17 of the [2022 Edition of Canada's Food Price Report][fpf-paper].</p>
     <div class="tag-container">
@@ -431,16 +500,11 @@ range of AI domains.
         <strong>Datasets:</strong> <span class="dataset-tag">FRED Economic Data</span>
     </div>
     </div>
-
-    </div>
-
-=== "2020"
-
-    <div class="grid cards" markdown>
     <div class="card" markdown>
     <div class="header">
         <h3><a href="https://github.com/VectorInstitute/cvp" title="Go to Repository">Computer_Vision_Project</a></h3>
         <span class="tag year-tag">2020</span>
+        <span class="tag type-tag">bootcamp</span>
     </div>
     <p>This repository tackles different problems such as defect detection, footprint extraction, road obstacle detection, traffic incident detection, and segmentation of medical procedures.</p>
     <div class="tag-container">
@@ -457,3 +521,45 @@ range of AI domains.
 
     </div>
 
+=== "tool"
+
+    <div class="grid cards" markdown>
+    <div class="card" markdown>
+    <div class="header">
+        <h3><a href="https://github.com/VectorInstitute/odyssey" title="Go to Repository">odyssey</a></h3>
+        <span class="tag year-tag">2024</span>
+        <span class="tag type-tag">tool</span>
+    </div>
+    <p>This is a library created with research done for the paper [EHRMamba: Towards Generalizable and Scalable Foundation Models for Electronic Health Records][odyssey-paper] published at ArXiv'24. <br>Authors are Adibvafa Fallahpour, Mahshid Alinoori, Wenqian Ye, Xu Cao, Arash Afkanpour, Amrit Krishnan.</p>
+    <div class="tag-container">
+        <span class="tag" data-tippy="EHRMamba">EHRMamba</span>
+        <span class="tag" data-tippy="XGBoost">XGBoost</span>
+        <span class="tag" data-tippy="Bi-LSTM">Bi-LSTM</span>
+    </div>
+    <div class="datasets">
+        <strong>Datasets:</strong> <span class="dataset-tag">MIMIC-IV</span>
+    </div>
+    </div>
+
+    </div>
+
+=== "applied-research"
+
+    <div class="grid cards" markdown>
+    <div class="card" markdown>
+    <div class="header">
+        <h3><a href="https://github.com/VectorInstitute/bmu" title="Go to Repository">bias-mitigation-unlearning</a></h3>
+        <span class="tag year-tag">2024</span>
+        <span class="tag type-tag">applied-research</span>
+    </div>
+    <p>This repository contains code for the paper [Can Machine Unlearning Reduce Social Bias in Language Models?][bmu-paper] which was published at EMNLP'24 in the Industry track. <br>Authors are Omkar Dige, Diljot Arneja, Tsz Fung Yau, Qixuan Zhang, Mohammad Bolandraftar, Xiaodan Zhu, Faiza Khan Khattak.</p>
+    <div class="tag-container">
+        <span class="tag" data-tippy="PCGU">PCGU</span>
+        <span class="tag" data-tippy="Task vectors and DPO for Machine Unlearning">Task vectors and DPO for Machine Unlearning</span>
+    </div>
+    <div class="datasets">
+        <strong>Datasets:</strong> <span class="dataset-tag">BBQ</span> <span class="dataset-tag">bbq-bmu</span>  <span class="dataset-tag">Stereoset</span> <span class="dataset-tag">stereoset-bmu</span>  <span class="dataset-tag">Link1</span> <span class="dataset-tag">link1-bmu</span>  <span class="dataset-tag">Link2</span> <span class="dataset-tag">link2-bmu</span>
+    </div>
+    </div>
+
+    </div>

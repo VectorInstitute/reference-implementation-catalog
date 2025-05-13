@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Sync reference implementations from README.md to docs/index.md.
+"""Sync repos from README.md to docs/index.md.
 
-This script extracts the reference implementation list from README.md and
+This script extracts the repositories list from README.md and
 updates the cards in docs/index.md. It automatically groups implementations
-by year and ensures changes in README.md are reflected in the documentation.
+by type and ensures changes in README.md are reflected in the documentation.
 """
 
 import re
@@ -13,10 +13,10 @@ from typing import Dict, List, Tuple
 
 # Regular expressions to parse README.md table rows
 REPO_ROW_PATTERN = re.compile(
-    r"\| \[(.*?)\]\[(.*?-repo)\] \| (.*?) \| (.*?) \| (.*?) \| (.*?) \| (\d{4}) \|"
+    r"\| \[(.*?)\]\[(.*?-repo)\] \| (.*?) \| (.*?) \| (.*?) \| (.*?) \| (.*?) \| (\d{4}) \|"
 )
-YEAR_TAB_PATTERN = re.compile(r'=== "(\d{4}[^"]*)"')
-BROWSE_HEADING_PATTERN = r"## Browse Implementations by Year"
+TYPE_TAB_PATTERN = re.compile(r'=== "([^"]*)"')
+BROWSE_HEADING_PATTERN = r"## Browse Implementations by Type"
 # Pattern to match Markdown links [text][reference]
 MARKDOWN_LINK_PATTERN = re.compile(r"\[(.*?)\]\[(.*?)\]")
 # Pattern to match simple Markdown links [text]
@@ -96,12 +96,12 @@ def format_datasets(datasets_text: str) -> str:
 
 
 def parse_readme_table() -> Dict[str, List[Dict]]:
-    """Parse the reference implementations table from README.md.
+    """Parse the implementations table from README.md.
 
     Returns
     -------
     Dict[str, List[Dict]]
-        Dictionary with years as keys and lists of implementation details as values.
+        Dictionary with types as keys and lists of implementation details as values.
 
     """
     readme_path = Path("README.md")
@@ -111,7 +111,7 @@ def parse_readme_table() -> Dict[str, List[Dict]]:
     readme_content = readme_path.read_text(encoding="utf-8")
 
     # Extract all table rows with repository information
-    implementations_by_year = defaultdict(list)
+    implementations_by_type = defaultdict(list)
 
     for match in REPO_ROW_PATTERN.finditer(readme_content):
         (
@@ -121,6 +121,7 @@ def parse_readme_table() -> Dict[str, List[Dict]]:
             algorithms,
             datasets_count,
             public_datasets,
+            type_value,
             year,
         ) = match.groups()
 
@@ -131,7 +132,7 @@ def parse_readme_table() -> Dict[str, List[Dict]]:
             if algo:
                 algo_list.append(algo)
 
-        implementations_by_year[year].append(
+        implementations_by_type[type_value.strip()].append(
             {
                 "name": repo_name,
                 "repo_id": repo_id,
@@ -139,11 +140,12 @@ def parse_readme_table() -> Dict[str, List[Dict]]:
                 "algorithms": algo_list,
                 "datasets_count": datasets_count.strip(),
                 "public_datasets": public_datasets.strip(),
+                "type": type_value.strip(),
                 "year": year,
             }
         )
 
-    return implementations_by_year
+    return implementations_by_type
 
 
 def generate_card_html(impl: Dict) -> str:
@@ -179,6 +181,7 @@ def generate_card_html(impl: Dict) -> str:
     <div class="header">
         <h3><a href="https://github.com/VectorInstitute/{impl["repo_id"].replace("-repo", "")}" title="Go to Repository">{impl["name"]}</a></h3>
         <span class="tag year-tag">{impl["year"]}</span>
+        <span class="tag type-tag">{impl["type"]}</span>
     </div>
     <p>{impl["description"]}</p>
     <div class="tag-container">
@@ -191,8 +194,8 @@ def generate_card_html(impl: Dict) -> str:
 """
 
 
-def get_year_sections(content: str) -> Dict[str, Tuple[int, int, str]]:
-    """Extract year sections from the markdown content.
+def get_type_sections(content: str) -> Dict[str, Tuple[int, int, str]]:
+    """Extract type sections from the markdown content.
 
     Parameters
     ----------
@@ -202,45 +205,45 @@ def get_year_sections(content: str) -> Dict[str, Tuple[int, int, str]]:
     Returns
     -------
     Dict[str, Tuple[int, int, str]]
-        Dictionary mapping years to their (start_pos, end_pos, section_content)
+        Dictionary mapping types to their (start_pos, end_pos, section_content)
 
     """
-    year_sections = {}
-    year_matches = list(YEAR_TAB_PATTERN.finditer(content))
+    type_sections = {}
+    type_matches = list(TYPE_TAB_PATTERN.finditer(content))
 
-    for i, match in enumerate(year_matches):
-        year = match.group(1)
+    for i, match in enumerate(type_matches):
+        type_value = match.group(1)
         section_start = match.start()
 
         # Find the end of this section
-        if i + 1 < len(year_matches):
-            section_end = year_matches[i + 1].start()
+        if i + 1 < len(type_matches):
+            section_end = type_matches[i + 1].start()
         else:
             section_end = len(content)
 
         section_content = content[section_start:section_end]
-        year_sections[year] = (section_start, section_end, section_content)
+        type_sections[type_value] = (section_start, section_end, section_content)
 
-    return year_sections
+    return type_sections
 
 
-def generate_year_section(year: str, implementations: List[Dict]) -> str:
-    """Generate a complete year section with all implementations.
+def generate_type_section(type_value: str, implementations: List[Dict]) -> str:
+    """Generate a complete type section with all implementations.
 
     Parameters
     ----------
-    year : str
-        The year for this section
+    type_value : str
+        The type for this section
     implementations : List[Dict]
         List of implementation details
 
     Returns
     -------
     str
-        Formatted year section
+        Formatted type section
 
     """
-    section = f'=== "{year}"\n\n    <div class="grid cards" markdown>\n'
+    section = f'=== "{type_value}"\n\n    <div class="grid cards" markdown>\n'
 
     for impl in implementations:
         section += generate_card_html(impl)
@@ -250,16 +253,16 @@ def generate_year_section(year: str, implementations: List[Dict]) -> str:
 
 
 def rebuild_document(
-    original_content: str, implementations_by_year: Dict[str, List[Dict]]
+    original_content: str, implementations_by_type: Dict[str, List[Dict]]
 ) -> str:
-    """Completely rebuild the document with all year sections.
+    """Completely rebuild the document with all type sections.
 
     Parameters
     ----------
     original_content : str
         The original markdown content
-    implementations_by_year : Dict[str, List[Dict]]
-        Dictionary with implementations grouped by year
+    implementations_by_type : Dict[str, List[Dict]]
+        Dictionary with implementations grouped by type
 
     Returns
     -------
@@ -267,38 +270,52 @@ def rebuild_document(
         Updated markdown content
 
     """
-    # Find the position after the "Browse Implementations by Year" heading
+    # Find the position after the "Browse Implementations by Type" heading
     heading_match = re.search(BROWSE_HEADING_PATTERN, original_content)
     if not heading_match:
-        raise ValueError("Could not find 'Browse Implementations by Year' heading")
+        raise ValueError("Could not find 'Browse Implementations by Type' heading")
 
     heading_end = heading_match.end()
 
-    # Get content before the first year section
+    # Get content before the first type section
     pre_content = original_content[:heading_end]
 
-    # Find the first year section
-    year_match = re.search(YEAR_TAB_PATTERN, original_content)
-    if year_match:
-        pre_content = original_content[: year_match.start()]
+    # Find the first type section
+    type_match = re.search(TYPE_TAB_PATTERN, original_content)
+    if type_match:
+        pre_content = original_content[: type_match.start()]
 
     # Build the new content with the pre-content
     new_content = pre_content + "\n\n"
 
-    # Add year sections in reverse chronological order
-    for year in sorted(implementations_by_year.keys(), reverse=True):
-        new_content += generate_year_section(year, implementations_by_year[year])
+    # Define the desired type order
+    type_order = ["bootcamp", "tool", "applied-research"]
+
+    # Add sections in the specified order, followed by any other types alphabetically
+    for type_value in type_order:
+        if type_value in implementations_by_type:
+            new_content += generate_type_section(
+                type_value, implementations_by_type[type_value]
+            )
+
+    # Add any remaining types that weren't in the predefined order
+    for type_value in sorted(
+        [t for t in implementations_by_type if t not in type_order]
+    ):
+        new_content += generate_type_section(
+            type_value, implementations_by_type[type_value]
+        )
 
     return new_content
 
 
-def update_docs_index(implementations_by_year: Dict[str, List[Dict]]) -> None:
+def update_docs_index(implementations_by_type: Dict[str, List[Dict]]) -> None:
     """Update the docs/index.md file with cards for all implementations.
 
     Parameters
     ----------
-    implementations_by_year : Dict[str, List[Dict]]
-        Dictionary of implementations grouped by year
+    implementations_by_type : Dict[str, List[Dict]]
+        Dictionary of implementations grouped by type
 
     """
     docs_index_path = Path("docs/index.md")
@@ -309,9 +326,56 @@ def update_docs_index(implementations_by_year: Dict[str, List[Dict]]) -> None:
 
     original_content = docs_index_path.read_text(encoding="utf-8")
 
-    # Ensure we have CSS for dataset tags
-    css_for_datasets = """
+    # Ensure we have CSS for dataset tags, type tags, year tags, and hero section
+    css_for_tags = """
 <style>
+.hero-section {
+  position: relative;
+  padding: 5rem 4rem;
+  text-align: center;
+  color: white;
+  background-color: var(--md-primary-fg-color);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url('assets/splash.png');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  position: relative;
+  min-height: 70vh;
+}
+
+.hero-content {
+  max-width: 800px;
+  z-index: 10;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+  font-family: 'Roboto', sans-serif;
+}
+
+.hero-content p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.7);
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.4;
+  color: #f8f8f8;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
+
 .dataset-tag {
   display: inline-block;
   background-color: #6a5acd;
@@ -324,11 +388,37 @@ def update_docs_index(implementations_by_year: Dict[str, List[Dict]]) -> None:
   font-weight: 500;
   white-space: nowrap;
 }
+
+.type-tag {
+  display: inline-block;
+  background-color: #2e8b57;
+  color: white;
+  padding: 0.1rem 0.4rem;
+  border-radius: 0.8rem;
+  margin-right: 0.2rem;
+  margin-bottom: 0.2rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.year-tag {
+  background-color: #eb088a; /* Pink color instead of black */
+  color: white;
+  float: right;
+}
 </style>
 """
 
     # Check if the CSS is already in the document
-    if "<style>" not in original_content:
+    if "<style>" in original_content:
+        # Replace the existing style block to include both dataset and type tags
+        style_start = original_content.find("<style>")
+        style_end = original_content.find("</style>", style_start) + len("</style>")
+        original_content = (
+            original_content[:style_start] + css_for_tags + original_content[style_end:]
+        )
+    else:
         # Add the CSS after the header area
         header_end_marker = "</div>"
         header_section_end = original_content.find(
@@ -338,27 +428,32 @@ def update_docs_index(implementations_by_year: Dict[str, List[Dict]]) -> None:
         if header_section_end > 0:
             original_content = (
                 original_content[: header_section_end + len(header_end_marker)]
-                + css_for_datasets
+                + css_for_tags
                 + original_content[header_section_end + len(header_end_marker) :]
             )
 
+    # Update the heading from "by Year" to "by Type"
+    original_content = original_content.replace(
+        "## Browse Implementations by Year", "## Browse Implementations by Type"
+    )
+
     # Create an entirely new document
-    updated_content = rebuild_document(original_content, implementations_by_year)
+    updated_content = rebuild_document(original_content, implementations_by_type)
 
     # Write the updated content back to docs/index.md
     docs_index_path.write_text(updated_content, encoding="utf-8")
 
-    # Get existing and new years for reporting
-    existing_sections = set(get_year_sections(original_content).keys())
-    new_years = set(implementations_by_year.keys()) - existing_sections
+    # Get existing and new types for reporting
+    existing_sections = set(get_type_sections(original_content).keys())
+    new_types = set(implementations_by_type.keys()) - existing_sections
 
     # Print summary
     print(
-        f"Updated {docs_index_path} with {sum(len(impls) for impls in implementations_by_year.values())} implementations"
+        f"Updated {docs_index_path} with {sum(len(impls) for impls in implementations_by_type.values())} repositories"
     )
-    if new_years:
+    if new_types:
         print(
-            f"Added {len(new_years)} new year sections: {', '.join(sorted(new_years, reverse=True))}"
+            f"Added {len(new_types)} new type sections: {', '.join(sorted(new_types))}"
         )
 
 
@@ -367,19 +462,19 @@ def main() -> None:
 
     This function orchestrates the entire synchronization process from README.md to docs/index.md.
     """
-    print("Syncing reference implementations from README.md to docs/index.md...")
-    implementations_by_year = parse_readme_table()
+    print("Syncing implementations from README.md to docs/index.md...")
+    implementations_by_type = parse_readme_table()
 
-    if not implementations_by_year:
-        print("No reference implementations found in README.md. Nothing to update.")
+    if not implementations_by_type:
+        print("No repositories found in README.md. Nothing to update.")
         return
 
-    total_count = sum(len(impls) for impls in implementations_by_year.values())
+    total_count = sum(len(impls) for impls in implementations_by_type.values())
     print(
-        f"Found {total_count} reference implementations across {len(implementations_by_year)} years"
+        f"Found {total_count} repositories across {len(implementations_by_type)} types"
     )
 
-    update_docs_index(implementations_by_year)
+    update_docs_index(implementations_by_type)
     print("Sync complete!")
 
 

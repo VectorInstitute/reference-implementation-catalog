@@ -1,6 +1,6 @@
-# Contributing to Reference Implementation Catalog
+# Contributing to Implementation Catalog
 
-Thank you for your interest in contributing to the Vector Institute Reference Implementation Catalog!
+Thank you for your interest in contributing to the Vector Institute Implementation Catalog!
 
 ## Adding a New Implementation
 
@@ -69,4 +69,4 @@ Then visit http://localhost:8000 in your browser.
 
 ## Additional Information
 
-For questions about contributing to the Reference Implementation Catalog, please reach out to the AI Engineering team at Vector Institute.
+For questions about contributing to the Implementation Catalog, please reach out to the AI Engineering team at Vector Institute.
