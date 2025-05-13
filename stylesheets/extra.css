@@ -137,10 +137,12 @@
   flex-direction: column !important;
   padding: 1rem !important;
   border-radius: 0.4rem !important;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08) !important;
-  border-left: 3px solid var(--md-primary-fg-color) !important;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.12) !important;
+  border-left: 3px solid var(--md-accent-fg-color) !important;
   background-color: var(--md-code-bg-color) !important;
+  background-image: linear-gradient(to bottom right, rgba(255, 255, 255, 0.05), rgba(72, 192, 217, 0.05)) !important;
   box-sizing: border-box !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
 }
 
 /* Responsive adjustments for cards inside tabs */
@@ -160,7 +162,8 @@
 
 .grid.cards .card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  border-left: 3px solid #48c0d9 !important; /* Vector teal accent color */
 }
 
 .card .header {
@@ -212,8 +215,9 @@
 }
 
 .card .year-tag {
-  background-color: var(--md-primary-fg-color);
+  background-color: #48c0d9; /* Vector teal accent color */
   float: right;
+  font-weight: 600;
 }
 
 .card .type-tag {
