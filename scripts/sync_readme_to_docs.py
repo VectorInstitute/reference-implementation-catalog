@@ -320,9 +320,56 @@ def update_docs_index(implementations_by_type: Dict[str, List[Dict]]) -> None:
 
     original_content = docs_index_path.read_text(encoding="utf-8")
 
-    # Ensure we have CSS for dataset tags and type tags
+    # Ensure we have CSS for dataset tags, type tags, year tags, and hero section
     css_for_tags = """
 <style>
+.hero-section {
+  position: relative;
+  padding: 5rem 4rem;
+  text-align: center;
+  color: white;
+  background-color: var(--md-primary-fg-color);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url('assets/splash.png');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  position: relative;
+  min-height: 70vh;
+}
+
+.hero-content {
+  max-width: 800px;
+  z-index: 10;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+  font-family: 'Roboto', sans-serif;
+}
+
+.hero-content p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.7);
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.4;
+  color: #f8f8f8;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
+
 .dataset-tag {
   display: inline-block;
   background-color: #6a5acd;
@@ -347,6 +394,12 @@ def update_docs_index(implementations_by_type: Dict[str, List[Dict]]) -> None:
   font-size: 0.7rem;
   font-weight: 500;
   white-space: nowrap;
+}
+
+.year-tag {
+  background-color: #eb088a; /* Pink color instead of black */
+  color: white;
+  float: right;
 }
 </style>
 """

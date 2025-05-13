@@ -15,6 +15,8 @@ hide:
 </div>
 
 <!-- Custom styling for the hero section -->
+
+
 <style>
 .hero-section {
   position: relative;
@@ -99,6 +101,8 @@ hide:
 
 
 
+
+
 <div class="catalog-stats">
   <div class="stat">
     <div class="stat-number">100+</div>
@@ -111,6 +115,10 @@ hide:
 </div>
 
 ## Browse Implementations by Type
+
+
+
+
 
 
 
@@ -205,21 +213,6 @@ hide:
     </div>
     <div class="card" markdown>
     <div class="header">
-        <h3><a href="https://github.com/VectorInstitute/bmu" title="Go to Repository">bias-mitigation-unlearning</a></h3>
-        <span class="tag year-tag">2024</span>
-        <span class="tag type-tag">bootcamp</span>
-    </div>
-    <p>This repository contains code for the paper [Can Machine Unlearning Reduce Social Bias in Language Models?][bmu-paper] which was published at EMNLP'24 in the Industry track. <br>Authors are Omkar Dige, Diljot Arneja, Tsz Fung Yau, Qixuan Zhang, Mohammad Bolandraftar, Xiaodan Zhu, Faiza Khan Khattak.</p>
-    <div class="tag-container">
-        <span class="tag" data-tippy="PCGU">PCGU</span>
-        <span class="tag" data-tippy="Task vectors and DPO for Machine Unlearning">Task vectors and DPO for Machine Unlearning</span>
-    </div>
-    <div class="datasets">
-        <strong>Datasets:</strong> <span class="dataset-tag">BBQ</span> <span class="dataset-tag">bbq-bmu</span>  <span class="dataset-tag">Stereoset</span> <span class="dataset-tag">stereoset-bmu</span>  <span class="dataset-tag">Link1</span> <span class="dataset-tag">link1-bmu</span>  <span class="dataset-tag">Link2</span> <span class="dataset-tag">link2-bmu</span>
-    </div>
-    </div>
-    <div class="card" markdown>
-    <div class="header">
         <h3><a href="https://github.com/VectorInstitute/cyclops" title="Go to Repository">cyclops-workshop</a></h3>
         <span class="tag year-tag">2024</span>
         <span class="tag type-tag">bootcamp</span>
@@ -230,22 +223,6 @@ hide:
     </div>
     <div class="datasets">
         <strong>Datasets:</strong> <span class="dataset-tag">Diabetes 130-US hospitals dataset for years 1999-2008</span> <span class="dataset-tag">diabetes-cyclops</span>
-    </div>
-    </div>
-    <div class="card" markdown>
-    <div class="header">
-        <h3><a href="https://github.com/VectorInstitute/odyssey" title="Go to Repository">odyssey</a></h3>
-        <span class="tag year-tag">2024</span>
-        <span class="tag type-tag">bootcamp</span>
-    </div>
-    <p>This is a library created with research done for the paper [EHRMamba: Towards Generalizable and Scalable Foundation Models for Electronic Health Records][odyssey-paper] published at ArXiv'24. <br>Authors are Adibvafa Fallahpour, Mahshid Alinoori, Wenqian Ye, Xu Cao, Arash Afkanpour, Amrit Krishnan.</p>
-    <div class="tag-container">
-        <span class="tag" data-tippy="EHRMamba">EHRMamba</span>
-        <span class="tag" data-tippy="XGBoost">XGBoost</span>
-        <span class="tag" data-tippy="Bi-LSTM">Bi-LSTM</span>
-    </div>
-    <div class="datasets">
-        <strong>Datasets:</strong> <span class="dataset-tag">MIMIC-IV</span>
     </div>
     </div>
     <div class="card" markdown>
@@ -539,6 +516,49 @@ hide:
     </div>
     <div class="datasets">
         <strong>Datasets:</strong> <span class="dataset-tag">SpaceNet Building Detection V2</span>  <span class="dataset-tag">MVTEC</span>  <span class="dataset-tag">ICDAR2015</span>  <span class="dataset-tag">PASCAL_VOC</span>  <span class="dataset-tag">DOTA</span>  <span class="dataset-tag">AVA</span>  <span class="dataset-tag">UCF101-24</span>  <span class="dataset-tag">J-HMDB-21</span>
+    </div>
+    </div>
+
+    </div>
+
+=== "tool"
+
+    <div class="grid cards" markdown>
+    <div class="card" markdown>
+    <div class="header">
+        <h3><a href="https://github.com/VectorInstitute/odyssey" title="Go to Repository">odyssey</a></h3>
+        <span class="tag year-tag">2024</span>
+        <span class="tag type-tag">tool</span>
+    </div>
+    <p>This is a library created with research done for the paper [EHRMamba: Towards Generalizable and Scalable Foundation Models for Electronic Health Records][odyssey-paper] published at ArXiv'24. <br>Authors are Adibvafa Fallahpour, Mahshid Alinoori, Wenqian Ye, Xu Cao, Arash Afkanpour, Amrit Krishnan.</p>
+    <div class="tag-container">
+        <span class="tag" data-tippy="EHRMamba">EHRMamba</span>
+        <span class="tag" data-tippy="XGBoost">XGBoost</span>
+        <span class="tag" data-tippy="Bi-LSTM">Bi-LSTM</span>
+    </div>
+    <div class="datasets">
+        <strong>Datasets:</strong> <span class="dataset-tag">MIMIC-IV</span>
+    </div>
+    </div>
+
+    </div>
+
+=== "applied-research"
+
+    <div class="grid cards" markdown>
+    <div class="card" markdown>
+    <div class="header">
+        <h3><a href="https://github.com/VectorInstitute/bmu" title="Go to Repository">bias-mitigation-unlearning</a></h3>
+        <span class="tag year-tag">2024</span>
+        <span class="tag type-tag">applied-research</span>
+    </div>
+    <p>This repository contains code for the paper [Can Machine Unlearning Reduce Social Bias in Language Models?][bmu-paper] which was published at EMNLP'24 in the Industry track. <br>Authors are Omkar Dige, Diljot Arneja, Tsz Fung Yau, Qixuan Zhang, Mohammad Bolandraftar, Xiaodan Zhu, Faiza Khan Khattak.</p>
+    <div class="tag-container">
+        <span class="tag" data-tippy="PCGU">PCGU</span>
+        <span class="tag" data-tippy="Task vectors and DPO for Machine Unlearning">Task vectors and DPO for Machine Unlearning</span>
+    </div>
+    <div class="datasets">
+        <strong>Datasets:</strong> <span class="dataset-tag">BBQ</span> <span class="dataset-tag">bbq-bmu</span>  <span class="dataset-tag">Stereoset</span> <span class="dataset-tag">stereoset-bmu</span>  <span class="dataset-tag">Link1</span> <span class="dataset-tag">link1-bmu</span>  <span class="dataset-tag">Link2</span> <span class="dataset-tag">link2-bmu</span>
     </div>
     </div>
 
