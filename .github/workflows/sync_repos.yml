@@ -44,7 +44,7 @@ jobs:
         run: uv sync --dev --group docs
 
       - name: Run sync script
-        run: python scripts/sync_repositories_to_docs.py
+        run: source .venv/bin/activate && python scripts/sync_repositories_to_docs.py
 
       - name: Check for changes
         id: git-check
