@@ -1,4 +1,4 @@
-name: sync-readme
+name: sync-repositories-to-docs
 permissions:
   contents: write
   pull-requests: write
@@ -8,16 +8,18 @@ on:
     branches:
       - main
     paths:
-      - 'README.md'
-      - 'scripts/sync_readme_to_docs.py'
-      - '.github/workflows/sync_readme.yml'
+      - 'scripts/sync_repositories_to_docs.py'
+      - '.github/workflows/sync_repos.yml'
+      - 'repositories/**'
+      - 'docs/bibtex/**'
   pull_request:
     branches:
       - main
     paths:
-      - 'README.md'
-      - 'scripts/sync_readme_to_docs.py'
-      - '.github/workflows/sync_readme.yml'
+      - 'scripts/sync_repositories_to_docs.py'
+      - '.github/workflows/sync_repos.yml'
+      - 'repositories/**'
+      - 'docs/bibtex/**'
   workflow_dispatch:  # Allow manual triggering
 
 jobs:
@@ -42,7 +44,7 @@ jobs:
         run: uv sync --dev --group docs
 
       - name: Run sync script
-        run: python scripts/sync_readme_to_docs.py
+        run: python scripts/sync_repositories_to_docs.py
 
       - name: Check for changes
         id: git-check
@@ -59,7 +61,7 @@ jobs:
         if: steps.git-check.outputs.changes == 'true' && github.event_name == 'push'
         run: |
           git add docs/index.md
-          git commit -m "docs: sync README.md reference implementations to docs/index.md
+          git commit -m "docs: sync repositories to docs/index.md
 
           Automated update triggered by changes to README.md
 
