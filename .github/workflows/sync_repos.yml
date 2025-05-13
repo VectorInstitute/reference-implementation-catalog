@@ -23,7 +23,7 @@ on:
   workflow_dispatch:  # Allow manual triggering
 
 jobs:
-  sync-readme:
+  sync-repositories:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
